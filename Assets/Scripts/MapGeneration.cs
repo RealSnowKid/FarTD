@@ -6,7 +6,9 @@ public class MapGeneration : MonoBehaviour {
     [SerializeField] private GameObject tilePrefab;
     [SerializeField] private GameObject corePrefab;
     [SerializeField] private GameObject playerPrefab;
+
     [SerializeField] private GameObject compass;
+    [SerializeField] private GameObject inventory;
 
     [SerializeField] private Transform parent;
 
@@ -77,6 +79,8 @@ public class MapGeneration : MonoBehaviour {
 
                         compass.GetComponent<Compass>().player = player;
                         compass.GetComponent<Compass>().AddMarker(core.GetComponent<CompassMarker>());
+
+                        inventory.GetComponent<Inventory>().player = player;
                     }
 
                     // generate ores from tiles which are not walls
