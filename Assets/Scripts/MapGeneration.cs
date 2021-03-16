@@ -6,6 +6,7 @@ public class MapGeneration : MonoBehaviour {
     [SerializeField] private GameObject tilePrefab;
     [SerializeField] private GameObject corePrefab;
     [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private GameObject compass;
 
     [SerializeField] private Transform parent;
 
@@ -22,7 +23,6 @@ public class MapGeneration : MonoBehaviour {
     private float memiumPercent = 5f;
     private float unobtaniumPercent = 5f;
     private float instabiliumPercent = 20f;
-
 
     void Start() {
 
@@ -52,6 +52,7 @@ public class MapGeneration : MonoBehaviour {
 
         int playerX, playerY;
 
+        // spawn player
         do {
             playerX = Random.Range(21, mapX - 20);
             playerY = Random.Range(21, mapY - 20);
@@ -71,8 +72,11 @@ public class MapGeneration : MonoBehaviour {
                 } else {
                     //spawn player
                     if(i == playerX && ii == playerY) {
-                        Instantiate(playerPrefab, tile.transform.position + new Vector3(0f, 2f, 0f), Quaternion.identity);
-                        Instantiate(corePrefab, tile.transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+                        GameObject player = Instantiate(playerPrefab, tile.transform.position + new Vector3(0f, 2f, 0f), Quaternion.identity);
+                        GameObject core = Instantiate(corePrefab, tile.transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+
+                        compass.GetComponent<Compass>().player = player;
+                        compass.GetComponent<Compass>().AddMarker(core.GetComponent<CompassMarker>());
                     }
 
                     // generate ores from tiles which are not walls

@@ -106,4 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379f4b0f9dd9398439abdbb7c418f70e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasOre: 0
+  oreType: 0
