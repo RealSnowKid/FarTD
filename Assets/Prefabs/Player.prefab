@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpStrength: 5
+  crouchHeight: 1
   mouseSensitivity: 1
   mouseSmoothing: 2
   playerCamera: {fileID: 2715294712245855356}
