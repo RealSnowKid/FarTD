@@ -20,9 +20,11 @@ public class MapGeneration : MonoBehaviour {
     private float ironiumPercent = 40f;
     private float zoniumPercent = 20f;
     private float ventiumPercent = 10f;
-    private float memiumPercent = 5f;
-    private float unobtaniumPercent = 5f;
+    private float memiumPercent = 6f;
+    private float unobtaniumPercent = 4f;
     private float instabiliumPercent = 20f;
+
+    List<GameObject> oreCluster = new List<GameObject>();
 
     void Start() {
 
@@ -44,7 +46,7 @@ public class MapGeneration : MonoBehaviour {
 
         // texture settings
         float seed = Random.Range(0f, 1000f);
-        float scale = mapX/7;
+        float scale = mapX/8;
 
         tileSize = tilePrefab.transform.localScale.x;
 
@@ -81,9 +83,9 @@ public class MapGeneration : MonoBehaviour {
 
                     // generate ores from tiles which are not walls
                     float oreSample = Mathf.PerlinNoise((i + seed * seed) / mapX * scale, (ii + seed * seed) / mapY * scale);
-
-                    if(oreSample < oreThreshold) {
+                    if (oreSample < oreThreshold) {
                         tile.GetComponent<Renderer>().material.color = Color.yellow;
+                        tile.tag = "Ore";
 
                         ores.Add(tile.name, tile);
 
@@ -128,12 +130,20 @@ public class MapGeneration : MonoBehaviour {
 
                         if(adjacentOre != null)
                             tile.GetComponent<Tile>().oreType = adjacentOre.GetComponent<Tile>().oreType;
+                            
 
                         tile.GetComponent<Tile>().UpdateVisuals();
                     }
                 }
             }
         }
+        Debug.Log(GameObject.FindGameObjectsWithTag("Ore").Length);
+        Debug.Log(ores.Count);
         ores.Clear();
+    }
+
+    void GenerateOreNode(GameObject ore)
+    {
+        Debug.Log(ore.name);
     }
 }
