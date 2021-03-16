@@ -109,8 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d34f52a287af684b96e51b8ecf0a54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  walkingSpeed: 5
   jumpStrength: 5
+  crouchHeight: 1
   mouseSensitivity: 1
   mouseSmoothing: 2
   playerCamera: {fileID: 2715294712245855356}

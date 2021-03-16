@@ -14,7 +14,7 @@ public class MapGeneration : MonoBehaviour {
 
     // thresholds
     private const float oreThreshold = 0.21f;
-    private const float wallThreshold = 0.335f;
+    private const float wallThreshold = 0.3f;
 
     private float ironiumPercent = 40f;
     private float zoniumPercent = 20f;
@@ -44,9 +44,9 @@ public class MapGeneration : MonoBehaviour {
 
         // texture settings
         float seed = Random.Range(0f, 1000f);
-        float scale = mapX/10;
+        float scale = mapX/7;
 
-        tileSize = tilePrefab.GetComponent<MeshFilter>().sharedMesh.bounds.size.x;
+        tileSize = tilePrefab.transform.localScale.x;
 
         Dictionary<string, GameObject> ores = new Dictionary<string, GameObject>();
 
@@ -67,7 +67,7 @@ public class MapGeneration : MonoBehaviour {
 
                 // generate walls
                 if(wallSample < wallThreshold) {
-                    tile.transform.localScale = new Vector3(1f, 10f, 1f);
+                    tile.transform.localScale = new Vector3(tileSize, 10f, tileSize);
                 } else {
                     //spawn player
                     if(i == playerX && ii == playerY) {
