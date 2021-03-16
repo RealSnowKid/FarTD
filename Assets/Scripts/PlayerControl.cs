@@ -57,7 +57,6 @@ public class PlayerControl : MonoBehaviour
         Look();
         Crouch();
         Sprint();
-        Debug.Log("player speed: " + speed);
     }
 
     bool isGrounded()
