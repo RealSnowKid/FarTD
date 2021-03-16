@@ -85,7 +85,6 @@ public class MapGeneration : MonoBehaviour {
                     float oreSample = Mathf.PerlinNoise((i + seed * seed) / mapX * scale, (ii + seed * seed) / mapY * scale);
                     if (oreSample < oreThreshold) {
                         tile.GetComponent<Renderer>().material.color = Color.yellow;
-                        tile.tag = "Ore";
 
                         ores.Add(tile.name, tile);
 
@@ -137,7 +136,6 @@ public class MapGeneration : MonoBehaviour {
                 }
             }
         }
-        Debug.Log(GameObject.FindGameObjectsWithTag("Ore").Length);
         Debug.Log(ores.Count);
         ores.Clear();
     }
