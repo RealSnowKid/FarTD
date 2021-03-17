@@ -11,14 +11,15 @@ public class InventoryTile : MonoBehaviour {
     public GameObject player;
 
     // refactor pls
-    private void Start() {
+    void Start() {
         if (isGunTile) {
             player = GameObject.Find("Player(Clone)");
-            player.GetComponent<GunSwitcher>().build.gunTile = this;
+            player.GetComponent<GunSwitcher>().build.gunTile = gameObject;
         }
     }
 
     public void OnClick() {
+        Debug.Log("click");
         // if slot is empty
         if(item == null) {
             // if user is putting item down

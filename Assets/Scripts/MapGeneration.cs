@@ -26,8 +26,7 @@ public class MapGeneration : MonoBehaviour {
     private float unobtaniumPercent = 5f;
     private float instabiliumPercent = 20f;
 
-    void Start() {
-
+    void Awake() {
         if(ironiumPercent + zoniumPercent + ventiumPercent + memiumPercent + unobtaniumPercent + instabiliumPercent != 100f) {
             Debug.LogError("Ore percentages not equal to 100!");
             return;

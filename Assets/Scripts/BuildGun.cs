@@ -10,7 +10,7 @@ public class BuildGun : MonoBehaviour {
 
     private RaycastHit hitInfo;
 
-    public InventoryTile gunTile = null;
+    public GameObject gunTile = null;
 
     public void Enable() {
         gunEnabled = true;
@@ -33,7 +33,7 @@ public class BuildGun : MonoBehaviour {
         instance.GetComponent<Collider>().enabled = true;
         instance = null;
 
-        Destroy(gunTile.item);
+        Destroy(gunTile.GetComponent<InventoryTile>().item);
     }
 
     void Update() {

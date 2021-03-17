@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecdb96d20f9322f49a0d06a394d4cd81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  build: {fileID: 0}
+  shoot: {fileID: 0}
   buildText: {fileID: 0}
   shootText: {fileID: 0}
 --- !u!1 &2715294712245855356
@@ -239,7 +241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2715294712245855356}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -305,10 +307,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildObject: {fileID: 0}
-  objectShow: {fileID: 0}
   gunEnabled: 0
-  testBuildObj: {fileID: 2474670921563331767, guid: 5fd2e432fa91ab44ca845b58c88a5eb4,
-    type: 3}
+  gunTile: {fileID: 0}
 --- !u!114 &4557040253903770346
 MonoBehaviour:
   m_ObjectHideFlags: 0
