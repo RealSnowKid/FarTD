@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapGeneration : MonoBehaviour {
     [SerializeField] private GameObject tilePrefab;
+    [SerializeField] private GameObject oreNodePrefab;
     [SerializeField] private GameObject corePrefab;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject compass;
@@ -15,6 +16,7 @@ public class MapGeneration : MonoBehaviour {
 
     // thresholds
     private const float oreThreshold = 0.21f;
+    private const float oreThreshold2 = 0.08f;
     private const float wallThreshold = 0.3f;
 
     private float ironiumPercent = 40f;
@@ -23,8 +25,6 @@ public class MapGeneration : MonoBehaviour {
     private float memiumPercent = 6f;
     private float unobtaniumPercent = 4f;
     private float instabiliumPercent = 20f;
-
-    List<GameObject> oreCluster = new List<GameObject>();
 
     void Start() {
 
@@ -51,6 +51,7 @@ public class MapGeneration : MonoBehaviour {
         tileSize = tilePrefab.transform.localScale.x;
 
         Dictionary<string, GameObject> ores = new Dictionary<string, GameObject>();
+        Dictionary<string, GameObject> oresCluster = new Dictionary<string, GameObject>();
 
         int playerX, playerY;
 
@@ -71,7 +72,8 @@ public class MapGeneration : MonoBehaviour {
                 // generate walls
                 if(wallSample < wallThreshold) {
                     tile.transform.localScale = new Vector3(tileSize, 10f, tileSize);
-                } else {
+                } 
+                else {
                     //spawn player
                     if(i == playerX && ii == playerY) {
                         GameObject player = Instantiate(playerPrefab, tile.transform.position + new Vector3(0f, 2f, 0f), Quaternion.identity);
@@ -133,15 +135,44 @@ public class MapGeneration : MonoBehaviour {
 
                         tile.GetComponent<Tile>().UpdateVisuals();
                     }
+
+                    if (oreSample < oreThreshold2)
+                    {
+                        bool anyAdjacent = false;
+                        if (oresCluster.ContainsKey((i - 1).ToString() + "," + (ii).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i).ToString() + "," + (ii - 1).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i + 1).ToString() + "," + (ii).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i).ToString() + "," + (ii + 1).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i - 1).ToString() + "," + (ii + 1).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i + 1).ToString() + "," + (ii - 1).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i - 1).ToString() + "," + (ii - 1).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i + 1).ToString() + "," + (ii + 1).ToString()))
+                            anyAdjacent = true;
+                        if (anyAdjacent == false)
+                        {
+                            if (tile.GetComponent<Tile>().oreType == Ore.Ventium || tile.GetComponent<Tile>().oreType == Ore.Memium || tile.GetComponent<Tile>().oreType == Ore.Unobtanium)
+                            {
+
+                            }
+                            else
+                            {
+                                oresCluster.Add(tile.name, tile);
+                                GameObject node = Instantiate(oreNodePrefab, tile.transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+                                node.GetComponent<Renderer>().material.color = tile.GetComponent<Renderer>().material.color;
+                            }
+                            
+                        }
+                    }
                 }
             }
         }
-        Debug.Log(ores.Count);
         ores.Clear();
-    }
-
-    void GenerateOreNode(GameObject ore)
-    {
-        Debug.Log(ore.name);
     }
 }
