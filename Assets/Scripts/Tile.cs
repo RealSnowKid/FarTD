@@ -15,6 +15,8 @@ public enum Ore {
 
 public class Tile : MonoBehaviour {
     public Ore oreType = 0;
+    public bool isWall = false;
+    public GameObject building = null;
 
     public void UpdateVisuals() {
         if (oreType == Ore.Ironium) {

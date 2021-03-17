@@ -71,11 +71,13 @@ public class MapGeneration : MonoBehaviour {
                 // generate walls
                 if(wallSample < wallThreshold) {
                     tile.transform.localScale = new Vector3(tileSize, 10f, tileSize);
+                    tile.GetComponent<Tile>().isWall = true;
                 } else {
                     //spawn player
                     if(i == playerX && ii == playerY) {
                         GameObject player = Instantiate(playerPrefab, tile.transform.position + new Vector3(0f, 2f, 0f), Quaternion.identity);
                         GameObject core = Instantiate(corePrefab, tile.transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+                        tile.GetComponent<Tile>().building = core;
 
                         compass.GetComponent<Compass>().player = player;
                         compass.GetComponent<Compass>().AddMarker(core.GetComponent<CompassMarker>());
