@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3710741580656740445}
   - component: {fileID: 2407674581910496042}
   - component: {fileID: 6280430311995833167}
+  - component: {fileID: 8977082983266683266}
+  - component: {fileID: -668898836419928730}
   m_Layer: 0
   m_Name: OreNode
   m_TagString: Untagged
@@ -94,3 +96,28 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0.024794936, z: -0.00000011920929}
+--- !u!65 &8977082983266683266
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9155548453973145828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2, z: 3}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &-668898836419928730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9155548453973145828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613b9cb825ccb8c4ba4696da29958513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
