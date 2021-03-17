@@ -4,19 +4,15 @@ using UnityEngine;
 public class BuildGun : MonoBehaviour {
     private float distance = 5f;
     public GameObject buildObject = null;
-    public Transform objectShow;
 
     public bool gunEnabled = false;
     private GameObject instance = null;
 
     private RaycastHit hitInfo;
 
-    public GameObject testBuildObj;
+    public InventoryTile gunTile = null;
 
     public void Enable() {
-        // ONLY FOR TESTING PURPOSES
-        if(buildObject == null) ChangeBuildObject(testBuildObj);
-
         gunEnabled = true;
     }
 
@@ -36,11 +32,13 @@ public class BuildGun : MonoBehaviour {
         tile.GetComponent<Tile>().building = instance;
         instance.GetComponent<Collider>().enabled = true;
         instance = null;
+
+        Destroy(gunTile.item);
     }
 
     void Update() {
         // if gun is aenabled are a building is selected
-        if (gunEnabled && buildObject != null) {
+        if (gunEnabled && instance != null) {
             // if we look at a tile
             if (Physics.Raycast(transform.position, transform.forward, out hitInfo, distance)) {
                 try {
