@@ -12,6 +12,13 @@ public class BuildGun : MonoBehaviour {
 
     public GameObject gunTile = null;
 
+    private GameObject buildParent;
+
+    // refactorr
+    private void Start() {
+        buildParent = GameObject.Find("Buildings");
+    }
+
     public void Enable() {
         gunEnabled = true;
     }
@@ -29,6 +36,7 @@ public class BuildGun : MonoBehaviour {
     }
 
     void Build(GameObject tile) {
+        instance.transform.parent = buildParent.transform;
         tile.GetComponent<Tile>().building = instance;
         instance.GetComponent<Collider>().enabled = true;
         instance = null;
@@ -36,6 +44,7 @@ public class BuildGun : MonoBehaviour {
         Destroy(gunTile.GetComponent<InventoryTile>().item);
     }
 
+    // TODO: interactions while not looking at the tile should also work
     void Update() {
         // if gun is aenabled are a building is selected
         if (gunEnabled && instance != null) {
@@ -50,9 +59,30 @@ public class BuildGun : MonoBehaviour {
                         instance.transform.position = hitInfo.collider.gameObject.transform.position;
 
                         // if LMB is clicked, build it
-                        if (Input.GetButtonDown("Fire1")) Build(hitInfo.collider.gameObject);
+                        if (Input.GetButtonDown("Fire1")) {
+                            // TODO: maybe put all these in a separate class
+                            // if we're building a miner
+                            if(instance.GetComponent<Miner>() != null) {
+                                // if ore is on the tile
+                                if(hitInfo.collider.gameObject.GetComponent<Tile>().oreType != Ore.None) {
+                                    instance.GetComponent<Miner>().setOre(hitInfo.collider.gameObject.GetComponent<Tile>().oreType);
+                                    Build(hitInfo.collider.gameObject);
+                                } else {
+                                    Debug.LogError("Miners must be placed on an ore tile");
+                                }
+                            }
+                            //if we're building a conveyor
+                            if(instance.GetComponent<ConveyorMovement>() != null) {
+                                Build(hitInfo.collider.gameObject);
+                            }
+                        }
+
+                        // if "r" is pressed, rotate the object
+                        if (Input.GetKeyDown("r")) {
+                            instance.transform.Rotate(new Vector3(0f, 90f, 0f));
+                        }
                     }
-                }catch(NullReferenceException e) {
+                }catch(NullReferenceException) {
                     // if we look at a non-tile object
                     Debug.DrawRay(transform.position, transform.forward * distance, Color.red);
                 }

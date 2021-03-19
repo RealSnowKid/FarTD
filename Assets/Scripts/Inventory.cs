@@ -15,9 +15,7 @@ public class Inventory : MonoBehaviour {
     public Text label;
 
     public List<GameObject> testItems = new List<GameObject>();
-
     private void Start() {
-
         foreach(GameObject item in testItems) {
             AddItem(item);
         }

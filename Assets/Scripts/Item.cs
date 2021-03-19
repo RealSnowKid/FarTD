@@ -25,7 +25,6 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     }
 
     public void PickUp() {
-        Debug.Log("pickup");
         if(inventory.pickedItem == null) {
             tile.GetComponent<InventoryTile>().PickUp();
             tile = null;

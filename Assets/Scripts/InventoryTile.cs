@@ -19,12 +19,10 @@ public class InventoryTile : MonoBehaviour {
     }
 
     public void OnClick() {
-        Debug.Log("click");
         // if slot is empty
         if(item == null) {
             // if user is putting item down
             if (inventory.pickedItem != null) {
-
                 if (isGunTile && !inventory.pickedItem.GetComponent<Item>().isPlaceable) {
                     Debug.LogError("Only placeable item can be put there");
                 } else {
