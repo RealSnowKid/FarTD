@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Timers;
 
 public class NodeMining : MonoBehaviour
 {
@@ -10,13 +11,9 @@ public class NodeMining : MonoBehaviour
     public float miningSpeed = 2f;
     
     private bool mining = false;
-
     private void Update()
     {
-        if (mining == true)
-        {
-            InvokeRepeating("MineOre", 1, 10);
-        }
+        MineOre();
         if (oreCapacity <= 0)
         {
             Destroy(gameObject);
@@ -48,7 +45,21 @@ public class NodeMining : MonoBehaviour
 
     void MineOre()
     {
-            oreCapacity -= miningSpeed;
-            Debug.Log(oreCapacity);
+        if (!mining)
+        {
+            CancelInvoke("ReduceOre");
+            return;
+        }
+        if (!IsInvoking())
+        {
+            InvokeRepeating("ReduceOre", 0, 1f);   
+        }
+        return;
+    }
+
+    void ReduceOre()
+    {
+        oreCapacity -= miningSpeed;
+        Debug.Log(oreCapacity);
     }
 }
