@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    void AddItem(GameObject item) {
+    public void AddItem(GameObject item) {
         GameObject tile = null;
 
         for (int i = 0; i < 25; i++) {

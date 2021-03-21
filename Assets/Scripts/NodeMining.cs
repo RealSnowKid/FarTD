@@ -11,6 +11,15 @@ public class NodeMining : MonoBehaviour
     public float miningSpeed = 2f;
     
     private bool mining = false;
+    public Ore oreType;
+    public GameObject oreItem;
+    public MapGeneration mapGen;
+    private Inventory inv;
+
+    private void Start()
+    {
+        inv = mapGen.GetComponent<Inventory>();
+    }
     private void Update()
     {
         MineOre();
@@ -27,6 +36,7 @@ public class NodeMining : MonoBehaviour
             if (Input.GetKey("e"))
             {
                 mining = true;
+                inv.AddItem(oreItem);
             }
             else
             {
@@ -62,4 +72,6 @@ public class NodeMining : MonoBehaviour
         oreCapacity -= miningSpeed;
         Debug.Log(oreCapacity);
     }
+
+
 }

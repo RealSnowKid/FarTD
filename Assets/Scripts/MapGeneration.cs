@@ -169,6 +169,7 @@ public class MapGeneration : MonoBehaviour {
                             {
                                 oresCluster.Add(tile.name, tile);
                                 GameObject node = Instantiate(oreNodePrefab, tile.transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+                                node.GetComponent<NodeMining>().oreType = tile.GetComponent<Tile>().oreType;
                                 node.transform.GetChild(0).GetComponent<Renderer>().material.color = tile.GetComponent<Renderer>().material.color;
                             }
                             
