@@ -28,8 +28,7 @@ public class MapGeneration : MonoBehaviour {
     private float unobtaniumPercent = 4f;
     private float instabiliumPercent = 20f;
 
-    void Start() {
-
+    void Awake() {
         if(ironiumPercent + zoniumPercent + ventiumPercent + memiumPercent + unobtaniumPercent + instabiliumPercent != 100f) {
             Debug.LogError("Ore percentages not equal to 100!");
             return;
@@ -74,12 +73,13 @@ public class MapGeneration : MonoBehaviour {
                 // generate walls
                 if(wallSample < wallThreshold) {
                     tile.transform.localScale = new Vector3(tileSize, 10f, tileSize);
-                } 
-                else {
+                    tile.GetComponent<Tile>().isWall = true;
+                } else {
                     //spawn player
                     if(i == playerX && ii == playerY) {
                         GameObject player = Instantiate(playerPrefab, tile.transform.position + new Vector3(0f, 2f, 0f), Quaternion.identity);
                         GameObject core = Instantiate(corePrefab, tile.transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+                        tile.GetComponent<Tile>().building = core;
 
                         compass.GetComponent<Compass>().player = player;
                         compass.GetComponent<Compass>().AddMarker(core.GetComponent<CompassMarker>());

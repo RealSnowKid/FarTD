@@ -1,0 +1,170 @@
+[33mcommit dee72bbcc6749f1bc669be89053fb2357f497def[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Vlado <i432274@fhict.nl>
+Date:   Wed Mar 17 19:20:25 2021 +0100
+
+    OreNode model added
+
+[33mcommit fa7aa323d16e741f4713d8872990a9ac79acd91d[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Wed Mar 17 13:51:47 2021 +0200
+
+    Fix misalignment with MapGeneration in scene
+
+[33mcommit 1d5ee69d2da8c515b2b74cde6e26ee29d1861a36[m
+Merge: e392090 315926a
+Author: Banov,Ivan I.K <i.banov@student.fontys.nl>
+Date:   Wed Mar 17 11:45:21 2021 +0000
+
+    Merge branch 'add-resource-nodes' into 'master'
+    
+    Add resource nodes
+    
+    See merge request I432274/fartd!1
+
+[33mcommit 315926ac6e1c4cea02e2bd645af8e57b7dd0c87b[m[33m ([m[1;31morigin/add-resource-nodes[m[33m)[m
+Merge: 7501e7a e392090
+Author: Banov,Ivan I.K <i.banov@student.fontys.nl>
+Date:   Wed Mar 17 10:19:51 2021 +0000
+
+    Fix merge conflicts:
+    #   Assets/Scenes/Main.unity
+    #   Packages/packages-lock.json
+    #   ProjectSettings/InputManager.asset
+
+[33mcommit 7501e7ac6b2c1ee1fac5ec656fab57fd8f5ba33b[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Wed Mar 17 12:09:01 2021 +0200
+
+    Add spawning logic for resource nodes
+
+[33mcommit e392090b2491c5794bc384d67ad42461c18f850a[m
+Author: Vlado <i432274@fhict.nl>
+Date:   Wed Mar 17 01:02:49 2021 +0100
+
+    scene hotfix
+
+[33mcommit 80d3d9d00dfcc91f97318ba8b6ca6fd82d88a19a[m
+Merge: 75f84f9 bcdaca7
+Author: Vlado <i432274@fhict.nl>
+Date:   Tue Mar 16 23:46:40 2021 +0100
+
+    Merge branch 'master' of http://git.fhict.nl/I432274/fartd
+
+[33mcommit 75f84f92da891402f2dcaedc5495313e64739a37[m
+Author: Vlado <i432274@fhict.nl>
+Date:   Tue Mar 16 23:46:15 2021 +0100
+
+    Inventory UI created
+
+[33mcommit 9a5f4fed11ecf25c227ed9c473e954eb50f5e369[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Tue Mar 16 19:37:26 2021 +0200
+
+    Fix tile prefab missing material
+
+[33mcommit 901d5925d92e51069c760e66c2a11ea8a78845f0[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Tue Mar 16 19:36:38 2021 +0200
+
+    Fix depricated tag usage
+
+[33mcommit 7fef69a9657beb003bed57e469b552d4222b6276[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Tue Mar 16 19:35:02 2021 +0200
+
+    Fixed some merge issues
+
+[33mcommit bcdaca74aec6a30776a91b42f8acde228a217a71[m
+Merge: 30c2d96 45c6c9a
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Tue Mar 16 19:11:50 2021 +0200
+
+    Merge https://github.com/RealSnowKid/FarTD
+
+[33mcommit 45c6c9aad62cd3a46b147757fe4bb18da345e5be[m
+Merge: 27870e6 e405a2b
+Author: RealSnowKid <realsnowkid@gmail.com>
+Date:   Tue Mar 16 19:09:15 2021 +0200
+
+    Merge pull request #1 from RealSnowKid/dev
+    
+    Merge dev into master
+
+[33mcommit 30c2d96339302ace7edd9438957ff87f0f495c3b[m
+Merge: 12747c0 e405a2b
+Author: Vlado <i432274@fhict.nl>
+Date:   Tue Mar 16 18:06:02 2021 +0100
+
+    Merge branch 'dev'
+
+[33mcommit e405a2b09e737da93bb88df7b2ede2b3986ac3f6[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Tue Mar 16 18:40:57 2021 +0200
+
+    Add material and remove debug.log from playercontrol
+
+[33mcommit ab6eb057fc373c14da0b95dbc36ed3f085fe0b9a[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Tue Mar 16 16:44:20 2021 +0200
+
+    Fix a bug with tiles box collider scaling
+
+[33mcommit 34a2273560f1ad47551064372b41a493de30bc5c[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Tue Mar 16 16:25:25 2021 +0200
+
+    Replace speed with walking speed for player
+
+[33mcommit 12747c0ea6a74a64cd48f7531f901de259b20400[m
+Author: Vlado <i432274@fhict.nl>
+Date:   Tue Mar 16 14:24:29 2021 +0100
+
+    UnassignedReferenceException hotfix
+
+[33mcommit 53256c07d4eea02f304927f21c4e5785d17e97ef[m
+Author: Vlado <i432274@fhict.nl>
+Date:   Tue Mar 16 14:15:48 2021 +0100
+
+    Basic UI and post processing
+
+[33mcommit f08c26ff6f47b895a57f8247a36a96e254ddf4b2[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Tue Mar 16 14:43:53 2021 +0200
+
+    Modified how tileprefabs are used in MapGen so they can be resized
+
+[33mcommit 9701cb27f5ec852868b991a2597ab9780eee608c[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Tue Mar 16 14:06:17 2021 +0200
+
+    Add sprinting to player contorller
+
+[33mcommit 5eb3b4214be8de7c7fe1700ea7ebb935dad2a778[m
+Author: i403318 <realsnowkid@gmail.com>
+Date:   Tue Mar 16 14:03:41 2021 +0200
+
+    Add crouch to player controller
+
+[33mcommit 27870e6375b84053b7f9130aadf6e278e3c566d9[m
+Author: Vlado <i432274@fhict.nl>
+Date:   Mon Mar 15 16:32:22 2021 +0100
+
+    Ore spawns and player character
+
+[33mcommit cefff2ab40fbf30554207e428ad980bdfdf47b4e[m
+Author: Vlado <i432274@fhict.nl>
+Date:   Mon Mar 15 14:10:10 2021 +0100
+
+    Procedural map generation
+
+[33mcommit f8db7ca0e4f2e2726c3cb6f7cbe380b05c7fd816[m
+Author: Vlado <i432274@fhict.nl>
+Date:   Fri Mar 12 12:14:47 2021 +0100
+
+    Initial commit
+
+[33mcommit a2d85d66276772d80ebf4be3f2d1b070f2252ede[m
+Author: Vladinov,Vladimir V.D <v.vladinov@student.fontys.nl>
+Date:   Fri Mar 5 15:34:31 2021 +0000
+
+    Initial commit

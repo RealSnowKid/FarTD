@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2715294712170814481}
   - component: {fileID: 2715294712170814486}
   - component: {fileID: 2715294712170814509}
+  - component: {fileID: 2875761306724645604}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -131,6 +132,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2875761306724645604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715294712170814487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdb96d20f9322f49a0d06a394d4cd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  build: {fileID: 0}
+  shoot: {fileID: 0}
+  buildText: {fileID: 0}
+  shootText: {fileID: 0}
 --- !u!1 &2715294712245855356
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +160,8 @@ GameObject:
   - component: {fileID: 2715294712245855358}
   - component: {fileID: 2715294712245855359}
   - component: {fileID: 5942139565178117862}
+  - component: {fileID: 775861059632224376}
+  - component: {fileID: 4557040253903770346}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -275,3 +294,31 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &775861059632224376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715294712245855356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cda4b8df414ba41848d38423a4f0b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildObject: {fileID: 0}
+  gunEnabled: 0
+  gunTile: {fileID: 0}
+--- !u!114 &4557040253903770346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715294712245855356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87dfa9b935682e7428d46ee72d01e0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunEnabled: 0
