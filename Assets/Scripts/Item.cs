@@ -12,6 +12,10 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public Text label;
 
     private bool pickedUp = false;
+
+    public bool isPlaceable = false;
+    public GameObject building;
+
     public void OnPointerEnter(PointerEventData eventData) {
         label.text = caption;
     }
