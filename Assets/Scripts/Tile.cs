@@ -16,6 +16,7 @@ public enum Ore {
 public class Tile : MonoBehaviour {
     public Ore oreType = 0;
     public bool isWall = false;
+    public bool hasOreNode = false;
     public GameObject building = null;
 
     public void UpdateVisuals() {

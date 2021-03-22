@@ -51,8 +51,12 @@ public class BuildGun : MonoBehaviour {
             // if we look at a tile
             if (Physics.Raycast(transform.position, transform.forward, out hitInfo, distance)) {
                 try {
+                    // if the tile is a wall or has an ore node
+                    if(hitInfo.collider.gameObject.GetComponent<Tile>().isWall || hitInfo.collider.gameObject.GetComponent<Tile>().hasOreNode) {
+                        throw new NullReferenceException();
+                    }
                     // if the tile is a ground tile and it's empty
-                    if (!hitInfo.collider.gameObject.GetComponent<Tile>().isWall && hitInfo.collider.gameObject.GetComponent<Tile>().building == null) {
+                    if (hitInfo.collider.gameObject.GetComponent<Tile>().building == null) {
                         Debug.DrawRay(transform.position, transform.forward * distance, Color.yellow);
 
                         // move the hologram to the desegnated tile
@@ -83,7 +87,7 @@ public class BuildGun : MonoBehaviour {
                         }
                     }
                 }catch(NullReferenceException) {
-                    // if we look at a non-tile object
+                    // if we look at a non-ground object
                     Debug.DrawRay(transform.position, transform.forward * distance, Color.red);
                 }
             }
