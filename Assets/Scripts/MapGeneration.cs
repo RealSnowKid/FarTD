@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapGeneration : MonoBehaviour {
     [SerializeField] private GameObject tilePrefab;
+    [SerializeField] private GameObject oreNodePrefab;
     [SerializeField] private GameObject corePrefab;
     [SerializeField] private GameObject playerPrefab;
 
@@ -17,13 +18,14 @@ public class MapGeneration : MonoBehaviour {
 
     // thresholds
     private const float oreThreshold = 0.21f;
+    private const float oreThreshold2 = 0.15f;
     private const float wallThreshold = 0.3f;
 
     private float ironiumPercent = 40f;
     private float zoniumPercent = 20f;
     private float ventiumPercent = 10f;
-    private float memiumPercent = 5f;
-    private float unobtaniumPercent = 5f;
+    private float memiumPercent = 6f;
+    private float unobtaniumPercent = 4f;
     private float instabiliumPercent = 20f;
 
     void Awake() {
@@ -45,11 +47,12 @@ public class MapGeneration : MonoBehaviour {
 
         // texture settings
         float seed = Random.Range(0f, 1000f);
-        float scale = mapX/7;
+        float scale = mapX/8;
 
         tileSize = tilePrefab.transform.localScale.x;
 
         Dictionary<string, GameObject> ores = new Dictionary<string, GameObject>();
+        Dictionary<string, GameObject> oresCluster = new Dictionary<string, GameObject>();
 
         int playerX, playerY;
 
@@ -86,8 +89,7 @@ public class MapGeneration : MonoBehaviour {
 
                     // generate ores from tiles which are not walls
                     float oreSample = Mathf.PerlinNoise((i + seed * seed) / mapX * scale, (ii + seed * seed) / mapY * scale);
-
-                    if(oreSample < oreThreshold) {
+                    if (oreSample < oreThreshold) {
                         tile.GetComponent<Renderer>().material.color = Color.yellow;
 
                         ores.Add(tile.name, tile);
@@ -133,8 +135,44 @@ public class MapGeneration : MonoBehaviour {
 
                         if(adjacentOre != null)
                             tile.GetComponent<Tile>().oreType = adjacentOre.GetComponent<Tile>().oreType;
+                            
 
                         tile.GetComponent<Tile>().UpdateVisuals();
+                    }
+
+                    if (oreSample < oreThreshold2)
+                    {
+                        bool anyAdjacent = false;
+                        if (oresCluster.ContainsKey((i - 1).ToString() + "," + (ii).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i).ToString() + "," + (ii - 1).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i + 1).ToString() + "," + (ii).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i).ToString() + "," + (ii + 1).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i - 1).ToString() + "," + (ii + 1).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i + 1).ToString() + "," + (ii - 1).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i - 1).ToString() + "," + (ii - 1).ToString()))
+                            anyAdjacent = true;
+                        else if (oresCluster.ContainsKey((i + 1).ToString() + "," + (ii + 1).ToString()))
+                            anyAdjacent = true;
+                        if (anyAdjacent == false)
+                        {
+                            if (tile.GetComponent<Tile>().oreType == Ore.Ventium || tile.GetComponent<Tile>().oreType == Ore.Memium || tile.GetComponent<Tile>().oreType == Ore.Unobtanium)
+                            {
+
+                            }
+                            else
+                            {
+                                oresCluster.Add(tile.name, tile);
+                                GameObject node = Instantiate(oreNodePrefab, tile.transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+                                node.transform.GetChild(0).GetComponent<Renderer>().material.color = tile.GetComponent<Renderer>().material.color;
+                            }
+                            
+                        }
                     }
                 }
             }
