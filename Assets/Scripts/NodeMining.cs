@@ -22,6 +22,7 @@ public class NodeMining : MonoBehaviour
         resources.Add(Resources.Load("OreZonium") as GameObject);
         resources.Add(Resources.Load("PowderInstabilium") as GameObject);
     }
+
     private void Update()
     {
         MineOre();
@@ -33,9 +34,9 @@ public class NodeMining : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (collider.GetComponent("PlayerControl") != null)
+        if (collider.GetComponent<PlayerControl>() != null && collider.GetComponent<GunSwitcher>().isMining)
         {
-            if (Input.GetKey("e"))
+            if (Input.GetMouseButtonDown(0))
             {
                 mining = true;
             }
@@ -48,7 +49,7 @@ public class NodeMining : MonoBehaviour
 
     private void OnTriggerExit(Collider collider)
     {
-        if (collider.GetComponent("PlayerControl") != null)
+        if (collider.GetComponent<PlayerControl>() != null && collider.GetComponent<GunSwitcher>().isMining)
         {
             mining = false;
         }
@@ -70,30 +71,40 @@ public class NodeMining : MonoBehaviour
 
     void ReduceOre()
     {
-        oreCapacity -= miningSpeed;
+
         for (int i = 0; i < miningSpeed; i++)
         {
-            AddResourcesToInv(oreType);
+            if (AddResourcesToInv(oreType))
+                oreCapacity--;
         }
+
         Debug.Log(oreCapacity);
     }
 
-    void AddResourcesToInv(Ore oreType)
+    bool AddResourcesToInv(Ore oreType)
     {
+
+        bool success = true;
         switch (oreType)
         {
             case Ore.Ironium:
-                inv.AddItem(resources[0]);
+                if (!inv.AddItem(resources[0]))
+                    success = false;
                 break;
             case Ore.Zonium:
-                inv.AddItem(resources[1]);
+                if (!inv.AddItem(resources[1]))
+                    success = false;
                 break;
             case Ore.Instabilium:
-                inv.AddItem(resources[2]);
+                if(!inv.AddItem(resources[2]))
+                    success = false;
                 break;
             default:
                 Debug.Log("No resource found");
+                success = false;
                 break;
         }
+
+        return success;
     }
 }

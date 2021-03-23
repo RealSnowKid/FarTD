@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    public void AddItem(GameObject item) {
+    public bool AddItem(GameObject item) {
         GameObject tile = null;
 
         for (int i = 0; i < 25; i++) {
@@ -44,7 +44,7 @@ public class Inventory : MonoBehaviour {
 
         if(tile == null) {
             Debug.LogError("No empty place");
-            return;
+            return false;
         }
 
 
@@ -58,5 +58,6 @@ public class Inventory : MonoBehaviour {
         visualItem.GetComponent<Item>().tile = tile;
 
         visualItem.transform.position = tile.transform.position;
+        return true;
     }
 }

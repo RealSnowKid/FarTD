@@ -12,6 +12,7 @@ public class MapGeneration : MonoBehaviour {
     [SerializeField] private GameObject inventory;
 
     [SerializeField] private Transform parent;
+    [SerializeField] private Transform oreNodeParent;
 
     public int mapX, mapY;
     private float tileSize;
@@ -170,6 +171,8 @@ public class MapGeneration : MonoBehaviour {
                                 oresCluster.Add(tile.name, tile);
                                 tile.GetComponent<Tile>().hasOreNode = true;
                                 GameObject node = Instantiate(oreNodePrefab, tile.transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+
+                                node.transform.parent = oreNodeParent;
                                 node.GetComponent<NodeMining>().oreType = tile.GetComponent<Tile>().oreType;
                                 node.transform.GetChild(0).GetComponent<Renderer>().material.color = tile.GetComponent<Renderer>().material.color;
                             }
