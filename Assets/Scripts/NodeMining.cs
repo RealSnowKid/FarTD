@@ -12,12 +12,15 @@ public class NodeMining : MonoBehaviour
     
     private bool mining = false;
     public Ore oreType;
-    public GameObject oreItem;
+    public List<GameObject> resources = new List<GameObject>();
     public Inventory inv;
 
     private void Start()
     {
         inv = GameObject.Find("MapGeneration").GetComponent<MapGeneration>().GetInventory().GetComponent<Inventory>();
+        resources.Add(Resources.Load("OreIronium") as GameObject);
+        resources.Add(Resources.Load("OreZonium") as GameObject);
+        resources.Add(Resources.Load("PowderInstabilium") as GameObject);
     }
     private void Update()
     {
@@ -68,9 +71,29 @@ public class NodeMining : MonoBehaviour
     void ReduceOre()
     {
         oreCapacity -= miningSpeed;
-        inv.AddItem(oreItem);
+        for (int i = 0; i < miningSpeed; i++)
+        {
+            AddResourcesToInv(oreType);
+        }
         Debug.Log(oreCapacity);
     }
 
-
+    void AddResourcesToInv(Ore oreType)
+    {
+        switch (oreType)
+        {
+            case Ore.Ironium:
+                inv.AddItem(resources[0]);
+                break;
+            case Ore.Zonium:
+                inv.AddItem(resources[1]);
+                break;
+            case Ore.Instabilium:
+                inv.AddItem(resources[2]);
+                break;
+            default:
+                Debug.Log("No resource found");
+                break;
+        }
+    }
 }
