@@ -180,4 +180,9 @@ public class MapGeneration : MonoBehaviour {
         }
         ores.Clear();
     }
+
+    public GameObject GetInventory()
+    {
+        return inventory;
+    }
 }

@@ -6049,12 +6049,6 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 363611771}
-    - target: {fileID: 1864792677093878049, guid: 9880037b68145b749aedda05b64a618b,
-        type: 3}
-      propertyPath: oreNodePrefab
-      value: 
-      objectReference: {fileID: 2983520477304351027, guid: 031ff77ad019193499e1c9393e8aff9b,
-        type: 3}
     - target: {fileID: 1864792677093878050, guid: 9880037b68145b749aedda05b64a618b,
         type: 3}
       propertyPath: m_Name

@@ -42,7 +42,7 @@ MonoBehaviour:
   miningSpeed: 2
   oreType: 0
   oreItem: {fileID: 8654669060546944457, guid: bac248861fd296d4390641c1d4146aa0, type: 3}
-  mapGen: {fileID: 1864792677093878049, guid: 9880037b68145b749aedda05b64a618b, type: 3}
+  mapGen: {fileID: 1864792677093878050, guid: 9880037b68145b749aedda05b64a618b, type: 3}
 --- !u!1001 &2713121636530869346
 PrefabInstance:
   m_ObjectHideFlags: 0
