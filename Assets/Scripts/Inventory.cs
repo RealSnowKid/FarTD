@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown("q")) {
+        if (Input.GetKeyDown("q") && pickedItem == null) {
             inventoryMenu.SetActive(!inventoryMenu.activeSelf);
 
             Cursor.lockState = inventoryMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
