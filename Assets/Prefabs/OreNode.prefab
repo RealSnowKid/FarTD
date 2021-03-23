@@ -11,8 +11,38 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.258463, y: 10.771157, z: 14.440036}
-  m_Center: {x: -0.20590329, y: 0.39307317, z: -0.3556742}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &5904063409491407627
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983520477304351027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 25, y: 25, z: 25}
+  m_Center: {x: 0, y: 10, z: 0}
+--- !u!114 &7288474191209934881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983520477304351027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613b9cb825ccb8c4ba4696da29958513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oreCapacity: 100
+  miningSpeed: 2
+  oreType: 0
+  oreItem: {fileID: 8654669060546944457, guid: bac248861fd296d4390641c1d4146aa0, type: 3}
+  mapGen: {fileID: 1864792677093878050, guid: 9880037b68145b749aedda05b64a618b, type: 3}
 --- !u!1001 &2713121636530869346
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3184,8 +3184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -2.8099976, y: 13.700012}
-  m_SizeDelta: {x: 11.369507, y: 27.320282}
+  m_AnchoredPosition: {x: 0.15081787, y: 13.700012}
+  m_SizeDelta: {x: -0.30163574, y: 27.320282}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130664435
 MonoBehaviour:
@@ -6049,12 +6049,6 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 363611771}
-    - target: {fileID: 1864792677093878049, guid: 9880037b68145b749aedda05b64a618b,
-        type: 3}
-      propertyPath: oreNodePrefab
-      value: 
-      objectReference: {fileID: 2983520477304351027, guid: 031ff77ad019193499e1c9393e8aff9b,
-        type: 3}
     - target: {fileID: 1864792677093878050, guid: 9880037b68145b749aedda05b64a618b,
         type: 3}
       propertyPath: m_Name
