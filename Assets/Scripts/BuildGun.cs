@@ -78,7 +78,7 @@ public class BuildGun : MonoBehaviour {
 
             // if "r" is pressed, rotate the object
             if (Input.GetKeyDown("r") && lastTile != null)
-                instance.transform.Rotate(new Vector3(0f, 90f, 0f));
+                instance.transform.Rotate(new Vector3(0f, 90f, 0f), Space.World);
 
             // if LMB is clicked, build it
             if (Input.GetButtonDown("Fire1") && lastTile != null) {
