@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConveyorMovement : MonoBehaviour {
+public class ConveyorMovement : Building {
     private float speed = 2f;
 
     private void OnCollisionStay(Collision collision) {

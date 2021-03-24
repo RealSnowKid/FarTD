@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Miner : MonoBehaviour {
+public class Miner : Building {
     [SerializeField] private GameObject ironiumPrefab;
     [SerializeField] private GameObject zoniumPrefab;
     [SerializeField] private GameObject ventiumPrefab;
