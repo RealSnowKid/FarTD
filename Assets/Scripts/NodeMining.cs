@@ -36,7 +36,7 @@ public class NodeMining : MonoBehaviour
     {
         if (collider.GetComponent<PlayerControl>() != null && collider.GetComponent<GunSwitcher>().isMining)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 mining = true;
             }
