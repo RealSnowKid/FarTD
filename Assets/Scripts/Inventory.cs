@@ -33,20 +33,13 @@ public class Inventory : MonoBehaviour {
     }
 
     public bool AddItem(GameObject item) {
-        GameObject tile = null;
+        GameObject tile = HasSpace();
 
-        for (int i = 0; i < 25; i++) {
-            if (grid.transform.GetChild(i).GetComponent<InventoryTile>().item == null) {
-                tile = grid.transform.GetChild(i).gameObject;
-                break;
-            }
-        }
-
-        if(tile == null) {
+        if (tile == null)
+        {
             Debug.LogError("No empty place");
             return false;
         }
-
 
         GameObject visualItem = Instantiate(item, itemsParent);
         items.Add(visualItem.GetComponent<Item>());
@@ -59,5 +52,26 @@ public class Inventory : MonoBehaviour {
 
         visualItem.transform.position = tile.transform.position;
         return true;
+    }
+
+    public GameObject HasSpace()
+    {
+        GameObject tile = null;
+
+        for (int i = 0; i < 25; i++)
+        {
+            if (grid.transform.GetChild(i).GetComponent<InventoryTile>().item == null)
+            {
+                tile = grid.transform.GetChild(i).gameObject;
+                break;
+            }
+        }
+        return tile;
+    }
+
+    public bool RemoveItem(GameObject item)
+    {
+        Debug.Log(item.gameObject);
+        return false;
     }
 }
