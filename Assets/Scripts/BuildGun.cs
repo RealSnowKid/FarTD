@@ -97,6 +97,11 @@ public class BuildGun : MonoBehaviour {
                 else if (instance.GetComponent<ConveyorMovement>() != null) {
                     Build(lastTile);
                 }
+                //if we're building a smelter
+                else if(instance.GetComponent<Smelter>() != null) {
+                    instance.GetComponent<Smelter>().Build();
+                    Build(lastTile);
+                }
             }
         }
     }
