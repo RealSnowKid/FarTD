@@ -29,6 +29,9 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
     public void PickUp() {
         if(inventory.pickedItem == null) {
+            if (tile.GetComponent<InventoryTile>().isOutputTile)
+                inventory.player.GetComponent<ClosestSmelter>().smelter.GetComponent<Smelter>().output = null;
+
             tile.GetComponent<InventoryTile>().PickUp();
             tile = null;
             pickedUp = true;

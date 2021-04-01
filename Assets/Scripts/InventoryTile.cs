@@ -18,7 +18,7 @@ public class InventoryTile : MonoBehaviour {
     void Start() {
         if (isGunTile || isInputTile || isFuelTile || isOutputTile) {
             player = GameObject.Find("Player(Clone)");
-            player.GetComponent<GunSwitcher>().build.gunTile = gameObject;
+            if (isGunTile) player.GetComponent<GunSwitcher>().build.gunTile = gameObject;
         }
     }
 

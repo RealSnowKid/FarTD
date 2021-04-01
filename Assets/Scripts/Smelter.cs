@@ -81,7 +81,7 @@ public class Smelter : Building {
         if (other.GetComponent<PlayerControl>() != null && isBuilt) {
             gui.transform.GetChild(4).GetComponent<Slider>().value = count / time;
             if (input != null && fuel != null) {
-                if (input.GetComponent<Item>().isOre && fuel.GetComponent<Item>().isBurnable)
+                if (input.GetComponent<Item>().isOre && fuel.GetComponent<Item>().isBurnable && output == null)
                     if(!CR_running) StartCoroutine(Smelt());
             }
         }
@@ -110,7 +110,6 @@ public class Smelter : Building {
             count += .2f;
         }
         count = 0;
-
 
         if (isIronium) ingot = Instantiate(ironiumSmelt, itemsParent);
         else if (isZonium) ingot = Instantiate(zoniumSmelt, itemsParent);

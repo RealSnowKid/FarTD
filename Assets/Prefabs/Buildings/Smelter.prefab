@@ -58,7 +58,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9056717, y: 2.1829476, z: 4.945675}
+  m_Size: {x: 0.7484874, y: 1.9720111, z: 4.4677777}
   m_Center: {x: 0, y: 1.2421871, z: 0}
 --- !u!114 &-3900451488962780748
 MonoBehaviour:
@@ -77,10 +77,12 @@ MonoBehaviour:
   output: {fileID: 0}
   time: 5
   gui: {fileID: 0}
+  itemsParent: {fileID: 0}
   ironiumSmelt: {fileID: 6928088763016814803, guid: 66e6af16dd729f24e81737b185e7a043,
     type: 3}
   zoniumSmelt: {fileID: 3497301601034223655, guid: 20dd4dd06b7a4244c854f9dfc6147fe0,
     type: 3}
+  ingot: {fileID: 0}
 --- !u!1001 &5063021505529839120
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -56,7 +56,6 @@ public class Miner : Building {
 
     private void spawnOre() {
         for(int i=0; i<amountMined; i++) {
-            Debug.Log("Mine");
             Instantiate(prefab, spawnLocation.position, spawnLocation.rotation, spawnParent);
         }
     }
