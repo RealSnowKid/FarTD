@@ -31,6 +31,7 @@ public class BuildGun : MonoBehaviour {
     }
 
     public void ChangeBuildObject(GameObject obj) {
+        Debug.Log("change obj");
         if (instance != null) Destroy(instance);
         buildObject = obj;
         instance = Instantiate(buildObject);
@@ -38,20 +39,24 @@ public class BuildGun : MonoBehaviour {
     }
 
     void Build(GameObject tile) {
+        Debug.Log("build");
         instance.transform.parent = buildParent.transform;
         tile.GetComponent<Tile>().building = instance;
         instance.GetComponent<Collider>().enabled = true;
         instance = null;
 
         Destroy(gunTile.GetComponent<InventoryTile>().item);
+
+        if (gunTile.GetComponent<InventoryTile>().item == null)
+            Debug.Log("DELET");
+
         lastTile = null;
     }
 
     GameObject lastTile = null;
 
-    // TODO: interactions while not looking at the tile should also work
     void Update() {
-        // if gun is aenabled are a building is selected
+        // if gun is enabled and a building is selected
         if (gunEnabled && instance != null) {
 
             // if we look at a tile
@@ -72,7 +77,6 @@ public class BuildGun : MonoBehaviour {
                 } catch (NullReferenceException) {
                     // if we look at a non-ground object
                     Debug.DrawRay(transform.position, transform.forward * distance, Color.red);
-                    //lastTile = null;
                 }
             }
 

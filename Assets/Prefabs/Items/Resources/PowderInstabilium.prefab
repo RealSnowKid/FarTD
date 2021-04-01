@@ -140,6 +140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1283732994564824375, guid: e952cce62ec7aaf4c8fa66828d937155,
         type: 3}
+      propertyPath: isBurnable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283732994564824375, guid: e952cce62ec7aaf4c8fa66828d937155,
+        type: 3}
       propertyPath: isPlaceable
       value: 0
       objectReference: {fileID: 0}
