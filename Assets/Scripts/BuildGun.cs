@@ -31,7 +31,6 @@ public class BuildGun : MonoBehaviour {
     }
 
     public void ChangeBuildObject(GameObject obj) {
-        Debug.Log("change obj");
         if (instance != null) Destroy(instance);
         buildObject = obj;
         instance = Instantiate(buildObject);
@@ -39,16 +38,12 @@ public class BuildGun : MonoBehaviour {
     }
 
     void Build(GameObject tile) {
-        Debug.Log("build");
         instance.transform.parent = buildParent.transform;
         tile.GetComponent<Tile>().building = instance;
         instance.GetComponent<Collider>().enabled = true;
         instance = null;
 
         Destroy(gunTile.GetComponent<InventoryTile>().item);
-
-        if (gunTile.GetComponent<InventoryTile>().item == null)
-            Debug.Log("DELET");
 
         lastTile = null;
     }
@@ -99,6 +94,11 @@ public class BuildGun : MonoBehaviour {
                 }
                 //if we're building a conveyor
                 else if (instance.GetComponent<ConveyorMovement>() != null) {
+
+                    //if conveyor smelter
+                    if(instance.transform.GetChild(0).GetComponent<Smelter>() != null) {
+                        instance.transform.GetChild(0).GetComponent<Smelter>().Build();
+                    }
                     Build(lastTile);
                 }
                 //if we're building a smelter

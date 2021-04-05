@@ -1809,7 +1809,8 @@ MonoBehaviour:
   - {fileID: 2234993775125010057, guid: 4275eeb24701e6b4bba894047904ea63, type: 3}
   - {fileID: 2234993775125010057, guid: 4275eeb24701e6b4bba894047904ea63, type: 3}
   - {fileID: 4597623089407184017, guid: 0ad8d558530cea249a3e791fe37d999a, type: 3}
-  - {fileID: 4597623089407184017, guid: 0ad8d558530cea249a3e791fe37d999a, type: 3}
+  - {fileID: 2226329822556123105, guid: 4cdaf0f9f8a4b9246bd94450b2962c33, type: 3}
+  - {fileID: 2226329822556123105, guid: 4cdaf0f9f8a4b9246bd94450b2962c33, type: 3}
   smelteryGUI: {fileID: 1218396107}
 --- !u!1 &385589512
 GameObject:
@@ -1845,8 +1846,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -141.2919, y: -327.48956}
-  m_SizeDelta: {x: 255.34918, y: 30}
+  m_AnchoredPosition: {x: -141.2919, y: -344.76}
+  m_SizeDelta: {x: 255.34918, y: 64.53522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &385589514
 MonoBehaviour:

@@ -18,6 +18,12 @@ public class Smelter : Building {
     [SerializeField] private GameObject ironiumSmelt;
     [SerializeField] private GameObject zoniumSmelt;
 
+    [SerializeField] private GameObject ironiumSmeltBlock;
+    [SerializeField] private GameObject zoniumSmeltBlock;
+
+    public bool isConveyor = false;
+    [SerializeField] private Transform spawnTransform;
+
     public void Start() {
         // temporary solution again lol
         gui = GameObject.Find("Canvas").GetComponent<Inventory>().GetSmelteryGUI();
@@ -28,7 +34,7 @@ public class Smelter : Building {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.GetComponent<PlayerControl>() != null && isBuilt) {
+        if (other.GetComponent<PlayerControl>() != null && isBuilt && !isConveyor) {
             gui.SetActive(true);
             other.GetComponent<ClosestSmelter>().smelter = gameObject;
 
@@ -50,11 +56,27 @@ public class Smelter : Building {
                 gui.transform.GetChild(3).GetComponent<InventoryTile>().item = output;
             }
             playerIn = true;
+        } else if (other.GetComponent<OreDrop>() != null && isBuilt && isConveyor && !ACR_running) {
+            GameObject smelt = null;
+
+            switch (other.GetComponent<OreDrop>().ore) {
+                case Ore.Ironium:
+                    smelt = ironiumSmeltBlock;
+                    break;
+                case Ore.Zonium:
+                    smelt = zoniumSmeltBlock;
+                    break;
+            }
+            if(smelt != null) {
+                Destroy(other.gameObject);
+
+                StartCoroutine(SmeltAuto(smelt));
+            }
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if (other.GetComponent<PlayerControl>() != null && isBuilt) {
+        if (other.GetComponent<PlayerControl>() != null && isBuilt && !isConveyor) {
             gui.SetActive(false);
             other.GetComponent<ClosestSmelter>().smelter = null;
 
@@ -78,7 +100,7 @@ public class Smelter : Building {
     }
 
     private void OnTriggerStay(Collider other) {
-        if (other.GetComponent<PlayerControl>() != null && isBuilt) {
+        if (other.GetComponent<PlayerControl>() != null && isBuilt && !isConveyor) {
             gui.transform.GetChild(4).GetComponent<Slider>().value = count / time;
             if (input != null && fuel != null) {
                 if (input.GetComponent<Item>().isOre && fuel.GetComponent<Item>().isBurnable && output == null)
@@ -127,5 +149,14 @@ public class Smelter : Building {
         } else
             Debug.LogError("ingot not found tf?");
         CR_running = false;
+    }
+
+    bool ACR_running = false;
+
+    private IEnumerator SmeltAuto(GameObject obj) {
+        ACR_running = true;
+        yield return new WaitForSeconds(time);
+        Instantiate(obj, spawnTransform.position, Quaternion.identity);
+        ACR_running = false;
     }
 }
