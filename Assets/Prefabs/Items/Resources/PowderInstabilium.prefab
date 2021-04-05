@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 1283732994564824372, guid: e952cce62ec7aaf4c8fa66828d937155,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1283732994564824372, guid: e952cce62ec7aaf4c8fa66828d937155,
         type: 3}
@@ -137,6 +137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: building
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283732994564824375, guid: e952cce62ec7aaf4c8fa66828d937155,
+        type: 3}
+      propertyPath: isBurnable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1283732994564824375, guid: e952cce62ec7aaf4c8fa66828d937155,
         type: 3}

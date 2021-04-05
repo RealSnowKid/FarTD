@@ -44,14 +44,14 @@ public class BuildGun : MonoBehaviour {
         instance = null;
 
         Destroy(gunTile.GetComponent<InventoryTile>().item);
+
         lastTile = null;
     }
 
     GameObject lastTile = null;
 
-    // TODO: interactions while not looking at the tile should also work
     void Update() {
-        // if gun is aenabled are a building is selected
+        // if gun is enabled and a building is selected
         if (gunEnabled && instance != null) {
 
             // if we look at a tile
@@ -72,7 +72,6 @@ public class BuildGun : MonoBehaviour {
                 } catch (NullReferenceException) {
                     // if we look at a non-ground object
                     Debug.DrawRay(transform.position, transform.forward * distance, Color.red);
-                    //lastTile = null;
                 }
             }
 
@@ -95,10 +94,19 @@ public class BuildGun : MonoBehaviour {
                 }
                 //if we're building a conveyor
                 else if (instance.GetComponent<ConveyorMovement>() != null) {
+
+                    //if conveyor smelter
+                    if(instance.transform.GetChild(0).GetComponent<Smelter>() != null) {
+                        instance.transform.GetChild(0).GetComponent<Smelter>().Build();
+                    }
+                    Build(lastTile);
+                }
+                //if we're building a smelter
+                else if(instance.GetComponent<Smelter>() != null) {
+                    instance.GetComponent<Smelter>().Build();
                     Build(lastTile);
                 }
             }
         }
     }
-
 }
