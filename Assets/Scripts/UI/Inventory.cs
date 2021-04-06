@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
-    [SerializeField] private GameObject inventoryMenu;
+    public GameObject inventoryMenu;
+    public GameObject craftingMenu;
     public GameObject player;
 
     public GameObject pickedItem = null;
@@ -24,6 +26,7 @@ public class Inventory : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown("q") && pickedItem == null) {
             inventoryMenu.SetActive(!inventoryMenu.activeSelf);
+            craftingMenu.SetActive(inventoryMenu.activeSelf);
 
             Cursor.lockState = inventoryMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = inventoryMenu.activeSelf;
@@ -71,7 +74,29 @@ public class Inventory : MonoBehaviour {
 
     public bool RemoveItem(GameObject item)
     {
-        Debug.Log(item.gameObject);
+        foreach (Item i in items)
+        {
+            if (i.caption == item.GetComponent<Item>().caption)
+            {
+                Destroy(i.gameObject);
+                items.Remove(i);
+                return true;
+            }
+        }
         return false;
+    }
+
+    public int ItemCount(GameObject item)
+    {
+        int number = 0;
+
+        foreach (Item i in items)
+        {
+            if (i.caption == item.GetComponent<Item>().caption)
+            {
+                number++;
+            }
+        }
+        return number;
     }
 }

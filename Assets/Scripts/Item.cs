@@ -17,11 +17,11 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public GameObject building;
 
     public void OnPointerEnter(PointerEventData eventData) {
-        label.text = caption;
+            label.text = caption; 
     }
 
     public void OnPointerExit(PointerEventData eventData) {
-        label.text = "";
+            label.text = "";
     }
 
     public void PickUp() {

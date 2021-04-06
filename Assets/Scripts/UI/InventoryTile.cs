@@ -24,7 +24,7 @@ public class InventoryTile : MonoBehaviour {
             // if user is putting item down
             if (inventory.pickedItem != null) {
                 if (isGunTile && !inventory.pickedItem.GetComponent<Item>().isPlaceable) {
-                    Debug.LogError("Only placeable item can be put there");
+                    Debug.LogWarning("Only placeable item can be put there");
                 } else {
                     item = inventory.pickedItem;
                     item.transform.position = gameObject.transform.position;
