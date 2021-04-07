@@ -28,6 +28,39 @@ public class GunSwitcher : MonoBehaviour {
         init = true;
     }
 
+    private short temp = 0;
+
+    public void OpenedInvenory() {
+        if (shoot.gunEnabled) {
+            temp = 1;
+        } else if (build.gunEnabled) {
+            temp = 2;
+        } else if (destroy.gunEnabled) {
+            temp = 3;
+        } else if (isMining) {
+            temp = 4;
+        }
+        shoot.Disable();
+        build.Disable();
+        isMining = false;
+        destroy.Disable();
+    }
+
+    public void ClosedInventory() {
+        if(temp == 1) {
+            shoot.Enable();
+        } else if(temp == 2) {
+            build.Enable();
+            UpdateBuildGun(build.buildObject);
+        } else if(temp == 3) {
+            destroy.Enable();
+        } else if(temp == 4) {
+            isMining = true;
+        }
+
+        temp = 0;
+    }
+
     void Update() {
         if (Input.GetKeyDown(KeyCode.Alpha1) || init) {
             shoot.Enable();
