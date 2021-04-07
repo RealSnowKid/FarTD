@@ -23,6 +23,12 @@ public class Inventory : MonoBehaviour {
         }
     }
 
+    [SerializeField] GameObject smelteryGUI;
+
+    public GameObject GetSmelteryGUI() {
+        return smelteryGUI;
+    }
+
     void Update() {
         if (Input.GetKeyDown("q") && pickedItem == null) {
             inventoryMenu.SetActive(!inventoryMenu.activeSelf);

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2234993775125010057
+--- !u!1 &2226329822556123105
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2234993775125010056}
-  - component: {fileID: 2234993775125010053}
-  - component: {fileID: 2234993775125010058}
-  - component: {fileID: 2234993775125010059}
-  - component: {fileID: 2234993775125010052}
+  - component: {fileID: 2226329822556123104}
+  - component: {fileID: 2226329822556123117}
+  - component: {fileID: 2226329822556123106}
+  - component: {fileID: 2226329822556123107}
+  - component: {fileID: 2226329822556123116}
   m_Layer: 5
-  m_Name: Conveyor
+  m_Name: C_Smelter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2234993775125010056
+--- !u!224 &2226329822556123104
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2234993775125010057}
+  m_GameObject: {fileID: 2226329822556123105}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -39,21 +39,21 @@ RectTransform:
   m_AnchoredPosition: {x: 440.68, y: 414.53998}
   m_SizeDelta: {x: 40.160217, y: 40.160217}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2234993775125010053
+--- !u!222 &2226329822556123117
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2234993775125010057}
+  m_GameObject: {fileID: 2226329822556123105}
   m_CullTransparentMesh: 0
---- !u!114 &2234993775125010058
+--- !u!114 &2226329822556123106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2234993775125010057}
+  m_GameObject: {fileID: 2226329822556123105}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
@@ -66,40 +66,40 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: d9eb92d70e593f347bf8b313ecc4405b, type: 3}
+  m_Texture: {fileID: 2800000, guid: e5be3eea812baeb45907f1ce8882fe98, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
---- !u!114 &2234993775125010059
+--- !u!114 &2226329822556123107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2234993775125010057}
+  m_GameObject: {fileID: 2226329822556123105}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 995cd942946836146a79283d949385b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caption: Conveyor
-  sprite: {fileID: 21300000, guid: d9eb92d70e593f347bf8b313ecc4405b, type: 3}
+  caption: Conveyor Smelter
+  sprite: {fileID: 21300000, guid: e5be3eea812baeb45907f1ce8882fe98, type: 3}
   tile: {fileID: 0}
   inventory: {fileID: 0}
   label: {fileID: 0}
   isPlaceable: 1
-  building: {fileID: 7089236653921845765, guid: 53655e7c46083f34189adfa01a4c2574,
+  building: {fileID: 4543236280529704287, guid: 261e9ef7013054b4aa3e6a0f25009b3b,
     type: 3}
---- !u!114 &2234993775125010052
+--- !u!114 &2226329822556123116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2234993775125010057}
+  m_GameObject: {fileID: 2226329822556123105}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -132,11 +132,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2234993775125010058}
+  m_TargetGraphic: {fileID: 2226329822556123106}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2234993775125010059}
+      - m_Target: {fileID: 2226329822556123107}
         m_MethodName: PickUp
         m_Mode: 1
         m_Arguments:

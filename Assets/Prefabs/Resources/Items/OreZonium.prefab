@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 1283732994564824372, guid: e952cce62ec7aaf4c8fa66828d937155,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1283732994564824372, guid: e952cce62ec7aaf4c8fa66828d937155,
         type: 3}
@@ -122,6 +122,11 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: b8a9d76f2b78aa441926b362dd3e2dfb, type: 3}
+    - target: {fileID: 1283732994564824375, guid: e952cce62ec7aaf4c8fa66828d937155,
+        type: 3}
+      propertyPath: isOre
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1283732994564824375, guid: e952cce62ec7aaf4c8fa66828d937155,
         type: 3}
       propertyPath: sprite
