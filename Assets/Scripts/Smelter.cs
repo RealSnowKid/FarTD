@@ -23,6 +23,7 @@ public class Smelter : Building {
 
     public bool isConveyor = false;
     [SerializeField] private Transform spawnTransform;
+    private bool hasFuel = false;
 
     public void Start() {
         // temporary solution again lol
@@ -57,21 +58,30 @@ public class Smelter : Building {
             }
             playerIn = true;
         } else if (other.GetComponent<OreDrop>() != null && isBuilt && isConveyor && !ACR_running) {
-            GameObject smelt = null;
 
             switch (other.GetComponent<OreDrop>().ore) {
                 case Ore.Ironium:
-                    smelt = ironiumSmeltBlock;
+                    if (input == null) {
+                        Destroy(other.gameObject);
+                        input = ironiumSmeltBlock;
+                    }
                     break;
                 case Ore.Zonium:
-                    smelt = zoniumSmeltBlock;
+                    if (input == null) {
+                        Destroy(other.gameObject);
+                        input = zoniumSmeltBlock;
+                    }
+                    break;
+                case Ore.Instabilium:
+                    if (!hasFuel) {
+                        Destroy(other.gameObject);
+                        hasFuel = true;
+                    }
                     break;
             }
-            if(smelt != null) {
-                Destroy(other.gameObject);
 
-                StartCoroutine(SmeltAuto(smelt));
-            }
+            if (input != null && hasFuel) 
+                StartCoroutine(SmeltAuto(input));
         }
     }
 
@@ -157,6 +167,8 @@ public class Smelter : Building {
         ACR_running = true;
         yield return new WaitForSeconds(time);
         Instantiate(obj, spawnTransform.position, Quaternion.identity);
+        input = null;
+        hasFuel = false;
         ACR_running = false;
     }
 }
