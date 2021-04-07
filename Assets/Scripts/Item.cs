@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public string caption = "null";
-    //public Sprite sprite;
+    public Sprite sprite;
 
     public GameObject tile;
 
@@ -20,11 +20,11 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public bool isBurnable;
 
     public void OnPointerEnter(PointerEventData eventData) {
-        label.text = caption;
+            label.text = caption; 
     }
 
     public void OnPointerExit(PointerEventData eventData) {
-        label.text = "";
+            label.text = "";
     }
 
     public void PickUp() {

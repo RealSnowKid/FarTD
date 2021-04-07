@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
-    [SerializeField] private GameObject inventoryMenu;
+    public GameObject inventoryMenu;
+    public GameObject craftingMenu;
     public GameObject player;
 
     public GameObject pickedItem = null;
@@ -30,6 +32,7 @@ public class Inventory : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown("q") && pickedItem == null) {
             inventoryMenu.SetActive(!inventoryMenu.activeSelf);
+            craftingMenu.SetActive(inventoryMenu.activeSelf);
 
             Cursor.lockState = inventoryMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = inventoryMenu.activeSelf;
@@ -39,20 +42,13 @@ public class Inventory : MonoBehaviour {
     }
 
     public bool AddItem(GameObject item) {
-        GameObject tile = null;
+        GameObject tile = HasSpace();
 
-        for (int i = 0; i < 25; i++) {
-            if (grid.transform.GetChild(i).GetComponent<InventoryTile>().item == null) {
-                tile = grid.transform.GetChild(i).gameObject;
-                break;
-            }
-        }
-
-        if(tile == null) {
+        if (tile == null)
+        {
             Debug.LogError("No empty place");
             return false;
         }
-
 
         GameObject visualItem = Instantiate(item, itemsParent);
         items.Add(visualItem.GetComponent<Item>());
@@ -65,5 +61,48 @@ public class Inventory : MonoBehaviour {
 
         visualItem.transform.position = tile.transform.position;
         return true;
+    }
+
+    public GameObject HasSpace()
+    {
+        GameObject tile = null;
+
+        for (int i = 0; i < 25; i++)
+        {
+            if (grid.transform.GetChild(i).GetComponent<InventoryTile>().item == null)
+            {
+                tile = grid.transform.GetChild(i).gameObject;
+                break;
+            }
+        }
+        return tile;
+    }
+
+    public bool RemoveItem(GameObject item)
+    {
+        foreach (Item i in items)
+        {
+            if (i.caption == item.GetComponent<Item>().caption)
+            {
+                Destroy(i.gameObject);
+                items.Remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int ItemCount(GameObject item)
+    {
+        int number = 0;
+
+        foreach (Item i in items)
+        {
+            if (i.caption == item.GetComponent<Item>().caption)
+            {
+                number++;
+            }
+        }
+        return number;
     }
 }

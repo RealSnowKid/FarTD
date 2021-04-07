@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3497301601034223655
+--- !u!1 &2234993775125010057
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,27 +8,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4333876060965501345}
-  - component: {fileID: 4422529832754481415}
-  - component: {fileID: 2125016152240801553}
-  - component: {fileID: 4756135500905359231}
-  - component: {fileID: 724428705170751758}
+  - component: {fileID: 2234993775125010056}
+  - component: {fileID: 2234993775125010053}
+  - component: {fileID: 2234993775125010058}
+  - component: {fileID: 2234993775125010059}
+  - component: {fileID: 2234993775125010052}
   m_Layer: 5
-  m_Name: ZoniumIngot
+  m_Name: Conveyor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &4333876060965501345
+--- !u!224 &2234993775125010056
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3497301601034223655}
+  m_GameObject: {fileID: 2234993775125010057}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,21 +39,21 @@ RectTransform:
   m_AnchoredPosition: {x: 440.68, y: 414.53998}
   m_SizeDelta: {x: 40.160217, y: 40.160217}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4422529832754481415
+--- !u!222 &2234993775125010053
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3497301601034223655}
+  m_GameObject: {fileID: 2234993775125010057}
   m_CullTransparentMesh: 0
---- !u!114 &2125016152240801553
+--- !u!114 &2234993775125010058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3497301601034223655}
+  m_GameObject: {fileID: 2234993775125010057}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
@@ -66,40 +66,40 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 7f1984a98500570419f3644438623282, type: 3}
+  m_Texture: {fileID: 2800000, guid: d9eb92d70e593f347bf8b313ecc4405b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
---- !u!114 &4756135500905359231
+--- !u!114 &2234993775125010059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3497301601034223655}
+  m_GameObject: {fileID: 2234993775125010057}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 995cd942946836146a79283d949385b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caption: Zonium Ingot
+  caption: Conveyor
+  sprite: {fileID: 21300000, guid: d9eb92d70e593f347bf8b313ecc4405b, type: 3}
   tile: {fileID: 0}
   inventory: {fileID: 0}
   label: {fileID: 0}
-  isPlaceable: 0
-  building: {fileID: 0}
-  isOre: 0
-  isBurnable: 0
---- !u!114 &724428705170751758
+  isPlaceable: 1
+  building: {fileID: 7089236653921845765, guid: 53655e7c46083f34189adfa01a4c2574,
+    type: 3}
+--- !u!114 &2234993775125010052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3497301601034223655}
+  m_GameObject: {fileID: 2234993775125010057}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -132,11 +132,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2125016152240801553}
+  m_TargetGraphic: {fileID: 2234993775125010058}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4756135500905359231}
+      - m_Target: {fileID: 2234993775125010059}
         m_MethodName: PickUp
         m_Mode: 1
         m_Arguments:
