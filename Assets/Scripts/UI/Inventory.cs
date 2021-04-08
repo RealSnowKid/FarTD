@@ -49,6 +49,10 @@ public class Inventory : MonoBehaviour {
 
             player.GetComponent<PlayerControl>().enabled = !inventoryMenu.activeSelf;
         }
+
+        if(Input.GetKeyDown("x") && pickedItem != null) {
+            Destroy(pickedItem);
+        }
     }
 
     public bool AddItem(GameObject item) {

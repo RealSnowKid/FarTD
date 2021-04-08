@@ -1813,6 +1813,7 @@ MonoBehaviour:
   - {fileID: 4597623089407184017, guid: 0ad8d558530cea249a3e791fe37d999a, type: 3}
   - {fileID: 2226329822556123105, guid: 4cdaf0f9f8a4b9246bd94450b2962c33, type: 3}
   - {fileID: 2226329822556123105, guid: 4cdaf0f9f8a4b9246bd94450b2962c33, type: 3}
+  gunSwitcher: {fileID: 0}
   smelteryGUI: {fileID: 1218396107}
 --- !u!1 &385589512
 GameObject:
