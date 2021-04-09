@@ -66,6 +66,7 @@ public class MapGeneration : MonoBehaviour {
             playerY = Random.Range(21, mapY - 20);
         } while (Mathf.PerlinNoise((playerX + seed) / mapX * scale, (playerY + seed) / mapY * scale) < wallThreshold);
 
+        ws.Setup();
         // generate tiles
         for (int i=0; i<mapX+2; i++) {
             for (int ii=0; ii<mapY+2; ii++) {
@@ -92,13 +93,14 @@ public class MapGeneration : MonoBehaviour {
                     }
 
                     // generate enemy spawnpoints
+
                     if (i == 0 && ii == (mapY + 1) / 2 ||
                         i == mapX + 1 && ii == (mapY + 1) / 2 ||
                         ii == 0 & i == (mapX + 1) / 2 ||
                         ii == mapY + 1 && i == (mapX + 1) / 2 ) {
 
                         GameObject spawnLocation = Instantiate(spawnPrefab, tile.transform.position, Quaternion.identity);
-                        ws.SetSpawnLocation(spawnLocation.transform);
+                        ws.SetSpawnLocation(spawnLocation);
                     }
 
                     // generate ores from tiles which are not walls

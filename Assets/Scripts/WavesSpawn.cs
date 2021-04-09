@@ -9,7 +9,7 @@ public class WavesSpawn : MonoBehaviour {
 
     [SerializeField] private Transform enemiesParent;
     [SerializeField] private Transform spawn;
-    private List<Transform> spawnLocations;
+    [SerializeField] private List<GameObject> spawnLocations;
 
     [SerializeField] private GameObject landEnemy;
     [SerializeField] private GameObject airEnemy;
@@ -27,12 +27,12 @@ public class WavesSpawn : MonoBehaviour {
 
     private int waveCount = 0;
 
-    public void SetSpawnLocation(Transform spawn) {
+    public void SetSpawnLocation(GameObject spawn) {
         spawnLocations.Add(spawn);
     }
 
-    void Awake() {
-        spawnLocations = new List<Transform>();
+    public void Setup() {
+        spawnLocations = new List<GameObject>();
         spawnedEnemies = new List<GameObject>();
         timer = waveDelay;
     }
@@ -48,26 +48,25 @@ public class WavesSpawn : MonoBehaviour {
     }
 
     private void SpawnNextWave() {
-        nrLandEnemies++;
-        nrAirEnemies++;
 
         // randomize spawn location
-        int rnd = Random.Range(0, 4);
-        spawn.transform.position = spawnLocations[rnd].position;
+        int rnd = Random.Range(0, 3);
+        spawn.transform.position = spawnLocations[rnd].transform.position;
 
         waveCount++;
         wavesCounter.text = waveCount.ToString();
 
         for(int i=0; i<nrLandEnemies; i++) {
-            GameObject enemy = Instantiate(landEnemy, spawn.position, Quaternion.identity, enemiesParent);
+            GameObject enemy = Instantiate(landEnemy, spawn.position, Quaternion.Euler(new Vector3(-90f, 0f,0f)), enemiesParent);
             spawnedEnemies.Add(enemy);
         }
         for(int i=0; i<nrAirEnemies; i++) {
-            GameObject enemy = Instantiate(airEnemy, spawn.position, Quaternion.identity, enemiesParent);
+            GameObject enemy = Instantiate(airEnemy, spawn.position, Quaternion.Euler(new Vector3(-90f, 0f, 0f)), enemiesParent);
             spawnedEnemies.Add(enemy);
         }
 
-
+        nrLandEnemies++;
+        nrAirEnemies++;
     }
 
     public void Remove(GameObject obj) {
