@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour {
 
     private WavesSpawn master;
-
     public float health = 100f;
 
     public void SetScript(WavesSpawn ws) {
         master = ws;
+    }
+
+    public void SetTarget(GameObject target) {
+        GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
     }
 
     public void Damage(float amount) {

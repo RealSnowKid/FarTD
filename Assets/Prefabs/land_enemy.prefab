@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8244569174609585024}
   - component: {fileID: 6394050076996957360}
   - component: {fileID: 1665766723473616325}
+  - component: {fileID: -2716352549858040329}
   m_Layer: 0
   m_Name: land_enemy
   m_TagString: Untagged
@@ -107,3 +108,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.022579134, y: 0.033274505, z: 0.015448879}
   m_Center: {x: 0.0000018277206, y: -0.0052214325, z: 0.0019111494}
+--- !u!195 &-2716352549858040329
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596001969011081813}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.011291394
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.022831641
+  m_BaseOffset: 0.011415821
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

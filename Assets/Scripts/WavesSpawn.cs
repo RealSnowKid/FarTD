@@ -16,6 +16,8 @@ public class WavesSpawn : MonoBehaviour {
 
     public List<GameObject> spawnedEnemies;
 
+    private GameObject playerBase;
+
     private int nrLandEnemies = 1;
     private int nrAirEnemies = 0;
 
@@ -29,12 +31,15 @@ public class WavesSpawn : MonoBehaviour {
 
     public void SetSpawnLocation(GameObject spawn) {
         spawnLocations.Add(spawn);
+        spawn.transform.parent = enemiesParent;
     }
 
-    public void Setup() {
+    public void Setup(GameObject pBase) {
         spawnLocations = new List<GameObject>();
         spawnedEnemies = new List<GameObject>();
         timer = waveDelay;
+
+        playerBase = pBase;
     }
 
     void Update() {
@@ -59,10 +64,14 @@ public class WavesSpawn : MonoBehaviour {
         for(int i=0; i<nrLandEnemies; i++) {
             GameObject enemy = Instantiate(landEnemy, spawn.position, Quaternion.Euler(new Vector3(-90f, 0f,0f)), enemiesParent);
             spawnedEnemies.Add(enemy);
+            enemy.GetComponent<Enemy>().SetTarget(playerBase);
+            enemy.GetComponent<Enemy>().SetScript(this);
         }
         for(int i=0; i<nrAirEnemies; i++) {
             GameObject enemy = Instantiate(airEnemy, spawn.position, Quaternion.Euler(new Vector3(-90f, 0f, 0f)), enemiesParent);
             spawnedEnemies.Add(enemy);
+            enemy.GetComponent<Enemy>().SetTarget(playerBase);
+            enemy.GetComponent<Enemy>().SetScript(this);
         }
 
         nrLandEnemies++;
