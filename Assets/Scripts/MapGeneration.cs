@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MapGeneration : MonoBehaviour {
     [SerializeField] private GameObject tilePrefab;
@@ -13,6 +14,11 @@ public class MapGeneration : MonoBehaviour {
 
     [SerializeField] private Transform parent;
     [SerializeField] private Transform oreNodeParent;
+
+    [SerializeField] private GameObject spawnPrefab;
+    [SerializeField] private WavesSpawn ws;
+
+    [SerializeField] private NavMeshSurface surface;
 
     public int mapX, mapY;
     private float tileSize;
@@ -63,18 +69,24 @@ public class MapGeneration : MonoBehaviour {
             playerY = Random.Range(21, mapY - 20);
         } while (Mathf.PerlinNoise((playerX + seed) / mapX * scale, (playerY + seed) / mapY * scale) < wallThreshold);
 
+        ws.Setup();
+        compass.GetComponent<Compass>().Setup();
         // generate tiles
-        for (int i=0; i<mapX; i++) {
-            for(int ii=0; ii<mapY; ii++) {
+        for (int i=0; i<mapX+2; i++) {
+            for (int ii=0; ii<mapY+2; ii++) {
                 GameObject tile = Instantiate(tilePrefab, new Vector3(i * tileSize, 0f, ii * tileSize), Quaternion.identity, parent);
                 tile.name = i.ToString() + "," + ii.ToString();
 
                 float wallSample = Mathf.PerlinNoise((i + seed) / mapX * scale, (ii + seed) / mapY * scale);
 
                 // generate walls
-                if(wallSample < wallThreshold) {
+                if (wallSample < wallThreshold && i != mapX+1 && ii != mapY+1 && i != 0 && ii != 0) {
                     tile.transform.localScale = new Vector3(tileSize, 10f, tileSize);
                     tile.GetComponent<Tile>().isWall = true;
+
+                    NavMeshObstacle navMesh = tile.AddComponent(typeof(NavMeshObstacle)) as NavMeshObstacle;
+                    navMesh.carving = true;
+
                 } else {
                     //spawn player
                     if(i == playerX && ii == playerY) {
@@ -86,6 +98,20 @@ public class MapGeneration : MonoBehaviour {
                         compass.GetComponent<Compass>().AddMarker(core.GetComponent<CompassMarker>());
 
                         inventory.GetComponent<Inventory>().player = player;
+
+                        ws.SetCore(core);
+                        ws.SetCompass(compass);
+                    }
+
+                    // generate enemy spawnpoints
+
+                    if (i == 0 && ii == (mapY + 1) / 2 ||
+                        i == mapX + 1 && ii == (mapY + 1) / 2 ||
+                        ii == 0 && i == (mapX + 1) / 2 ||
+                        ii == mapY + 1 && i == (mapX + 1) / 2 ) {
+
+                        GameObject spawnLocation = Instantiate(spawnPrefab, tile.transform.position, Quaternion.identity);
+                        ws.SetSpawnLocation(spawnLocation);
                     }
 
                     // generate ores from tiles which are not walls
@@ -183,6 +209,7 @@ public class MapGeneration : MonoBehaviour {
             }
         }
         ores.Clear();
+        surface.BuildNavMesh();
     }
 
     public GameObject GetInventory()
