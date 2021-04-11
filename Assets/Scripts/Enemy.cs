@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.GetComponent<Bullet>() != null) {
             Damage(collision.gameObject.GetComponent<Bullet>().damage);
+            Destroy(collision.gameObject);
         }
     }
 }

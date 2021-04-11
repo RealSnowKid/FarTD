@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +13,10 @@ public class WavesSpawn : MonoBehaviour {
     [SerializeField] private GameObject landEnemy;
     [SerializeField] private GameObject airEnemy;
 
-    public List<GameObject> spawnedEnemies;
+    private List<GameObject> spawnedEnemies;
 
-    private GameObject playerBase;
+    private GameObject playerCore;
+    private GameObject compass;
 
     private int nrLandEnemies = 1;
     private int nrAirEnemies = 0;
@@ -34,12 +34,18 @@ public class WavesSpawn : MonoBehaviour {
         spawn.transform.parent = enemiesParent;
     }
 
-    public void Setup(GameObject pBase) {
+    public void Setup() {
         spawnLocations = new List<GameObject>();
         spawnedEnemies = new List<GameObject>();
         timer = waveDelay;
+    }
 
-        playerBase = pBase;
+    public void SetCompass(GameObject comp) {
+        compass = comp;
+    }
+
+    public void SetCore(GameObject core) {
+        playerCore = core;
     }
 
     void Update() {
@@ -53,7 +59,6 @@ public class WavesSpawn : MonoBehaviour {
     }
 
     private void SpawnNextWave() {
-
         // randomize spawn location
         int rnd = Random.Range(0, 3);
         spawn.transform.position = spawnLocations[rnd].transform.position;
@@ -62,24 +67,30 @@ public class WavesSpawn : MonoBehaviour {
         wavesCounter.text = waveCount.ToString();
 
         for(int i=0; i<nrLandEnemies; i++) {
-            GameObject enemy = Instantiate(landEnemy, spawn.position, Quaternion.Euler(new Vector3(-90f, 0f,0f)), enemiesParent);
+            GameObject enemy = Instantiate(landEnemy, spawn.position, Quaternion.identity, enemiesParent);
             spawnedEnemies.Add(enemy);
-            enemy.GetComponent<Enemy>().SetTarget(playerBase);
             enemy.GetComponent<Enemy>().SetScript(this);
+            enemy.GetComponent<Enemy>().SetTarget(playerCore);
+
+            compass.GetComponent<Compass>().AddMarker(enemy.GetComponent<CompassMarker>());
         }
         for(int i=0; i<nrAirEnemies; i++) {
-            GameObject enemy = Instantiate(airEnemy, spawn.position, Quaternion.Euler(new Vector3(-90f, 0f, 0f)), enemiesParent);
+            GameObject enemy = Instantiate(airEnemy, spawn.position, Quaternion.identity, enemiesParent);
             spawnedEnemies.Add(enemy);
-            enemy.GetComponent<Enemy>().SetTarget(playerBase);
             enemy.GetComponent<Enemy>().SetScript(this);
+            enemy.GetComponent<Enemy>().SetTarget(playerCore);
+
+            compass.GetComponent<Compass>().AddMarker(enemy.GetComponent<CompassMarker>());
         }
 
+        // to be balanced
         nrLandEnemies++;
         nrAirEnemies++;
     }
 
     public void Remove(GameObject obj) {
         spawnedEnemies.Remove(obj);
+        compass.GetComponent<Compass>().RemoveMarker(obj.GetComponent<CompassMarker>());
         if (spawnedEnemies.Count == 0) isWave = false;
     }
 

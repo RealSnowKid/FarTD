@@ -2832,7 +2832,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: '0
+
+'
 --- !u!222 &635180771
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6172,11 +6174,10 @@ MonoBehaviour:
   enemiesParent: {fileID: 941744701}
   spawn: {fileID: 1308284003}
   spawnLocations: []
-  landEnemy: {fileID: 7596001969011081813, guid: b5ba0a82870146641b0bcf3bab2e96c5,
+  landEnemy: {fileID: 6641368302344334939, guid: b5ba0a82870146641b0bcf3bab2e96c5,
     type: 3}
-  airEnemy: {fileID: 4035522773051860903, guid: 6a4e28e3dfe4f4c41b0101ef5991b677,
+  airEnemy: {fileID: 5687864139165392549, guid: 6a4e28e3dfe4f4c41b0101ef5991b677,
     type: 3}
-  spawnedEnemies: []
 --- !u!1 &1704086139
 GameObject:
   m_ObjectHideFlags: 0

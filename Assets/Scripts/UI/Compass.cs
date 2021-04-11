@@ -12,8 +12,11 @@ public class Compass : MonoBehaviour {
 
     float compassUnit;
 
-    void Start() {
+    private Dictionary<CompassMarker, GameObject> dict;
+
+    public void Setup() {
         compassUnit = GetComponent<RectTransform>().rect.width / 360f;
+        dict = new Dictionary<CompassMarker, GameObject>();
     }
 
     void Update() {
@@ -29,6 +32,15 @@ public class Compass : MonoBehaviour {
         marker.image.sprite = marker.icon;
 
         markers.Add(marker);
+        dict.Add(marker, newMarker);
+    }
+
+    public void RemoveMarker(CompassMarker givenMarker) {
+        markers.Remove(givenMarker);
+
+        GameObject marker = dict[givenMarker];
+        dict.Remove(givenMarker);
+        Destroy(marker);
     }
 
     Vector2 GetPosOnCompass(CompassMarker marker) {

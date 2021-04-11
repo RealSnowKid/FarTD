@@ -8,7 +8,7 @@ public class ShootGun : MonoBehaviour {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform spawnLocation;
 
-    private float speed = 300f;
+    private float speed = 150f;
 
     public float damage = 5f;
 
