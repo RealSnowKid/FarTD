@@ -89,7 +89,7 @@ public class BuildGun : MonoBehaviour {
                         instance.GetComponent<Miner>().setOre(lastTile.GetComponent<Tile>().oreType);
                         Build(lastTile);
                     } else {
-                        Debug.LogError("Miners must be placed on an ore tile");
+                        Debug.LogWarning("Miners must be placed on an ore tile");
                     }
                 }
                 //if we're building a conveyor

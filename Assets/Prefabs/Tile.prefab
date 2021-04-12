@@ -107,3 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oreType: 0
+  isWall: 0
+  hasOreNode: 0
+  building: {fileID: 0}

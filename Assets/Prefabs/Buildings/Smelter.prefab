@@ -82,6 +82,10 @@ MonoBehaviour:
     type: 3}
   zoniumSmelt: {fileID: 3497301601034223655, guid: 20dd4dd06b7a4244c854f9dfc6147fe0,
     type: 3}
+  ironiumSmeltBlock: {fileID: 0}
+  zoniumSmeltBlock: {fileID: 0}
+  isConveyor: 0
+  spawnTransform: {fileID: 0}
   ingot: {fileID: 0}
 --- !u!1001 &5063021505529839120
 PrefabInstance:

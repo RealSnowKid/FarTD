@@ -5,9 +5,11 @@ using UnityEngine;
 public class ConveyorMovement : Building {
     private float speed = 2f;
 
-    private void OnCollisionStay(Collision collision) {
-        if (collision.collider.gameObject.GetComponent<OreDrop>() != null) {
-            collision.collider.gameObject.transform.Translate(transform.forward * speed * Time.fixedDeltaTime, Space.World);
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.GetComponent<OreDrop>() != null)
+        {
+            other.gameObject.transform.Translate(transform.forward * speed * Time.fixedDeltaTime, Space.World);
         }
     }
 }
