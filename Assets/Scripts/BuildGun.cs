@@ -106,6 +106,11 @@ public class BuildGun : MonoBehaviour {
                     instance.GetComponent<Smelter>().Build();
                     Build(lastTile);
                 }
+                else if(instance.transform.GetComponent<Crafter>() != null)
+                {
+                    instance.transform.GetComponent<Crafter>().Build();
+                    Build(lastTile);
+                }
             }
         }
     }
