@@ -45,6 +45,7 @@ public class BuildGun : MonoBehaviour {
 
         Destroy(gunTile.GetComponent<InventoryTile>().item);
 
+        //buildObject = null;
         lastTile = null;
     }
 
@@ -104,6 +105,10 @@ public class BuildGun : MonoBehaviour {
                 //if we're building a smelter
                 else if(instance.GetComponent<Smelter>() != null) {
                     instance.GetComponent<Smelter>().Build();
+                    Build(lastTile);
+                }
+                //if we're building a wall
+                else if(instance.GetComponent<Wall>() != null) {
                     Build(lastTile);
                 }
             }

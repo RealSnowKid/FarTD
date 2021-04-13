@@ -51,7 +51,7 @@ public class GunSwitcher : MonoBehaviour {
             shoot.Enable();
         } else if(temp == 2) {
             build.Enable();
-            UpdateBuildGun(build.buildObject);
+            //UpdateBuildGun(build.buildObject);
         } else if(temp == 3) {
             destroy.Enable();
         } else if(temp == 4) {
