@@ -540,6 +540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 84274736}
   - component: {fileID: 84274735}
+  - component: {fileID: 84274737}
   m_Layer: 0
   m_Name: NavMesh
   m_TagString: Untagged
@@ -565,15 +566,15 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
+    m_Bits: 311
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_OverrideTileSize: 1
+  m_TileSize: 1024
+  m_OverrideVoxelSize: 1
+  m_VoxelSize: 0.0625
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}
 --- !u!4 &84274736
@@ -590,6 +591,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &84274737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84274734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -902729914
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 55
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &86664529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,6 +1903,16 @@ MonoBehaviour:
   - {fileID: 4597623089407184017, guid: 0ad8d558530cea249a3e791fe37d999a, type: 3}
   - {fileID: 2226329822556123105, guid: 4cdaf0f9f8a4b9246bd94450b2962c33, type: 3}
   - {fileID: 2226329822556123105, guid: 4cdaf0f9f8a4b9246bd94450b2962c33, type: 3}
+  - {fileID: 2234993775125010057, guid: 4275eeb24701e6b4bba894047904ea63, type: 3}
+  - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
+  - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
+  - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
+  - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
+  - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
+  - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
+  - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
+  - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
+  - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
   - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
   gunSwitcher: {fileID: 0}
   smelteryGUI: {fileID: 1218396107}
@@ -3281,7 +3321,7 @@ MonoBehaviour:
   spawnPrefab: {fileID: 2382056289514448062, guid: 6d4281ddb5d47ab4eb8cebfc29a38c7e,
     type: 3}
   ws: {fileID: 1693928824}
-  surface: {fileID: 84274735}
+  surface: {fileID: 84274734}
   mapX: 100
   mapY: 100
 --- !u!4 &723993619

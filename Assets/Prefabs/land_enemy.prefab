@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3173558606153580603}
   - component: {fileID: 1992109640030359454}
   - component: {fileID: 4341912458348526420}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,8 +92,8 @@ GameObject:
   - component: {fileID: 6971652933604328466}
   - component: {fileID: 5911934656902265552}
   - component: {fileID: 5380010213203805382}
-  m_Layer: 0
-  m_Name: Land_Enemy
+  m_Layer: 10
+  m_Name: land_enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5778486170114377408}
   - component: {fileID: 1545573232537643198}
   - component: {fileID: 9040303485925663555}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ZoniumWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

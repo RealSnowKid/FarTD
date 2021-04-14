@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
+using System.Threading;
+using UnityEngine.AI;
 
 public class BuildGun : MonoBehaviour {
     private float distance = 5f;
@@ -13,6 +16,8 @@ public class BuildGun : MonoBehaviour {
     public GameObject gunTile = null;
 
     private GameObject buildParent;
+
+    public NavMeshSurface surface;
 
     // refactorr
     private void Start() {
@@ -45,8 +50,13 @@ public class BuildGun : MonoBehaviour {
 
         Destroy(gunTile.GetComponent<InventoryTile>().item);
 
-        //buildObject = null;
         lastTile = null;
+    }
+
+    IEnumerator UpdateNavMesh() {
+        surface.UpdateNavMesh(surface.navMeshData);
+        //surface.BuildNavMesh();
+        yield break;
     }
 
     GameObject lastTile = null;
@@ -110,6 +120,8 @@ public class BuildGun : MonoBehaviour {
                 //if we're building a wall
                 else if(instance.GetComponent<Wall>() != null) {
                     Build(lastTile);
+                    //UpdateNavMesh();
+                    StartCoroutine(UpdateNavMesh());
                 }
             }
         }

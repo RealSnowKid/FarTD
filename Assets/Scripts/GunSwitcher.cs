@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class GunSwitcher : MonoBehaviour {
     public BuildGun build;
@@ -24,6 +25,8 @@ public class GunSwitcher : MonoBehaviour {
         shootText = GameObject.Find("ShootingText").GetComponent<Text>();
         mineText = GameObject.Find("MiningText").GetComponent<Text>();
         destroyText = GameObject.Find("DestroyingText").GetComponent<Text>();
+
+        build.surface = (NavMeshSurface) GameObject.Find("NavMesh").GetComponents(typeof(NavMeshSurface))[0];
 
         init = true;
     }
