@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConveyorMovement : Building {
     private float speed = 2f;
-    Vector3 lastPosition = Vector3.zero;
+    GameObject go;
 
     private void OnTriggerStay(Collider collider)
     {
@@ -18,33 +18,23 @@ public class ConveyorMovement : Building {
     {
         if (collider.gameObject.GetComponent<OreDrop>() != null)
         {
-            float time = 1.8f;
-            float passed = 0;
-            while (time >= passed)
+            go = collider.gameObject;
+            if (!IsInvoking())
             {
-                PushForward(collider.gameObject);
-                passed += 0.1f;
+                InvokeRepeating("PushForward", 0, 0.02f);
             }
+            StartCoroutine("CancelPushInvoke");
         }
     }
 
-    IEnumerator Inertia(GameObject go)
+    IEnumerator CancelPushInvoke()
     {
-        float time = 0.5f;
-        float passed = 0;
-        while (time >= passed)
-        {
-            yield return new WaitForSeconds(0.1f);
-            PushForward(go);
-            passed += 0.1f;
-        }
+        yield return new WaitForSeconds(0.4f);
+        CancelInvoke("PushForward");
     }
 
-    private void PushForward(GameObject go)
+    private void PushForward()
     {
-        //for (int i = 0; i < 25; i++)
-        //{
-            go.transform.Translate(transform.forward * 2 * Time.fixedDeltaTime, Space.World);
-        //}
+        go.transform.Translate(transform.forward * speed * Time.fixedDeltaTime, Space.World);
     }
 }
