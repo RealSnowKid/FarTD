@@ -41,7 +41,6 @@ public class Enemy : MonoBehaviour {
         if(collision.gameObject.GetComponent<Bullet>() != null) {
             Damage(collision.gameObject.GetComponent<Bullet>().damage);
             Destroy(collision.gameObject);
-            Debug.Log("b");
         }
     }
 

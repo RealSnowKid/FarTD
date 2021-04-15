@@ -11,6 +11,5 @@ public class BirdEnemyHitbox : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
         root.OnCollisionEnter(collision);
-        Debug.Log("a");
     }
 }
