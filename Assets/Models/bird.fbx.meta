@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: eb0944a7fec385d4da27d32ace252c8e
+guid: 2db4c3d58ffb4254d81b0d4ebf99f73b
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -7536546058115350168
+    second: metarig|metarigAction.002
   externalObjects: {}
   materials:
     materialImportMode: 1

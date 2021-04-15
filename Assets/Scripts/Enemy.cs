@@ -11,7 +11,13 @@ public class Enemy : MonoBehaviour {
     public float damage = 5f;
     public float attackDelay = 1;
 
+    private Animator animator;
+
     private GameObject target = null;
+
+    private void Start() {
+        animator = GetComponent<Animator>();
+    }
 
     public void SetScript(WavesSpawn ws) {
         master = ws;
@@ -31,15 +37,20 @@ public class Enemy : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision) {
+    public void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.GetComponent<Bullet>() != null) {
             Damage(collision.gameObject.GetComponent<Bullet>().damage);
             Destroy(collision.gameObject);
+            Debug.Log("b");
         }
     }
 
     private void OnTriggerEnter(Collider col) {
         if(col.GetComponent<Core>() != null) {
+            GetComponent<NavMeshAgent>().enabled = false;
+            animator.SetBool("isAttacking", true);
+            //transform.LookAt(col.transform);
+
             target = col.gameObject;
             InvokeRepeating("DealDamage", 0, attackDelay);
         }
@@ -47,6 +58,9 @@ public class Enemy : MonoBehaviour {
 
     private void OnTriggerExit(Collider col) {
         if (col.GetComponent<Core>() != null) {
+            GetComponent<NavMeshAgent>().enabled = true;
+            animator.SetBool("isAttacking", false);
+
             target = null;
             CancelInvoke("DealDamage");
         }

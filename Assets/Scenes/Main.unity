@@ -6215,9 +6215,9 @@ MonoBehaviour:
   enemiesParent: {fileID: 941744701}
   spawn: {fileID: 1308284003}
   spawnLocations: []
-  landEnemy: {fileID: 6641368302344334939, guid: b5ba0a82870146641b0bcf3bab2e96c5,
+  landEnemy: {fileID: 8526385364147003252, guid: c1a1f524bfddf344da6f638c84cfebf0,
     type: 3}
-  airEnemy: {fileID: 5687864139165392549, guid: 6a4e28e3dfe4f4c41b0101ef5991b677,
+  airEnemy: {fileID: 8456823484775818022, guid: fda47fc16ba62084e980ca8f4efea90d,
     type: 3}
 --- !u!1 &1704086139
 GameObject:
