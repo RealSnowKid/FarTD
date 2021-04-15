@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class WavesSpawn : MonoBehaviour {
@@ -19,7 +20,7 @@ public class WavesSpawn : MonoBehaviour {
     private GameObject compass;
 
     private int nrLandEnemies = 1;
-    private int nrAirEnemies = 0;
+    private int nrAirEnemies = 1;
 
     private float waveDelay = 20f;
 
@@ -68,6 +69,7 @@ public class WavesSpawn : MonoBehaviour {
 
         for(int i=0; i<nrLandEnemies; i++) {
             GameObject enemy = Instantiate(landEnemy, spawn.position, Quaternion.identity, enemiesParent);
+
             spawnedEnemies.Add(enemy);
             enemy.GetComponent<Enemy>().SetScript(this);
             enemy.GetComponent<Enemy>().SetTarget(playerCore);
@@ -76,6 +78,16 @@ public class WavesSpawn : MonoBehaviour {
         }
         for(int i=0; i<nrAirEnemies; i++) {
             GameObject enemy = Instantiate(airEnemy, spawn.position, Quaternion.identity, enemiesParent);
+            enemy.GetComponent<NavMeshAgent>().enabled = false;
+
+            NavMeshHit closestHit;
+            if (NavMesh.SamplePosition(enemy.transform.position, out closestHit, 1000f, NavMesh.AllAreas))
+                enemy.transform.position = closestHit.position;
+            else
+                Debug.LogError("Air enemy couln't find NavMesh");
+
+            enemy.GetComponent<NavMeshAgent>().enabled = true;
+
             spawnedEnemies.Add(enemy);
             enemy.GetComponent<Enemy>().SetScript(this);
             enemy.GetComponent<Enemy>().SetTarget(playerCore);

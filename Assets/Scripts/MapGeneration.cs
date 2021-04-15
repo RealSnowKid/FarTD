@@ -18,7 +18,7 @@ public class MapGeneration : MonoBehaviour {
     [SerializeField] private GameObject spawnPrefab;
     [SerializeField] private WavesSpawn ws;
 
-    [SerializeField] private NavMeshSurface surface;
+    [SerializeField] private GameObject surface;
 
     public int mapX, mapY;
     private float tileSize;
@@ -209,7 +209,15 @@ public class MapGeneration : MonoBehaviour {
             }
         }
         ores.Clear();
-        surface.BuildNavMesh();
+        Component[] surfaces;
+        surfaces = surface.GetComponents(typeof(NavMeshSurface));
+
+        foreach(NavMeshSurface mesh in surfaces) {
+            mesh.BuildNavMesh();
+        }
+
+        //surface.BuildNavMesh();
+
     }
 
     public GameObject GetInventory()
