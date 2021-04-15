@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7b4f582dfac1fa4d87ab5440e0e2f50, type: 3}
-  m_Name: New Crafting Recipe
+  m_Name: Conveyor
   m_EditorClassIdentifier: 
   Materials:
   - Item: {fileID: 6928088763016814801, guid: 66e6af16dd729f24e81737b185e7a043, type: 3}

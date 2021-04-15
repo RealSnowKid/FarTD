@@ -11,8 +11,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0490909, y: 7.977965, z: 0.7897202}
-  m_Center: {x: 0.013538002, y: 4.364086, z: -0.084406525}
+  m_Size: {x: 1.083195, y: 7.977965, z: 0.9622213}
+  m_Center: {x: 0.010620905, y: 4.364086, z: 0.0018447784}
 --- !u!1 &4543236280529704287
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2890bde3dafad8645ade3c0a7b19ea59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftingRecipe: {fileID: 11400000, guid: 9e08d585a1c93a14f9b00018302b00ed, type: 2}
 --- !u!1 &6530363134565542263
 GameObject:
   m_ObjectHideFlags: 0
