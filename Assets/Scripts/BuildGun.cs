@@ -50,6 +50,7 @@ public class BuildGun : MonoBehaviour {
 
         Destroy(gunTile.GetComponent<InventoryTile>().item);
 
+        buildObject = null;
         lastTile = null;
     }
 

@@ -36,6 +36,9 @@ public class Inventory : MonoBehaviour {
 
     void Update() {
         if (Input.GetKeyDown("q") && pickedItem == null) {
+            // bug with remaining inertia
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
             inventoryMenu.SetActive(!inventoryMenu.activeSelf);
             craftingMenu.SetActive(inventoryMenu.activeSelf);
 
