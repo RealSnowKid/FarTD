@@ -3236,7 +3236,7 @@ MonoBehaviour:
   item: {fileID: 0}
   inventory: {fileID: 363611776}
   isGunTile: 0
-  isInputTile: 0
+  isInputTile: 1
   isFuelTile: 0
   isOutputTile: 0
   player: {fileID: 0}
@@ -4256,7 +4256,7 @@ MonoBehaviour:
   isGunTile: 0
   isInputTile: 0
   isFuelTile: 0
-  isOutputTile: 0
+  isOutputTile: 1
   player: {fileID: 0}
 --- !u!114 &1210339836
 MonoBehaviour:
@@ -5271,7 +5271,7 @@ MonoBehaviour:
   inventory: {fileID: 363611776}
   isGunTile: 0
   isInputTile: 0
-  isFuelTile: 0
+  isFuelTile: 1
   isOutputTile: 0
   player: {fileID: 0}
 --- !u!114 &1415700118
@@ -6183,7 +6183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1693928823
 Transform:
   m_ObjectHideFlags: 0
