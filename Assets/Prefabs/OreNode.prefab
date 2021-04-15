@@ -131,6 +131,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3137722172632951806, guid: 2afaea6c0ab26394191d1c2f3cf0f0d3,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -3137722172632951806, guid: 2afaea6c0ab26394191d1c2f3cf0f0d3,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -141,6 +146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1558721567721526513, guid: 2afaea6c0ab26394191d1c2f3cf0f0d3,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -1558721567721526513, guid: 2afaea6c0ab26394191d1c2f3cf0f0d3,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -148,6 +158,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OreNode
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2afaea6c0ab26394191d1c2f3cf0f0d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2afaea6c0ab26394191d1c2f3cf0f0d3,
         type: 3}

@@ -749,6 +749,7 @@ MonoBehaviour:
   health: 100
   damage: 2
   attackDelay: 1
+  isGround: 1
 --- !u!195 &7754394902760336887
 NavMeshAgent:
   m_ObjectHideFlags: 0

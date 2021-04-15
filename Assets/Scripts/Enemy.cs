@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour {
-
     private WavesSpawn master;
 
     public float health = 100f;
@@ -15,6 +14,9 @@ public class Enemy : MonoBehaviour {
 
     private GameObject playerCore = null;
     private GameObject target = null;
+
+    private bool isAttacking = false;
+    public bool isGround = false;
 
     private void Start() {
         animator = GetComponent<Animator>();
@@ -46,14 +48,18 @@ public class Enemy : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider col) {
-        if(col.GetComponent<Damageable>() != null) {
+        if(col.GetComponent<Damageable>() != null && !isAttacking) {
+            isAttacking = true;
             GetComponent<NavMeshAgent>().enabled = false;
             animator.SetBool("isAttacking", true);
+
             target = col.gameObject;
-            transform.LookAt(target.transform);
+
+            if(isGround) transform.LookAt(target.transform);
 
             if (col.GetComponent<Wall>() != null)
                 col.GetComponent<Wall>().SetAttacker(gameObject);
+
             InvokeRepeating("DealDamage", 0, attackDelay);
         }
     }
@@ -71,6 +77,7 @@ public class Enemy : MonoBehaviour {
         target = null;
         GetComponent<NavMeshAgent>().enabled = true;
         GetComponent<NavMeshAgent>().SetDestination(playerCore.transform.position);
+        isAttacking = false;
     }
 
     void DealDamage() {
