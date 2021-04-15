@@ -6,7 +6,12 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour {
 
     private WavesSpawn master;
+
     public float health = 100f;
+    public float damage = 5f;
+    public float attackDelay = 1;
+
+    private GameObject target = null;
 
     public void SetScript(WavesSpawn ws) {
         master = ws;
@@ -31,5 +36,23 @@ public class Enemy : MonoBehaviour {
             Damage(collision.gameObject.GetComponent<Bullet>().damage);
             Destroy(collision.gameObject);
         }
+    }
+
+    private void OnTriggerEnter(Collider col) {
+        if(col.GetComponent<Core>() != null) {
+            target = col.gameObject;
+            InvokeRepeating("DealDamage", 0, attackDelay);
+        }
+    }
+
+    private void OnTriggerExit(Collider col) {
+        if (col.GetComponent<Core>() != null) {
+            target = null;
+            CancelInvoke("DealDamage");
+        }
+    }
+
+    void DealDamage() {
+        target.GetComponent<Core>().Damage(damage);
     }
 }
