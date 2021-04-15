@@ -120,8 +120,8 @@ public class BuildGun : MonoBehaviour {
                 }
                 //if we're building a wall
                 else if(instance.GetComponent<Wall>() != null) {
+                    instance.GetComponent<Wall>().SetSurface(surface);
                     Build(lastTile);
-                    //UpdateNavMesh();
                     StartCoroutine(UpdateNavMesh());
                 }
             }

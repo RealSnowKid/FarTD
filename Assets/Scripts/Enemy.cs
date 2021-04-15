@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour {
 
     private Animator animator;
 
+    private GameObject playerCore = null;
     private GameObject target = null;
 
     private void Start() {
@@ -22,9 +23,9 @@ public class Enemy : MonoBehaviour {
     public void SetScript(WavesSpawn ws) {
         master = ws;
     }
-
-    public void SetTarget(GameObject target) {
-        GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
+    public void SetTarget(GameObject core) {
+        playerCore = core;
+        GetComponent<NavMeshAgent>().SetDestination(playerCore.transform.position);
     }
 
     public void Damage(float amount) {
@@ -45,27 +46,43 @@ public class Enemy : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider col) {
-        if(col.GetComponent<Core>() != null) {
+        if(col.GetComponent<Damageable>() != null) {
             GetComponent<NavMeshAgent>().enabled = false;
             animator.SetBool("isAttacking", true);
-            //transform.LookAt(col.transform);
-
             target = col.gameObject;
+            transform.LookAt(target.transform);
+
+            if (col.GetComponent<Wall>() != null)
+                col.GetComponent<Wall>().SetAttacker(gameObject);
             InvokeRepeating("DealDamage", 0, attackDelay);
         }
     }
 
     private void OnTriggerExit(Collider col) {
-        if (col.GetComponent<Core>() != null) {
-            GetComponent<NavMeshAgent>().enabled = true;
-            animator.SetBool("isAttacking", false);
-
-            target = null;
-            CancelInvoke("DealDamage");
+        if (col.GetComponent<Damageable>() != null) {
+            StopAttacking();
         }
     }
 
+    public void StopAttacking() {
+        CancelInvoke("DealDamage");
+        animator.SetBool("isAttacking", false);
+
+        target = null;
+        GetComponent<NavMeshAgent>().enabled = true;
+        GetComponent<NavMeshAgent>().SetDestination(playerCore.transform.position);
+    }
+
     void DealDamage() {
-        target.GetComponent<Core>().Damage(damage);
+        target.GetComponent<Damageable>().Damage(damage);
+    }
+
+    private void Update() {
+        /*
+        Vector3 lookPos = playerCore.transform.position - transform.position;
+        lookPos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+        */
     }
 }

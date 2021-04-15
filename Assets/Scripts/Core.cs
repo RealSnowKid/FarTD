@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Core : MonoBehaviour {
+public class Core : Damageable {
     private float health = 100f;
     private Slider slider;
 
@@ -12,7 +12,7 @@ public class Core : MonoBehaviour {
         slider = GameObject.Find("Canvas").transform.GetChild(0).GetComponent<Slider>();
     }
 
-    public void Damage(float amount) {
+    public override void Damage(float amount) {
         health -= amount;
         slider.value = health;
         if(health <= 0)

@@ -192,7 +192,7 @@ public class MapGeneration : MonoBehaviour {
                             {
 
                             }
-                            else
+                            else if (i != mapX + 1 && ii != mapY + 1 && i != 0 && ii != 0)
                             {
                                 oresCluster.Add(tile.name, tile);
                                 tile.GetComponent<Tile>().hasOreNode = true;
@@ -212,12 +212,8 @@ public class MapGeneration : MonoBehaviour {
         Component[] surfaces;
         surfaces = surface.GetComponents(typeof(NavMeshSurface));
 
-        foreach(NavMeshSurface mesh in surfaces) {
+        foreach(NavMeshSurface mesh in surfaces)
             mesh.BuildNavMesh();
-        }
-
-        //surface.BuildNavMesh();
-
     }
 
     public GameObject GetInventory()
