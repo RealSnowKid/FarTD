@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour {
+public class Turret : Building {
     public Transform body;
     public Transform gun;
     public Transform spawnLocation;
@@ -12,6 +12,38 @@ public class Turret : MonoBehaviour {
     public float shootDelay;
     [SerializeField] private GameObject bulletPrefab;
 
+    public Transform target = null;
+
+    private bool isShooting = false;
+
+    private void Start() {
+        GetComponent<SphereCollider>().radius = radius;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.GetComponent<Enemy>() != null && target == null && !other.GetComponent<Enemy>().isGround) {
+            target = other.transform.GetChild(1).GetChild(2);
+            isShooting = true;
+            InvokeRepeating("Shoot", 0, shootDelay);
+        }
+    }
+
+    private void Update() {
+        if (target != null)
+            AimAt(target.position);
+
+        if (isShooting && target == null) {
+            isShooting = false;
+            CancelInvoke("Shoot");
+        }
+    }
+
+    void Shoot() {
+        GameObject bullet = Instantiate(bulletPrefab, spawnLocation.position, Quaternion.identity);
+        bullet.GetComponent<Bullet>().damage = damage;
+
+        bullet.GetComponent<Rigidbody>().AddForce(gun.transform.forward * 150f);
+    }
 
     private void AimAt(Vector3 pos) {
         Vector2 playerPos = new Vector2(transform.position.x, transform.position.z);

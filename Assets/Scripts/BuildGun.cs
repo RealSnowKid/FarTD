@@ -124,6 +124,9 @@ public class BuildGun : MonoBehaviour {
                     Build(lastTile);
                     StartCoroutine(UpdateNavMesh());
                 }
+                else if(instance.GetComponent<Building>() != null) {
+                    Build(lastTile);
+                }
             }
         }
     }
