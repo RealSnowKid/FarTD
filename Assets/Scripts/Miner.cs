@@ -21,7 +21,7 @@ public class Miner : Building {
 
     // optimize pls
     private void Start() {
-        spawnParent = GameObject.Find("OresMined").transform;
+        spawnParent = GameObject.Find("ObjectsSpawned").transform;
     }
 
     public void setOre(Ore ore) {

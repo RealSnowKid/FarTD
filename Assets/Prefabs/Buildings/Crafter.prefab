@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1702073767194814498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137805644147554071}
+  m_Layer: 0
+  m_Name: SpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &137805644147554071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702073767194814498}
+  m_LocalRotation: {x: 0.50000006, y: 0.5, z: 0.50000006, w: 0.5}
+  m_LocalPosition: {x: 0, y: 1, z: 0.324}
+  m_LocalScale: {x: 1.305493, y: 1.305493, z: 1.305493}
+  m_Children: []
+  m_Father: {fileID: 6633038822736838775}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90.00001}
 --- !u!65 &1376229331041505599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11,8 +41,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.083195, y: 7.977965, z: 0.9622213}
-  m_Center: {x: 0.010620905, y: 4.364086, z: 0.0018447784}
+  m_Size: {x: 1.083195, y: 7.977965, z: 0.6515436}
+  m_Center: {x: 0.010620905, y: 4.364086, z: -0.1534927}
 --- !u!1 &4543236280529704287
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,6 +77,7 @@ Transform:
   m_Children:
   - {fileID: 1390580172152778928}
   - {fileID: 652739190841566043}
+  - {fileID: 137805644147554071}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -138,7 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2890bde3dafad8645ade3c0a7b19ea59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingRecipe: {fileID: 11400000, guid: 9e08d585a1c93a14f9b00018302b00ed, type: 2}
+  CraftingRecipe: {fileID: 11400000, guid: 9e08d585a1c93a14f9b00018302b00ed, type: 2}
+  Craftables:
+  - {fileID: 2940205708354531436, guid: 05564da7bd58e704798b7080b9f1d3a3, type: 3}
+  SpawnLocation: {fileID: 137805644147554071}
 --- !u!1 &6530363134565542263
 GameObject:
   m_ObjectHideFlags: 0
