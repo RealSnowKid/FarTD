@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7616867479589187}
   m_LocalRotation: {x: -0.4845125, y: -0.51502186, z: 0.51502204, w: 0.4845126}
-  m_LocalPosition: {x: 0.013769418, y: 3.1324098, z: 0}
+  m_LocalPosition: {x: -0.37623057, y: 9.567167, z: 0}
   m_LocalScale: {x: 62.720127, y: 62.72013, z: 253.2711}
   m_Children:
   - {fileID: 4740813287646020775}
@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4937468891118665328}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 1.5552422, z: 0}
+  m_LocalPosition: {x: -0.39, y: 7.99, z: -0}
   m_LocalScale: {x: 290.4392, y: 290.4392, z: 42.20147}
   m_Children: []
   m_Father: {fileID: 8194012755558995867}
@@ -185,8 +185,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6103134576053786470}
   m_LocalRotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -0.14297478, z: 0}
-  m_LocalScale: {x: 380.17093, y: 380.17093, z: 24.619959}
+  m_LocalPosition: {x: -0, y: 3.004, z: 0}
+  m_LocalScale: {x: 380.17035, y: 380.17093, z: 337.18906}
   m_Children: []
   m_Father: {fileID: 8194012755558995867}
   m_RootOrder: 2
@@ -320,12 +320,13 @@ MonoBehaviour:
   body: {fileID: 3028380308847684161}
   gun: {fileID: 3152391262196998817}
   spawnLocation: {fileID: 4740813287646020775}
-  radius: 20
+  radius: 50
   damage: 10
   shootDelay: 1
   bulletPrefab: {fileID: 8962286388536208361, guid: ffbbbb2e8a4386a4193bf2936e06ca5c,
     type: 3}
   target: {fileID: 0}
+  isAir: 1
 --- !u!65 &4076556933634032673
 BoxCollider:
   m_ObjectHideFlags: 0

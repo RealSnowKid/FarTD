@@ -19,8 +19,8 @@ public class WavesSpawn : MonoBehaviour {
     private GameObject playerCore;
     private GameObject compass;
 
-    private int nrLandEnemies = 0;
-    private int nrAirEnemies = 1;
+    private int nrLandEnemies = 1;
+    private int nrAirEnemies = 0;
 
     private float waveDelay = 20f;
 
