@@ -10,7 +10,7 @@ public class Crafter : Building
     private List<GameObject> items = new List<GameObject>();
     public Transform SpawnLocation;
     private Transform spawnParent;
-    private bool isBuilt = false;
+    public bool isBuilt = false;
     private bool crafting = false;
 
     // Bit of a WeridChamp

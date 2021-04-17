@@ -43,6 +43,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.083195, y: 7.977965, z: 0.6515436}
   m_Center: {x: 0.010620905, y: 4.364086, z: -0.1534927}
+--- !u!114 &4517650434105377675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731499779175639562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890bde3dafad8645ade3c0a7b19ea59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CraftingRecipe: {fileID: 11400000, guid: 9e08d585a1c93a14f9b00018302b00ed, type: 2}
+  Craftables:
+  - {fileID: 2940205708354531436, guid: 05564da7bd58e704798b7080b9f1d3a3, type: 3}
+  SpawnLocation: {fileID: 137805644147554071}
 --- !u!1 &4543236280529704287
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,8 +71,9 @@ GameObject:
   - component: {fileID: 526410983731667087}
   - component: {fileID: 4129181166733794902}
   - component: {fileID: 204151084519850573}
+  - component: {fileID: 2349657891921117502}
   - component: {fileID: 626201816280327418}
-  - component: {fileID: 7755351581096654644}
+  - component: {fileID: 7716201834935518295}
   m_Layer: 0
   m_Name: Crafter
   m_TagString: Untagged
@@ -141,6 +158,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &2349657891921117502
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4543236280529704287}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 20, z: 3}
+  m_Center: {x: 0.2489022, y: 9.274253, z: -0.049927324}
 --- !u!54 &626201816280327418
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,12 +182,12 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7755351581096654644
+--- !u!114 &7716201834935518295
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,13 +196,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4543236280529704287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2890bde3dafad8645ade3c0a7b19ea59, type: 3}
+  m_Script: {fileID: 11500000, guid: 37749b9dc0a97bf4dbb374cef101dafc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CraftingRecipe: {fileID: 11400000, guid: 9e08d585a1c93a14f9b00018302b00ed, type: 2}
-  Craftables:
-  - {fileID: 2940205708354531436, guid: 05564da7bd58e704798b7080b9f1d3a3, type: 3}
-  SpawnLocation: {fileID: 137805644147554071}
+  CrafterUI: {fileID: 1634017107412667595, guid: 1809ceb2f626f144aa600f12a0a10eaf,
+    type: 3}
 --- !u!1 &6530363134565542263
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class DisplayTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [Header("References")]
     public string ItemName = null;
     [SerializeField] private Image image;
+    public Text Label;
+    public bool isInCrafting = true;
 
     private List<GameObject> items = new List<GameObject>();
     private Text label;
@@ -28,8 +30,17 @@ public class DisplayTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             item1 = item.GetComponent<Item>();
             image.sprite = item1.sprite;
             caption = item1.caption;
-            CraftingRecipeUI crui = GetComponentInParent<CraftingRecipeUI>();
-            label = crui.Label;
+            if (isInCrafting)
+            {
+                CraftingRecipeUI crui = GetComponentInParent<CraftingRecipeUI>();
+                label = crui.Label;
+            }
+            else
+            {
+                label = Label;
+                label.text = caption;
+            }
+            
         }
         else
         {
@@ -40,11 +51,17 @@ public class DisplayTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        label.text = caption;
+        if (isInCrafting)
+        {
+            label.text = caption;
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        label.text = "";
+        if (isInCrafting)
+        {
+            label.text = "";
+        }
     }
 }

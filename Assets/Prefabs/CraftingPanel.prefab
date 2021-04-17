@@ -560,6 +560,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: IroniumRod
   image: {fileID: 5423181405225656041}
+  Label: {fileID: 0}
+  isInCrafting: 1
 --- !u!1 &5423181404887674990
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +762,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Miner
   image: {fileID: 5423181404987545233}
+  Label: {fileID: 0}
+  isInCrafting: 1
 --- !u!1 &5423181404947603198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: IroniumRod
   image: {fileID: 5423181406021484215}
+  Label: {fileID: 0}
+  isInCrafting: 1
 --- !u!1 &5423181405225656046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,6 +1694,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: OreIronium
   image: {fileID: 5423181404947603193}
+  Label: {fileID: 0}
+  isInCrafting: 1
 --- !u!1 &5423181405669315073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,6 +2226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: OreIronium
   image: {fileID: 5423181404888194678}
+  Label: {fileID: 0}
+  isInCrafting: 1
 --- !u!1 &5423181405987896300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,6 +2522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: IroniumRod
   image: {fileID: 5423181405827569610}
+  Label: {fileID: 0}
+  isInCrafting: 1
 --- !u!1 &5423181406081279919
 GameObject:
   m_ObjectHideFlags: 0
