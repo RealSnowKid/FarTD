@@ -1913,7 +1913,8 @@ MonoBehaviour:
   - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
   - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
   - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
-  - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
+  - {fileID: 6617921465597776961, guid: c75615973ac9579409cd5cebde7796d8, type: 3}
+  - {fileID: 8191063204033365657, guid: fd8a16761703ba54a95a4a91bb5f0422, type: 3}
   gunSwitcher: {fileID: 0}
   smelteryGUI: {fileID: 1218396107}
 --- !u!1 &385589512
@@ -2589,7 +2590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559686202}
   m_LocalRotation: {x: 0.83651656, y: -0.12940976, z: 0.48296195, w: 0.22414477}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 4.073, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3122,7 +3123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.22414477, y: -0.48296195, z: 0.12940976, w: 0.83651656}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 1.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3743,7 +3744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 987136416}
   m_Layer: 0
-  m_Name: =====HELPERS=====
+  m_Name: =====MANAGERS=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
