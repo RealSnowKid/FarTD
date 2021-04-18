@@ -49,6 +49,34 @@ public class DisplayTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         }
     }
 
+    private void Update()
+    {
+        GameObject item = items.Find(i => i.name == ItemName);
+        if (item != null)
+        {
+            Item item1;
+            item1 = item.GetComponent<Item>();
+            image.sprite = item1.sprite;
+            caption = item1.caption;
+            if (isInCrafting)
+            {
+                CraftingRecipeUI crui = GetComponentInParent<CraftingRecipeUI>();
+                label = crui.Label;
+            }
+            else
+            {
+                label = Label;
+                label.text = caption;
+            }
+
+        }
+        else
+        {
+            image.sprite = null;
+            image.color = disabledColor;
+        }
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (isInCrafting)

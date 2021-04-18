@@ -6,12 +6,16 @@ using UnityEngine;
 public class Crafter : Building
 {
     public CraftingRecipe CraftingRecipe;
-    public List<GameObject> Craftables = new List<GameObject>();
+    public GameObject Craftable;
     private List<GameObject> items = new List<GameObject>();
     public Transform SpawnLocation;
     private Transform spawnParent;
     public bool isBuilt = false;
     private bool crafting = false;
+
+    // Debugging purposes
+    public string Name;
+    private Transform buildings;
 
     // Bit of a WeridChamp
     private float speed = 2f;
@@ -20,11 +24,30 @@ public class Crafter : Building
     private void Start()
     {
         spawnParent = GameObject.Find("ObjectsSpawned").transform;
+        buildings = GameObject.Find("Buildings").transform;
+        CraftingRecipe = gameObject.transform.GetComponentInParent<CrafterUITrigger>().CraftingRecipes[1];
+        Craftable = gameObject.transform.GetComponentInParent<CrafterUITrigger>().Spawnables[0];
     }
 
     public void Build()
     {
         isBuilt = true;
+        // Debugging purposes
+        int number = 0;
+        for (int i = 0; i < buildings.childCount; i++)
+        {
+            if (buildings.GetChild(i).name == this.transform.parent.name)
+            {
+                number++;
+            }
+        }
+        Name = "Crafter " + number;
+    }
+
+    public void SetRecipe(CraftingRecipe craftingRecipe, GameObject craftable)
+    {
+        this.CraftingRecipe = craftingRecipe;
+        this.Craftable = craftable;
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -97,7 +120,7 @@ public class Crafter : Building
     IEnumerator Crafting()
     {
         yield return new WaitForSeconds(2.5f);
-        GameObject itemToSpawn = Craftables.Find(item => item.GetComponent<OreDrop>().Item == CraftingRecipe.Results[0].Item);
+        GameObject itemToSpawn = Craftable;
         crafting = false;
         foreach (GameObject item in items)
         {

@@ -25,12 +25,18 @@ public class ButtonsGroupController : MonoBehaviour
     private List<ButtonStatus> statuses = new List<ButtonStatus>();
     private int numberButtons;
 
-    public CrafterWindow crafterWindow;
+    public CrafterWindow CrafterWindow;
 
     void Start()
     {
         RegisterElements();
-        crafterWindow.NotifyButtonUpdate(GetListActiveButtons());
+        CrafterWindow.SetActiveRecipe();
+        CrafterWindow.NotifyButtonUpdate(GetListActiveButtons());
+    }
+
+    private void Update()
+    {
+        CrafterWindow.SetActiveRecipe();
     }
 
     public void RegisterElements()
@@ -39,7 +45,7 @@ public class ButtonsGroupController : MonoBehaviour
         for (int i = 0; i < numberButtons; i++)
         {
             GameObject currChild = transform.GetChild(i).gameObject;
-            currChild.GetComponent<ClickableButton>().buttonId = i;
+            currChild.GetComponent<ClickableButton>().ButtonId = i;
             buttons.Add(currChild);
 
             statuses.Add(ButtonStatus.Idle);
@@ -52,7 +58,6 @@ public class ButtonsGroupController : MonoBehaviour
         }
 
         SetColorButtons();
-
     }
 
     private void SetColorButtons()
@@ -84,7 +89,6 @@ public class ButtonsGroupController : MonoBehaviour
                 {
                     isDirty = true;
                     statuses[idButton] = ButtonStatus.Idle;
-
                 }
             } 
             else
@@ -92,7 +96,6 @@ public class ButtonsGroupController : MonoBehaviour
                 isDirty = true;
                 statuses[idButton] = ButtonStatus.Idle;
             }
-
         } 
         else
         {
@@ -112,7 +115,7 @@ public class ButtonsGroupController : MonoBehaviour
             SetColorButtons();
         }
 
-        crafterWindow.NotifyButtonUpdate(GetListActiveButtons());
+        CrafterWindow.NotifyButtonUpdate(GetListActiveButtons());
     }
 
     public void NotifyHovering(int idButton)

@@ -55,10 +55,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2890bde3dafad8645ade3c0a7b19ea59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CraftingRecipe: {fileID: 11400000, guid: 9e08d585a1c93a14f9b00018302b00ed, type: 2}
+  CraftingRecipe: {fileID: 0}
   Craftables:
   - {fileID: 2940205708354531436, guid: 05564da7bd58e704798b7080b9f1d3a3, type: 3}
   SpawnLocation: {fileID: 137805644147554071}
+  isBuilt: 0
 --- !u!1 &4543236280529704287
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,8 +200,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37749b9dc0a97bf4dbb374cef101dafc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CrafterUI: {fileID: 1634017107412667595, guid: 1809ceb2f626f144aa600f12a0a10eaf,
-    type: 3}
+  CraftingRecipes:
+  - {fileID: 11400000, guid: 9e08d585a1c93a14f9b00018302b00ed, type: 2}
+  - {fileID: 11400000, guid: 1608ec71bb8661f4aafb2305faffb28b, type: 2}
+  - {fileID: 11400000, guid: 152ae8cc63e29e64b8d70163985dc5a8, type: 2}
+  - {fileID: 11400000, guid: 208a615d5bb89ea46973059883f3a192, type: 2}
+  - {fileID: 11400000, guid: 40ff22e1547c30b43b6a9b8619b4cd1d, type: 2}
+  Spawnables:
+  - {fileID: 2940205708354531436, guid: 05564da7bd58e704798b7080b9f1d3a3, type: 3}
 --- !u!1 &6530363134565542263
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +388,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 9bca321cf874c2f48aaa90398b637be5,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bca321cf874c2f48aaa90398b637be5, type: 3}

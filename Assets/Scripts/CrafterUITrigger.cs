@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CrafterUITrigger : MonoBehaviour
 {
+    public List<CraftingRecipe> CraftingRecipes = new List<CraftingRecipe>();
+    public List<GameObject> Spawnables = new List<GameObject>();
+
     private GameObject crosshair;
-    [SerializeField] private GameObject crafterUI;
+    private GameObject crafterUI;
     private GameObject crafter;
     private GameObject inventory;
     private GameObject player;
@@ -18,6 +21,15 @@ public class CrafterUITrigger : MonoBehaviour
         crosshair = GameObject.Find("Crosshair");
         player = GameObject.Find("Canvas").GetComponent<Inventory>().player;
         inventory = GameObject.Find("Canvas").GetComponent<Inventory>().inventoryMenu;
+        crafterUI.GetComponent<CrafterWindow>().SetRecipeImages(CraftingRecipes);
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.GetComponent<PlayerControl>() != null && crafter.GetComponent<Crafter>().isBuilt == true)
+        {
+            HandleUIWindow();
+        }
     }
 
     private void OnTriggerStay(Collider collider)
@@ -36,7 +48,6 @@ public class CrafterUITrigger : MonoBehaviour
     {
         if (collider.GetComponent<PlayerControl>() != null && crafter.GetComponent<Crafter>().isBuilt == true)
         {
-            Debug.Log("Player Exited Area");
             menuOpen = false;
             HandleUIWindow();
         }
@@ -48,12 +59,14 @@ public class CrafterUITrigger : MonoBehaviour
         {
             if (menuOpen)
             {
+                crafterUI.GetComponent<CrafterWindow>().SetCrafter(crafter);
                 crafterUI.SetActive(true);
                 crosshair.SetActive(false);
             }
             else if (!menuOpen)
             {
                 crafterUI.SetActive(false);
+                crafterUI.GetComponent<CrafterWindow>().SetCrafter(crafter);
                 crosshair.SetActive(true);
             }
             if (!inventory.activeSelf)

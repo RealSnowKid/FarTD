@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class ClickableButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public int buttonId;
+    public int ButtonId;
     private ButtonsGroupController buttonsGroupController;
 
     void Start()
@@ -14,18 +14,18 @@ public class ClickableButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        buttonsGroupController.NotifySelection(buttonId);
+        buttonsGroupController.NotifySelection(ButtonId);
 
     }
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        buttonsGroupController.NotifyHovering(buttonId);
+        buttonsGroupController.NotifyHovering(ButtonId);
 
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        buttonsGroupController.NotifyStoppedHovering(buttonId);  
+        buttonsGroupController.NotifyStoppedHovering(ButtonId);  
     }
 }
