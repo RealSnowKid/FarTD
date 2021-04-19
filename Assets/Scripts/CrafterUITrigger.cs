@@ -18,11 +18,11 @@ public class CrafterUITrigger : MonoBehaviour
     private void Start()
     {
         crafter = gameObject.transform.GetChild(0).gameObject;
-        crafterUI = GameObject.Find("Canvas").GetComponent<Inventory>().CrafterUI.gameObject;
+        crafterUI = GameObject.Find("GUI").GetComponent<Inventory>().CrafterUI.gameObject;
         crosshair = GameObject.Find("Crosshair");
-        crafterUINotification = GameObject.Find("Canvas").GetComponent<Inventory>().CrafterUINotification;
-        player = GameObject.Find("Canvas").GetComponent<Inventory>().player;
-        inventory = GameObject.Find("Canvas").GetComponent<Inventory>().inventoryMenu;
+        crafterUINotification = GameObject.Find("GUI").GetComponent<Inventory>().CrafterUINotification;
+        player = GameObject.Find("GUI").GetComponent<Inventory>().player;
+        inventory = GameObject.Find("GUI").GetComponent<Inventory>().inventoryMenu;
         crafterUI.GetComponent<CrafterWindow>().SetRecipeImages(CraftingRecipes);
     }
 
