@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour {
     public GameObject inventoryMenu;
     public GameObject craftingMenu;
     public GameObject CrafterUI;
+    public GameObject CrafterUINotification;
     public GameObject player;
 
     public GameObject pickedItem = null;

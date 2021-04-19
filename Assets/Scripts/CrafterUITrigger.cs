@@ -9,6 +9,7 @@ public class CrafterUITrigger : MonoBehaviour
 
     private GameObject crosshair;
     private GameObject crafterUI;
+    private GameObject crafterUINotification;
     private GameObject crafter;
     private GameObject inventory;
     private GameObject player;
@@ -19,6 +20,7 @@ public class CrafterUITrigger : MonoBehaviour
         crafter = gameObject.transform.GetChild(0).gameObject;
         crafterUI = GameObject.Find("Canvas").GetComponent<Inventory>().CrafterUI.gameObject;
         crosshair = GameObject.Find("Crosshair");
+        crafterUINotification = GameObject.Find("Canvas").GetComponent<Inventory>().CrafterUINotification;
         player = GameObject.Find("Canvas").GetComponent<Inventory>().player;
         inventory = GameObject.Find("Canvas").GetComponent<Inventory>().inventoryMenu;
         crafterUI.GetComponent<CrafterWindow>().SetRecipeImages(CraftingRecipes);
@@ -50,6 +52,7 @@ public class CrafterUITrigger : MonoBehaviour
         {
             menuOpen = false;
             HandleUIWindow();
+            crafterUINotification.SetActive(false);
         }
     }
 
@@ -62,12 +65,14 @@ public class CrafterUITrigger : MonoBehaviour
                 crafterUI.GetComponent<CrafterWindow>().SetCrafter(crafter);
                 crafterUI.SetActive(true);
                 crosshair.SetActive(false);
+                crafterUINotification.SetActive(false);
             }
             else if (!menuOpen)
             {
                 crafterUI.SetActive(false);
                 crafterUI.GetComponent<CrafterWindow>().SetCrafter(crafter);
                 crosshair.SetActive(true);
+                crafterUINotification.SetActive(true);
             }
             if (!inventory.activeSelf)
             {
