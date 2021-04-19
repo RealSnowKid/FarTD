@@ -24,9 +24,9 @@ public class MapGeneration : MonoBehaviour {
     private float tileSize;
 
     // thresholds
-    private const float oreThreshold = 0.21f;
-    private const float oreThreshold2 = 0.15f;
-    private const float wallThreshold = 0.3f;
+    private float oreThreshold = 0.21f;
+    private float oreThreshold2 = 0.15f;
+    private float wallThreshold = 0.3f;
 
     private float ironiumPercent = 40f;
     private float zoniumPercent = 20f;
@@ -35,7 +35,48 @@ public class MapGeneration : MonoBehaviour {
     private float unobtaniumPercent = 4f;
     private float instabiliumPercent = 20f;
 
-    void Awake() {
+    public void ChangeDifficulty(int difficulty) {
+        switch (difficulty) {
+            case 0:
+                oreThreshold = 0.3f;
+                oreThreshold2 = 0.21f;
+                wallThreshold = 0.2f;
+
+                ironiumPercent = 16f;
+                zoniumPercent = 17f;
+                ventiumPercent = 17f;
+                memiumPercent = 17f;
+                unobtaniumPercent = 17f;
+                instabiliumPercent = 16f;
+                break;
+            case 1:
+                oreThreshold = 0.21f;
+                oreThreshold2 = 0.15f;
+                wallThreshold = 0.3f;
+
+                ironiumPercent = 40f;
+                zoniumPercent = 20f;
+                ventiumPercent = 10f;
+                memiumPercent = 6f;
+                unobtaniumPercent = 4f;
+                instabiliumPercent = 20f;
+                break;
+            case 2:
+                oreThreshold = 0.15f;
+                oreThreshold2 = 0.1f;
+                wallThreshold = 0.45f;
+
+                ironiumPercent = 53f;
+                zoniumPercent = 20f;
+                ventiumPercent = 10f;
+                memiumPercent = 6f;
+                unobtaniumPercent = 1f;
+                instabiliumPercent = 10f;
+                break;
+        }
+    }
+
+    public void BuildMap() {
         if(ironiumPercent + zoniumPercent + ventiumPercent + memiumPercent + unobtaniumPercent + instabiliumPercent != 100f) {
             Debug.LogError("Ore percentages not equal to 100!");
             return;

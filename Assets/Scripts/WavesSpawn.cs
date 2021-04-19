@@ -22,6 +22,9 @@ public class WavesSpawn : MonoBehaviour {
     private int nrLandEnemies = 1;
     private int nrAirEnemies = 0;
 
+    //private int incrementLandEnemies = 1;
+    //private int incrementAirEnemies = 1;
+
     private float waveDelay = 20f;
 
     private float timer;
@@ -29,6 +32,27 @@ public class WavesSpawn : MonoBehaviour {
     private bool isWave = false;
 
     private int waveCount = 0;
+
+    private int difficulty;
+
+    public void ChangeDifficulty(int difficulty) {
+        switch (difficulty) {
+            case 0:
+                nrLandEnemies = 0;
+                nrAirEnemies = 0;
+                break;
+            case 1:
+                nrLandEnemies = 1;
+                nrAirEnemies = 0;
+                break;
+            case 2:
+                nrLandEnemies = 1;
+                nrAirEnemies = 1;
+                break;
+        }
+
+        this.difficulty = difficulty;
+    }
 
     public void SetSpawnLocation(GameObject spawn) {
         spawnLocations.Add(spawn);
@@ -59,10 +83,17 @@ public class WavesSpawn : MonoBehaviour {
         }
     }
 
+    bool firstPassOnEasy = true;
+
     private void SpawnNextWave() {
-        // randomize spawn location
-        int rnd = Random.Range(0, 3);
-        spawn.transform.position = spawnLocations[rnd].transform.position;
+        // randomize spawn location if not on easy
+        if (difficulty != 0 || (firstPassOnEasy && difficulty == 0)) {
+            int rnd = Random.Range(0, 3);
+            spawn.transform.position = spawnLocations[rnd].transform.position;
+
+            if(difficulty == 0)
+                firstPassOnEasy = false;
+        }
 
         waveCount++;
         wavesCounter.text = waveCount.ToString();
@@ -95,9 +126,20 @@ public class WavesSpawn : MonoBehaviour {
             compass.GetComponent<Compass>().AddMarker(enemy.GetComponent<CompassMarker>());
         }
 
-        // to be balanced
-        nrLandEnemies++;
-        nrAirEnemies++;
+        switch (difficulty) {
+            case 0:
+                if (waveCount % 2 == 0) nrLandEnemies++;
+                if (waveCount % 5 == 0) nrAirEnemies++;
+                break;
+            case 1:
+                if (waveCount % 2 == 0) nrLandEnemies++;
+                else nrAirEnemies++;
+                break;
+            case 2:
+                nrLandEnemies++;
+                nrAirEnemies++;
+                break;
+        }
     }
 
     public void Remove(GameObject obj) {

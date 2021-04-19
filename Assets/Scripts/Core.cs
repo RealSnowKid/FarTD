@@ -9,7 +9,7 @@ public class Core : Damageable {
 
     private void Start() {
         // temp
-        slider = GameObject.Find("Canvas").transform.GetChild(0).GetComponent<Slider>();
+        slider = GameObject.Find("GUI").transform.GetChild(0).GetComponent<Slider>();
     }
 
     public override void Damage(float amount) {
