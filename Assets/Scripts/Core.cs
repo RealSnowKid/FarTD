@@ -7,9 +7,12 @@ public class Core : Damageable {
     private float health = 100f;
     private Slider slider;
 
+    [SerializeField] private GameObject gameOverScreen;
+
     private void Start() {
         // temp
         slider = GameObject.Find("GUI").transform.GetChild(0).GetComponent<Slider>();
+        //gameOverScreen = GameObject.Find("GameOverScreen");
     }
 
     public override void Damage(float amount) {
@@ -20,6 +23,8 @@ public class Core : Damageable {
     }
 
     void Lose() {
-        Debug.Log("ded");
+        //gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
+        Debug.Log("dead");
     }
 }
