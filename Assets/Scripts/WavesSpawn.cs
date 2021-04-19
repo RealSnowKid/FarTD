@@ -7,6 +7,8 @@ public class WavesSpawn : MonoBehaviour {
     [SerializeField] private Text wavesCounter;
     [SerializeField] private Text wavesTimer;
 
+    [SerializeField] private Text scoreCounter;
+
     [SerializeField] private Transform enemiesParent;
     [SerializeField] private Transform spawn;
     [SerializeField] private List<GameObject> spawnLocations;
@@ -21,9 +23,6 @@ public class WavesSpawn : MonoBehaviour {
 
     private int nrLandEnemies = 1;
     private int nrAirEnemies = 0;
-
-    //private int incrementLandEnemies = 1;
-    //private int incrementAirEnemies = 1;
 
     private float waveDelay = 20f;
 
@@ -98,7 +97,9 @@ public class WavesSpawn : MonoBehaviour {
         waveCount++;
         wavesCounter.text = waveCount.ToString();
 
-        for(int i=0; i<nrLandEnemies; i++) {
+        scoreCounter.text = "Score: " + waveCount.ToString();
+
+        for (int i=0; i<nrLandEnemies; i++) {
             GameObject enemy = Instantiate(landEnemy, spawn.position, Quaternion.identity, enemiesParent);
 
             spawnedEnemies.Add(enemy);
