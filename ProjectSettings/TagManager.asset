@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - Player
+  - Enemies
+  - Wall_remove
+  - EnemyTransparent
   - 
   - 
   - 

@@ -1,18 +1,23 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
+using System.Threading;
+using UnityEngine.AI;
 
 public class BuildGun : MonoBehaviour {
     private float distance = 5f;
     public GameObject buildObject = null;
 
     public bool gunEnabled = false;
-    private GameObject instance = null;
+    public GameObject instance = null;
 
     private RaycastHit hitInfo;
 
     public GameObject gunTile = null;
 
     private GameObject buildParent;
+
+    public NavMeshSurface surface;
 
     // refactorr
     private void Start() {
@@ -21,7 +26,7 @@ public class BuildGun : MonoBehaviour {
 
     public void Enable() {
         gunEnabled = true;
-        if (buildObject != null) ChangeBuildObject(buildObject);
+        if (buildObject != null && instance == null) ChangeBuildObject(buildObject);
     }
 
     public void Disable() {
@@ -45,7 +50,14 @@ public class BuildGun : MonoBehaviour {
 
         Destroy(gunTile.GetComponent<InventoryTile>().item);
 
+        buildObject = null;
         lastTile = null;
+    }
+
+    IEnumerator UpdateNavMesh() {
+        surface.UpdateNavMesh(surface.navMeshData);
+        //surface.BuildNavMesh();
+        yield break;
     }
 
     GameObject lastTile = null;
@@ -104,6 +116,15 @@ public class BuildGun : MonoBehaviour {
                 //if we're building a smelter
                 else if(instance.GetComponent<Smelter>() != null) {
                     instance.GetComponent<Smelter>().Build();
+                    Build(lastTile);
+                }
+                //if we're building a wall
+                else if(instance.GetComponent<Wall>() != null) {
+                    instance.GetComponent<Wall>().SetSurface(surface);
+                    Build(lastTile);
+                    StartCoroutine(UpdateNavMesh());
+                }
+                else if(instance.GetComponent<Building>() != null) {
                     Build(lastTile);
                 }
                 else if(instance.transform.GetChild(0).GetComponent<Crafter>() != null)

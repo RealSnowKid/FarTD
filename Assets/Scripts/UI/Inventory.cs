@@ -19,10 +19,15 @@ public class Inventory : MonoBehaviour {
     public Text label;
 
     public List<GameObject> testItems = new List<GameObject>();
+    [SerializeField] private GunSwitcher gunSwitcher;
+
     private void Start() {
         foreach(GameObject item in testItems) {
             AddItem(item);
         }
+
+        // temp
+        gunSwitcher = GameObject.Find("Player(Clone)").GetComponent<GunSwitcher>();
     }
 
     [SerializeField] GameObject smelteryGUI;
@@ -33,14 +38,31 @@ public class Inventory : MonoBehaviour {
 
     void Update() {
         if (Input.GetKeyDown("q") && pickedItem == null) {
+            // bug with remaining inertia
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
             inventoryMenu.SetActive(!inventoryMenu.activeSelf);
             craftingMenu.SetActive(inventoryMenu.activeSelf);
 
+            if (inventoryMenu.activeSelf)
+                gunSwitcher.OpenedInvenory();
+            else
+                gunSwitcher.ClosedInventory();
+
+            Cursor.lockState = inventoryMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = inventoryMenu.activeSelf;
             if (!CrafterUI.activeSelf)
             {
                 Cursor.lockState = inventoryMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
                 Cursor.visible = inventoryMenu.activeSelf;
 
+            player.GetComponent<PlayerControl>().enabled = !inventoryMenu.activeSelf;
+        }
+
+        if(Input.GetKeyDown("x") && pickedItem != null) {
+            Destroy(pickedItem);
+        }
+    }
                 player.GetComponent<PlayerControl>().enabled = !inventoryMenu.activeSelf;
             }
         }
