@@ -2539,6 +2539,8 @@ MonoBehaviour:
   - {fileID: 5126104515398138738, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
   - {fileID: 6617921465597776961, guid: c75615973ac9579409cd5cebde7796d8, type: 3}
   - {fileID: 8191063204033365657, guid: fd8a16761703ba54a95a4a91bb5f0422, type: 3}
+  - {fileID: 2226329822556123105, guid: e460405d7bcee344fbcace48c8aa6485, type: 3}
+  - {fileID: 2226329822556123105, guid: e460405d7bcee344fbcace48c8aa6485, type: 3}
   gunSwitcher: {fileID: 0}
   smelteryGUI: {fileID: 1218396107}
 --- !u!1 &371955011
@@ -7958,6 +7960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wavesCounter: {fileID: 635180770}
   wavesTimer: {fileID: 694385602}
+  scoreCounter: {fileID: 0}
   enemiesParent: {fileID: 941744701}
   spawn: {fileID: 1308284003}
   spawnLocations: []
@@ -8979,7 +8982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2091563361}
   m_Layer: 0
-  m_Name: OresMined
+  m_Name: ObjectsSpawned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

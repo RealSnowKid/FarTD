@@ -25,7 +25,7 @@ public class Crafter : Building
     {
         spawnParent = GameObject.Find("ObjectsSpawned").transform;
         buildings = GameObject.Find("Buildings").transform;
-        CraftingRecipe = gameObject.transform.GetComponentInParent<CrafterUITrigger>().CraftingRecipes[1];
+        CraftingRecipe = gameObject.transform.GetComponentInParent<CrafterUITrigger>().CraftingRecipes[0];
         Craftable = gameObject.transform.GetComponentInParent<CrafterUITrigger>().Spawnables[0];
     }
 
