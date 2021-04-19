@@ -55,7 +55,9 @@ public class Enemy : MonoBehaviour {
 
             target = col.gameObject;
 
-            if(isGround) transform.LookAt(target.transform);
+            if (isGround) {
+                transform.LookAt(target.transform);
+            }
 
             if (col.GetComponent<Wall>() != null)
                 col.GetComponent<Wall>().SetAttacker(gameObject);

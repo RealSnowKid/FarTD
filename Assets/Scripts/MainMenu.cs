@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour {
 
     public void StartGame() {
         playerUI.SetActive(true);
-        Destroy(menuCamera.gameObject);
+        menuCamera.gameObject.SetActive(false);
         gameObject.SetActive(false);
 
         mapAgent.mapX = mapSize;
@@ -53,6 +53,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void ReloadScene() {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -6,13 +6,18 @@ using UnityEngine.UI;
 public class Core : Damageable {
     private float health = 100f;
     private Slider slider;
+    public GameObject player;
 
-    [SerializeField] private GameObject gameOverScreen;
+    private GameObject gameOverScreen;
+
+    private GameObject gui;
 
     private void Start() {
         // temp
-        slider = GameObject.Find("GUI").transform.GetChild(0).GetComponent<Slider>();
-        //gameOverScreen = GameObject.Find("GameOverScreen");
+        gui = GameObject.Find("GUI");
+        slider = gui.transform.GetChild(0).GetComponent<Slider>();
+
+        gameOverScreen = gui.transform.GetChild(14).gameObject;
     }
 
     public override void Damage(float amount) {
@@ -23,8 +28,17 @@ public class Core : Damageable {
     }
 
     void Lose() {
-        //gameOverScreen.SetActive(true);
+        gameOverScreen.SetActive(true);
         Time.timeScale = 0;
-        Debug.Log("dead");
+        gui.GetComponent<Inventory>().enabled = false;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        player.SetActive(false);
+
+        GameObject cam = new GameObject("GameOver Cam");
+        cam.transform.position = player.transform.position + new Vector3(0f, 20f, 0f);
+        cam.transform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+        cam.AddComponent<Camera>();
     }
 }

@@ -63,7 +63,7 @@ public class MapGeneration : MonoBehaviour {
                 break;
             case 2:
                 oreThreshold = 0.15f;
-                oreThreshold2 = 0.1f;
+                oreThreshold2 = 0.25f;
                 wallThreshold = 0.45f;
 
                 ironiumPercent = 53f;
@@ -133,6 +133,8 @@ public class MapGeneration : MonoBehaviour {
                     if(i == playerX && ii == playerY) {
                         GameObject player = Instantiate(playerPrefab, tile.transform.position + new Vector3(0f, 2f, 0f), Quaternion.identity);
                         GameObject core = Instantiate(corePrefab, tile.transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+                        core.GetComponent<Core>().player = player;
+
                         tile.GetComponent<Tile>().building = core;
 
                         compass.GetComponent<Compass>().player = player;
