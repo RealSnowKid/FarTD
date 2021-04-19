@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ore: 2
+  Item: {fileID: 8654669060546944459, guid: 36751c1e17aee7c418223485d37d3cfc, type: 3}

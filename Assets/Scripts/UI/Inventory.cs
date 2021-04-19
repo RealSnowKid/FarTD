@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour {
     public GameObject inventoryMenu;
     public GameObject craftingMenu;
+    public GameObject CrafterUI;
+    public GameObject CrafterUINotification;
     public GameObject player;
 
     public GameObject pickedItem = null;
@@ -42,15 +44,16 @@ public class Inventory : MonoBehaviour {
             inventoryMenu.SetActive(!inventoryMenu.activeSelf);
             craftingMenu.SetActive(inventoryMenu.activeSelf);
 
+            if (!CrafterUI.activeSelf)
+            {
+                Cursor.lockState = inventoryMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
+                Cursor.visible = inventoryMenu.activeSelf;
+            }
+            player.GetComponent<PlayerControl>().enabled = !inventoryMenu.activeSelf;
             if (inventoryMenu.activeSelf)
                 gunSwitcher.OpenedInvenory();
             else
                 gunSwitcher.ClosedInventory();
-
-            Cursor.lockState = inventoryMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
-            Cursor.visible = inventoryMenu.activeSelf;
-
-            player.GetComponent<PlayerControl>().enabled = !inventoryMenu.activeSelf;
         }
 
         if(Input.GetKeyDown("x") && pickedItem != null) {

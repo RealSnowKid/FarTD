@@ -101,7 +101,7 @@ public class BuildGun : MonoBehaviour {
                         instance.GetComponent<Miner>().setOre(lastTile.GetComponent<Tile>().oreType);
                         Build(lastTile);
                     } else {
-                        Debug.LogError("Miners must be placed on an ore tile");
+                        Debug.LogWarning("Miners must be placed on an ore tile");
                     }
                 }
                 //if we're building a conveyor
@@ -125,6 +125,11 @@ public class BuildGun : MonoBehaviour {
                     StartCoroutine(UpdateNavMesh());
                 }
                 else if(instance.GetComponent<Building>() != null) {
+                    Build(lastTile);
+                }
+                else if(instance.transform.GetChild(0).GetComponent<Crafter>() != null)
+                {
+                    instance.transform.GetChild(0).GetComponent<Crafter>().Build();
                     Build(lastTile);
                 }
             }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OreDrop : MonoBehaviour {
     public Ore ore;
+    public Item Item;
 
     private void OnCollisionEnter(Collision collision) {
         // if we hit a tile, initiate self destruction
