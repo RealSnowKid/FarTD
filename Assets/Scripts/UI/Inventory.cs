@@ -48,8 +48,9 @@ public class Inventory : MonoBehaviour {
             {
                 Cursor.lockState = inventoryMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
                 Cursor.visible = inventoryMenu.activeSelf;
+                player.GetComponent<PlayerControl>().enabled = !inventoryMenu.activeSelf;
             }
-            player.GetComponent<PlayerControl>().enabled = !inventoryMenu.activeSelf;
+            
             if (inventoryMenu.activeSelf)
                 gunSwitcher.OpenedInvenory();
             else

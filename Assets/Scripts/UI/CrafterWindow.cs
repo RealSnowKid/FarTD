@@ -71,7 +71,7 @@ public class CrafterWindow : MonoBehaviour
                     buttonsGroupController.NotifySelection(3);
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
-                case "ConveyorSmelter":
+                case "C_Smelter":
                     buttonsGroupController.NotifySelection(4);
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
