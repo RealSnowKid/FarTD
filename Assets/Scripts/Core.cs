@@ -32,7 +32,6 @@ public class Core : Damageable {
         Time.timeScale = 0;
         gui.SetActive(false);
 
-
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         player.SetActive(false);
