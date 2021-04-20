@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2715294712170814509}
   - component: {fileID: 2875761306724645604}
   - component: {fileID: 9115685197778220048}
+  - component: {fileID: 5443624802751894529}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -169,6 +170,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smelter: {fileID: 0}
+--- !u!114 &5443624802751894529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715294712170814487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0ab85b526d80441a9efed03c96c1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/BGMusic
 --- !u!1 &2715294712245855356
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +198,7 @@ GameObject:
   - component: {fileID: 775861059632224376}
   - component: {fileID: 4557040253903770346}
   - component: {fileID: 958044052362346242}
+  - component: {fileID: 5278947821796532216}
   m_Layer: 12
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -369,7 +384,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37655623700b139428f5bca0760c786f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunEnabled: 0
+  gunEnabled: 1
+--- !u!114 &5278947821796532216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715294712245855356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &3554490195968564296
 GameObject:
   m_ObjectHideFlags: 0
