@@ -58,6 +58,7 @@ public class Inventory : MonoBehaviour {
         }
 
         if(Input.GetKeyDown("x") && pickedItem != null) {
+            items.Remove(pickedItem.GetComponent<Item>());
             Destroy(pickedItem);
         }
     }

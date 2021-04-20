@@ -3035,12 +3035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crafter: {fileID: 0}
   buttonsGroupController: {fileID: 4343927204543239725}
-  buttonDisplayTiles:
-  - {fileID: 4343927205452689137}
-  - {fileID: 4343927204720536493}
-  - {fileID: 4343927204546586973}
-  - {fileID: 4343927206405748688}
-  - {fileID: 4343927205519103112}
+  buttonDisplayTiles: []
   inputsAndOutput:
   - {fileID: 4343927205533680526}
   - {fileID: 4343927205771299376}
