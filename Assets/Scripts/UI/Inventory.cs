@@ -23,12 +23,14 @@ public class Inventory : MonoBehaviour {
     [SerializeField] private GunSwitcher gunSwitcher;
 
     private void Start() {
-        foreach(GameObject item in testItems) {
+        foreach (GameObject item in testItems) {
             AddItem(item);
         }
 
         // temp
-        gunSwitcher = GameObject.Find("Player(Clone)").GetComponent<GunSwitcher>();
+        do {
+            gunSwitcher = GameObject.Find("Player(Clone)").GetComponent<GunSwitcher>();
+        } while (gunSwitcher == null);
     }
 
     [SerializeField] GameObject smelteryGUI;
@@ -40,7 +42,8 @@ public class Inventory : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown("q") && pickedItem == null) {
             // bug with remaining inertia
-            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            player.GetComponent<Rigidbody>().isKinematic = true;
+            player.GetComponent<Rigidbody>().isKinematic = false;
 
             inventoryMenu.SetActive(!inventoryMenu.activeSelf);
             craftingMenu.SetActive(inventoryMenu.activeSelf);
@@ -59,6 +62,7 @@ public class Inventory : MonoBehaviour {
         }
 
         if(Input.GetKeyDown("x") && pickedItem != null) {
+            items.Remove(pickedItem.GetComponent<Item>());
             Destroy(pickedItem);
         }
     }

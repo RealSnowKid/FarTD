@@ -38,7 +38,7 @@ public class WavesSpawn : MonoBehaviour {
     public void ChangeDifficulty(int difficulty) {
         switch (difficulty) {
             case 0:
-                nrLandEnemies = 0;
+                nrLandEnemies = 1;
                 nrAirEnemies = 0;
                 difficultyLabel.text = "Easy";
                 difficultyLabel.color = new Color(0, 1, 0.1951792f);
@@ -94,7 +94,7 @@ public class WavesSpawn : MonoBehaviour {
     private void SpawnNextWave() {
         // randomize spawn location if not on easy
         if (difficulty != 0 || (firstPassOnEasy && difficulty == 0)) {
-            int rnd = Random.Range(0, 3);
+            int rnd = Random.Range(0, 4);
             spawn.transform.position = spawnLocations[rnd].transform.position;
 
             if(difficulty == 0)

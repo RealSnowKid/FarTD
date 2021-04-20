@@ -10,16 +10,33 @@ public class CrafterWindow : MonoBehaviour
     [SerializeField] private List<DisplayTile> buttonDisplayTiles = new List<DisplayTile>();
     [SerializeField] private List<DisplayTile> inputsAndOutput = new List<DisplayTile>();
 
+    public void AddButtons()
+    {
+        for (int i = 0; i < buttonsGroupController.transform.childCount; i++)
+        {
+            buttonDisplayTiles.Add(buttonsGroupController.transform.GetChild(i).GetComponent<DisplayTile>());
+        }
+    }
+
     public void NotifyButtonUpdate(List<bool> activeButtons)
     {
         if (crafter != null)
         {
             List<CraftingRecipe> craftingRecipes = crafter.GetComponentInParent<CrafterUITrigger>().CraftingRecipes;
+            List<GameObject> spawnables = crafter.GetComponentInParent<CrafterUITrigger>().Spawnables;
             for (int i = 0; i < activeButtons.Count; i++)
             {
                 if (activeButtons[i] == true)
                 {
                     crafter.CraftingRecipe = craftingRecipes[i];
+                    foreach (var spawnable in spawnables)
+                    {
+                        if (spawnable.GetComponent<OreDrop>().Item == craftingRecipes[i].Results[0].Item)
+                        {
+                            crafter.Craftable = spawnable;
+                            break;
+                        }
+                    }
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
                 }
@@ -73,6 +90,10 @@ public class CrafterWindow : MonoBehaviour
                     break;
                 case "C_Smelter":
                     buttonsGroupController.NotifySelection(4);
+                    SetInputOutputImages(crafter.CraftingRecipe);
+                    break;
+                case "Bullet":
+                    buttonsGroupController.NotifySelection(5);
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
                 default:

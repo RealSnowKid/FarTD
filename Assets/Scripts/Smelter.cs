@@ -7,7 +7,7 @@ public class Smelter : Building {
     public GameObject input;
     public GameObject output;
 
-    public float time = 5f;
+    public float time = 4.5f;
 
     public GameObject gui;
 
@@ -27,8 +27,10 @@ public class Smelter : Building {
 
     public void Start() {
         // temporary solution again lol
-        gui = GameObject.Find("Canvas").GetComponent<Inventory>().GetSmelteryGUI();
-        itemsParent = gui.transform.parent.GetChild(4);
+        if (!isConveyor) {
+            gui = GameObject.Find("GUI").GetComponent<Inventory>().GetSmelteryGUI();
+            itemsParent = gui.transform.parent.GetChild(4);
+        }
     }
     public void Build() {
         isBuilt = true;
@@ -152,6 +154,7 @@ public class Smelter : Building {
 
             if (playerIn) {
                 ingot.GetComponent<Item>().tile = gui.transform.GetChild(3).gameObject;
+                gui.transform.GetChild(3).GetComponent<InventoryTile>().item = ingot;
                 ingot.transform.position = gui.transform.GetChild(3).position;
             }
 

@@ -123,8 +123,10 @@ public class BuildGun : MonoBehaviour {
                     instance.GetComponent<Wall>().SetSurface(surface);
                     Build(lastTile);
                     StartCoroutine(UpdateNavMesh());
-                }
-                else if(instance.GetComponent<Building>() != null) {
+                }else if(instance.GetComponent<Turret>() != null) {
+                    instance.GetComponent<Turret>().Build();
+                    Build(lastTile);
+                }else if(instance.GetComponent<Building>() != null) {
                     Build(lastTile);
                 }
                 else if(instance.transform.GetChild(0).GetComponent<Crafter>() != null)
