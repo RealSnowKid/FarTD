@@ -154,6 +154,7 @@ public class Smelter : Building {
 
             if (playerIn) {
                 ingot.GetComponent<Item>().tile = gui.transform.GetChild(3).gameObject;
+                gui.transform.GetChild(3).GetComponent<InventoryTile>().item = ingot;
                 ingot.transform.position = gui.transform.GetChild(3).position;
             }
 

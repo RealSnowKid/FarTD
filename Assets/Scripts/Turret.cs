@@ -11,6 +11,7 @@ public class Turret : Building {
     public float radius;
     public float damage;
     public float shootDelay;
+    public int maxBullets = 12;
     [SerializeField] private GameObject bulletPrefab;
 
     public Transform target = null;
@@ -22,10 +23,11 @@ public class Turret : Building {
 
     public int bullets = 0;
 
+
     [SerializeField] private Text bulletLabel;
 
     public void Build() {
-        transform.GetChild(1).GetComponent<TurretCollider>().Build();
+        transform.GetChild(1).GetComponent<TurretCollider>().Build(isConveyor);
     }
 
     private void Start() {

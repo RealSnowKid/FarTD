@@ -11,9 +11,10 @@ public class TurretCollider : MonoBehaviour {
 
     private Inventory inventory;
 
-    public int bulletsAmoundPerItem = 4;
+    public int bulletsAmountPerItem = 4;
 
     private bool isBuilt = false;
+    private bool isConveyor = false;
 
     private void Start() {
         root = transform.parent.GetComponent<Turret>();
@@ -22,26 +23,47 @@ public class TurretCollider : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider col) {
-        if(col.GetComponent<PlayerControl>() != null && isBuilt) {
-            canvas.SetActive(true);
+        if (isConveyor) {
+            if(col.GetComponent<OreDrop>() != null) {
+                // can be optimized
+                if(col.GetComponent<OreDrop>().Item.caption == "Bullet") {
+                    if(root.bullets + bulletsAmountPerItem <= root.maxBullets) {
+                        root.bullets += bulletsAmountPerItem;
+                        Destroy(col.gameObject);
+                    }
+                }
+            }
+        } else {
+            if (col.GetComponent<PlayerControl>() != null && isBuilt) {
+                canvas.SetActive(true);
+            }
         }
+
     }
 
     private void OnTriggerExit(Collider col) {
-        if (col.GetComponent<PlayerControl>() != null && isBuilt) {
-            canvas.SetActive(false);
+        if (isConveyor) {
+
+        } else {
+            if (col.GetComponent<PlayerControl>() != null && isBuilt) {
+                canvas.SetActive(false);
+            }
         }
     }
 
     public void LoadAmmo() {
-        if(inventory.pickedItem.GetComponent<Item>().caption == "Bullet") {
-            root.bullets += bulletsAmoundPerItem;
+        if(inventory.pickedItem.GetComponent<Item>().caption == "Bullet" && root.bullets + bulletsAmountPerItem <= root.maxBullets) {
+            root.bullets += bulletsAmountPerItem;
             bulletCount.text = root.bullets.ToString();
             Destroy(inventory.pickedItem);
         }
     }
 
-    public void Build() {
+    public void Build(bool isConveyor) {
         isBuilt = true;
+        this.isConveyor = isConveyor;
+        if (isConveyor) {
+            GetComponent<BoxCollider>().size = new Vector3(.3f, .5f, .3f);
+        }
     }
 }

@@ -37,7 +37,7 @@ public class WavesSpawn : MonoBehaviour {
     public void ChangeDifficulty(int difficulty) {
         switch (difficulty) {
             case 0:
-                nrLandEnemies = 0;
+                nrLandEnemies = 1;
                 nrAirEnemies = 0;
                 break;
             case 1:
