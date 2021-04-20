@@ -10,6 +10,14 @@ public class CrafterWindow : MonoBehaviour
     [SerializeField] private List<DisplayTile> buttonDisplayTiles = new List<DisplayTile>();
     [SerializeField] private List<DisplayTile> inputsAndOutput = new List<DisplayTile>();
 
+    public void AddButtons()
+    {
+        for (int i = 0; i < buttonsGroupController.transform.childCount; i++)
+        {
+            buttonDisplayTiles.Add(buttonsGroupController.transform.GetChild(i).GetComponent<DisplayTile>());
+        }
+    }
+
     public void NotifyButtonUpdate(List<bool> activeButtons)
     {
         if (crafter != null)
@@ -21,7 +29,14 @@ public class CrafterWindow : MonoBehaviour
                 if (activeButtons[i] == true)
                 {
                     crafter.CraftingRecipe = craftingRecipes[i];
-                    crafter.Craftable = spawnables[i];
+                    foreach (var spawnable in spawnables)
+                    {
+                        if (spawnable.GetComponent<OreDrop>().Item == craftingRecipes[i].Results[0].Item)
+                        {
+                            crafter.Craftable = spawnable;
+                            break;
+                        }
+                    }
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
                 }

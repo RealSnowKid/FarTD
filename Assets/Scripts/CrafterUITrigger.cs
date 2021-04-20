@@ -23,6 +23,7 @@ public class CrafterUITrigger : MonoBehaviour
         crafterUINotification = GameObject.Find("GUI").GetComponent<Inventory>().CrafterUINotification;
         player = GameObject.Find("GUI").GetComponent<Inventory>().player;
         inventory = GameObject.Find("GUI").GetComponent<Inventory>().inventoryMenu;
+        crafterUI.GetComponent<CrafterWindow>().AddButtons();
         crafterUI.GetComponent<CrafterWindow>().SetRecipeImages(CraftingRecipes);
     }
 
