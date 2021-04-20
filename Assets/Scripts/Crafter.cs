@@ -92,6 +92,9 @@ public class Crafter : Building
 
     private bool CountItems()
     {
+        //purge list
+        items = items.Where(item => item != null).ToList();
+
         int allHere = 0;
         foreach (var itemAmount in CraftingRecipe.Materials)
         {
@@ -119,6 +122,7 @@ public class Crafter : Building
 
     IEnumerator Crafting()
     {
+        Debug.Log("CRAFT");
         yield return new WaitForSeconds(2.5f);
         GameObject itemToSpawn = Craftable;
         crafting = false;
@@ -131,6 +135,7 @@ public class Crafter : Building
         gObject = spawnedItem;
         InvokeRepeating("PushForward", 0, 0.02f);
         StartCoroutine("CancelPushInvoke");
+        Debug.Log("END");
     }
 
     IEnumerator CancelPushInvoke()
