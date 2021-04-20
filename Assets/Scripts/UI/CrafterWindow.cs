@@ -15,11 +15,13 @@ public class CrafterWindow : MonoBehaviour
         if (crafter != null)
         {
             List<CraftingRecipe> craftingRecipes = crafter.GetComponentInParent<CrafterUITrigger>().CraftingRecipes;
+            List<GameObject> spawnables = crafter.GetComponentInParent<CrafterUITrigger>().Spawnables;
             for (int i = 0; i < activeButtons.Count; i++)
             {
                 if (activeButtons[i] == true)
                 {
                     crafter.CraftingRecipe = craftingRecipes[i];
+                    crafter.Craftable = spawnables[i];
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
                 }
