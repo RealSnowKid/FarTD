@@ -15,6 +15,9 @@ public class GunSwitcher : MonoBehaviour {
     private bool init = false;
     public bool isMining = false;
 
+    [SerializeField] private GameObject colorObject;
+    [SerializeField] private Light colorLight;
+
     private void Start() {
         build = transform.GetChild(0).GetComponent<BuildGun>();
         shoot = transform.GetChild(0).GetComponent<ShootGun>();
@@ -76,6 +79,9 @@ public class GunSwitcher : MonoBehaviour {
             mineText.color = Color.white;
             destroyText.color = Color.white;
             init = false;
+
+            colorObject.GetComponent<Renderer>().material.color = Color.white;
+            colorLight.color = Color.white;
         } else if (Input.GetKeyDown(KeyCode.Alpha2)) {
             shoot.Disable();
             build.Enable();
@@ -86,6 +92,8 @@ public class GunSwitcher : MonoBehaviour {
             buildText.color = Color.red;
             mineText.color = Color.white;
             destroyText.color = Color.white;
+            colorObject.GetComponent<Renderer>().material.color = Color.yellow;
+            colorLight.color = Color.yellow;
         } else if (Input.GetKeyDown(KeyCode.Alpha3)) {
             shoot.Disable();
             build.Disable();
@@ -96,6 +104,8 @@ public class GunSwitcher : MonoBehaviour {
             buildText.color = Color.white;
             mineText.color = Color.red;
             destroyText.color = Color.white;
+            colorObject.GetComponent<Renderer>().material.color = Color.green;
+            colorLight.color = Color.green;
         } else if (Input.GetKeyDown(KeyCode.Alpha4)) {
             shoot.Disable();
             build.Disable();
@@ -106,6 +116,8 @@ public class GunSwitcher : MonoBehaviour {
             buildText.color = Color.white;
             mineText.color = Color.white;
             destroyText.color = Color.red;
+            colorObject.GetComponent<Renderer>().material.color = Color.red;
+            colorLight.color = Color.red;
         }
     }
 
