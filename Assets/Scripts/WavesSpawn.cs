@@ -164,4 +164,9 @@ public class WavesSpawn : MonoBehaviour {
 
         wavesTimer.text = min.ToString() + ":" + (sec / 10 > 0 ? sec.ToString() : "0" + sec.ToString());
     }
+
+    public bool IsWave()
+    {
+        return isWave;
+    }
 }

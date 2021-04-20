@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8211535622788535496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGMusic/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-7484538661261706700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19,7 +39,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -3000956104514069968}
   MinDistance: 1
   MaxDistance: 20
   Length: 17000
@@ -44,6 +65,46 @@ MonoBehaviour:
   - Name: Desktop
     Value: 351904
   Exists: 1
+--- !u!114 &-3000956104514069968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGMusic/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-2640521720069209121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGMusic/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-210748563076221452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,13 +166,12 @@ MonoBehaviour:
   - {fileID: 3391321089801331783}
   EditorEvents:
   - {fileID: -7484538661261706700}
-  EditorParameters:
-  - {fileID: 4879958405932292964}
+  EditorParameters: []
   MasterBanks:
   - {fileID: 3391321089801331783}
   StringsBanks:
   - {fileID: 4963751170857945817}
-  stringsBankWriteTime: 637545363334387142
+  stringsBankWriteTime: 637545597858226002
   cacheVersion: 6
 --- !u!114 &2796521454184531489
 MonoBehaviour:
@@ -148,11 +208,11 @@ MonoBehaviour:
   Path: C:/Users/ivank/Documents/FMOD Studio/FarTDBGMusic/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637545363334367150
+  lastModified: 637545597858146036
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 351904
+    Value: 351840
   Exists: 1
 --- !u!114 &4879958405932292964
 MonoBehaviour:
@@ -189,7 +249,7 @@ MonoBehaviour:
   Path: C:/Users/ivank/Documents/FMOD Studio/FarTDBGMusic/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637545363334387142
+  lastModified: 637545597858226002
   LoadResult: 0
   FileSizes:
   - Name: Desktop
