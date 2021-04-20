@@ -56,10 +56,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CraftingRecipe: {fileID: 0}
-  Craftables:
-  - {fileID: 2940205708354531436, guid: 05564da7bd58e704798b7080b9f1d3a3, type: 3}
+  Craftable: {fileID: 0}
   SpawnLocation: {fileID: 137805644147554071}
   isBuilt: 0
+  Name: 
 --- !u!1 &4543236280529704287
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,8 +206,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 152ae8cc63e29e64b8d70163985dc5a8, type: 2}
   - {fileID: 11400000, guid: 208a615d5bb89ea46973059883f3a192, type: 2}
   - {fileID: 11400000, guid: 40ff22e1547c30b43b6a9b8619b4cd1d, type: 2}
+  - {fileID: 11400000, guid: 5f6173ea7be55bd4c8552abdef14860f, type: 2}
   Spawnables:
   - {fileID: 2940205708354531436, guid: 05564da7bd58e704798b7080b9f1d3a3, type: 3}
+  - {fileID: 6666717648006184035, guid: 66382734855cea647a9baef249eba0ce, type: 3}
 --- !u!1 &6530363134565542263
 GameObject:
   m_ObjectHideFlags: 0

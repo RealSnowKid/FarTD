@@ -75,6 +75,10 @@ public class CrafterWindow : MonoBehaviour
                     buttonsGroupController.NotifySelection(4);
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
+                case "Bullet":
+                    buttonsGroupController.NotifySelection(5);
+                    SetInputOutputImages(crafter.CraftingRecipe);
+                    break;
                 default:
                     Debug.LogError("Something went wrong with getting the recipe from the crafter");
                     break;
