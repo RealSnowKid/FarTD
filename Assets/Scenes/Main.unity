@@ -9756,6 +9756,7 @@ MonoBehaviour:
   wavesCounter: {fileID: 635180770}
   wavesTimer: {fileID: 694385602}
   scoreCounter: {fileID: 1114590459}
+  difficultyLabel: {fileID: 1112557081}
   enemiesParent: {fileID: 941744701}
   spawn: {fileID: 1308284003}
   spawnLocations: []
