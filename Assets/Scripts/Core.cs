@@ -17,7 +17,7 @@ public class Core : Damageable {
         gui = GameObject.Find("GUI");
         slider = gui.transform.GetChild(0).GetComponent<Slider>();
 
-        gameOverScreen = gui.transform.GetChild(14).gameObject;
+        gameOverScreen = gui.GetComponent<Inventory>().EndGameScreen;
     }
 
     public override void Damage(float amount) {
@@ -30,7 +30,8 @@ public class Core : Damageable {
     void Lose() {
         gameOverScreen.SetActive(true);
         Time.timeScale = 0;
-        gui.GetComponent<Inventory>().enabled = false;
+        gui.SetActive(false);
+
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

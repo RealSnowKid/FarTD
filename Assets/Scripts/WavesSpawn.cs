@@ -8,6 +8,7 @@ public class WavesSpawn : MonoBehaviour {
     [SerializeField] private Text wavesTimer;
 
     [SerializeField] private Text scoreCounter;
+    [SerializeField] private Text difficultyLabel;
 
     [SerializeField] private Transform enemiesParent;
     [SerializeField] private Transform spawn;
@@ -39,14 +40,20 @@ public class WavesSpawn : MonoBehaviour {
             case 0:
                 nrLandEnemies = 0;
                 nrAirEnemies = 0;
+                difficultyLabel.text = "Easy";
+                difficultyLabel.color = new Color(0, 1, 0.1951792f);
                 break;
             case 1:
                 nrLandEnemies = 1;
                 nrAirEnemies = 0;
+                difficultyLabel.text = "Medium";
+                difficultyLabel.color = new Color(0, 0.8145137f, 1);
                 break;
             case 2:
                 nrLandEnemies = 1;
                 nrAirEnemies = 1;
+                difficultyLabel.text = "Hard";
+                difficultyLabel.color = new Color(1, 0, 0.01010323f);
                 break;
         }
 
@@ -97,7 +104,7 @@ public class WavesSpawn : MonoBehaviour {
         waveCount++;
         wavesCounter.text = waveCount.ToString();
 
-        scoreCounter.text = "Score: " + waveCount.ToString();
+        scoreCounter.text = "Wave: " + waveCount.ToString();
 
         for (int i=0; i<nrLandEnemies; i++) {
             GameObject enemy = Instantiate(landEnemy, spawn.position, Quaternion.identity, enemiesParent);
