@@ -94,7 +94,7 @@ public class WavesSpawn : MonoBehaviour {
     private void SpawnNextWave() {
         // randomize spawn location if not on easy
         if (difficulty != 0 || (firstPassOnEasy && difficulty == 0)) {
-            int rnd = Random.Range(0, 3);
+            int rnd = Random.Range(0, 4);
             spawn.transform.position = spawnLocations[rnd].transform.position;
 
             if(difficulty == 0)
