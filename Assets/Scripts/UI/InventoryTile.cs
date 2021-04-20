@@ -25,9 +25,6 @@ public class InventoryTile : MonoBehaviour {
     public void OnClick() {
         // if its the output box you should be able to put anything there
         if (isOutputTile) return;
-        if (isInputTile || isFuelTile) {
-
-        }
 
         // if slot is empty
         if(item == null) {
@@ -57,6 +54,7 @@ public class InventoryTile : MonoBehaviour {
 
                         item.GetComponent<Item>().PutDown(gameObject);
 
+                        inventory.items.Remove(item.GetComponent<Item>());
                     }
                 }
             }
@@ -64,13 +62,16 @@ public class InventoryTile : MonoBehaviour {
     }
 
     public void PickUp() {
-        if (isInputTile)
+        if (isInputTile) {
+            inventory.items.Add(item.GetComponent<Item>());
             player.GetComponent<ClosestSmelter>().smelter.GetComponent<Smelter>().input = null;
-        else if(isFuelTile)
+        } else if (isFuelTile) {
+            inventory.items.Add(item.GetComponent<Item>());
             player.GetComponent<ClosestSmelter>().smelter.GetComponent<Smelter>().fuel = null;
-        else if (isOutputTile)
+        } else if (isOutputTile) {
+            inventory.items.Add(item.GetComponent<Item>());
             player.GetComponent<ClosestSmelter>().smelter.GetComponent<Smelter>().output = null;
-
+        }
         item = null;
     }
 }

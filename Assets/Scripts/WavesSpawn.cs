@@ -38,7 +38,7 @@ public class WavesSpawn : MonoBehaviour {
     public void ChangeDifficulty(int difficulty) {
         switch (difficulty) {
             case 0:
-                nrLandEnemies = 0;
+                nrLandEnemies = 1;
                 nrAirEnemies = 0;
                 difficultyLabel.text = "Easy";
                 difficultyLabel.color = new Color(0, 1, 0.1951792f);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Turret : Building {
     public Transform body;
@@ -10,6 +11,7 @@ public class Turret : Building {
     public float radius;
     public float damage;
     public float shootDelay;
+    public int maxBullets = 12;
     [SerializeField] private GameObject bulletPrefab;
 
     public Transform target = null;
@@ -17,6 +19,16 @@ public class Turret : Building {
     private bool isShooting = false;
 
     public bool isAir = false;
+    public bool isConveyor = false;
+
+    public int bullets = 0;
+
+
+    [SerializeField] private Text bulletLabel;
+
+    public void Build() {
+        transform.GetChild(1).GetComponent<TurretCollider>().Build(isConveyor);
+    }
 
     private void Start() {
         GetComponent<SphereCollider>().radius = radius;
@@ -53,10 +65,18 @@ public class Turret : Building {
     }
 
     void Shoot() {
-        GameObject bullet = Instantiate(bulletPrefab, spawnLocation.position, Quaternion.identity);
-        bullet.GetComponent<Bullet>().damage = damage;
+        if(bullets <= 0) {
+            Debug.LogWarning("turret out of ammo");
+        } else {
+            GameObject bullet = Instantiate(bulletPrefab, spawnLocation.position, Quaternion.identity);
+            bullet.GetComponent<Bullet>().damage = damage;
 
-        bullet.GetComponent<Rigidbody>().AddForce((isAir ? gun.transform.forward : -body.transform.right) * 250f);
+            bullet.GetComponent<Rigidbody>().AddForce((isAir ? gun.transform.forward : -body.transform.right) * 250f);
+            Destroy(bullet, 5);
+            bullets--;
+
+            bulletLabel.text = bullets.ToString();
+        }
     }
 
     private void AimAt(Vector3 pos, bool isAir) {

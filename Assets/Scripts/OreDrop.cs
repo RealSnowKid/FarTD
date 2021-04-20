@@ -6,10 +6,25 @@ public class OreDrop : MonoBehaviour {
     public Ore ore;
     public Item Item;
 
-    private void OnCollisionEnter(Collision collision) {
-        // if we hit a tile, initiate self destruction
-        if(collision.collider.gameObject.GetComponent<Tile>() != null) {
-            Destroy(gameObject, 5f);
+    private Vector3 lastPosition = new Vector3();
+
+    private void Start()
+    {
+        InvokeRepeating("CheckIfMoved", 0, 2);
+    }
+
+    void CheckIfMoved()
+    {
+        lastPosition = this.transform.position;
+        StartCoroutine("DidItMove");
+    }
+
+    IEnumerator DidItMove()
+    {
+        yield return new WaitForSeconds(1f);
+        if (this.transform.position == lastPosition)
+        {
+            Destroy(gameObject);
         }
     }
 }
