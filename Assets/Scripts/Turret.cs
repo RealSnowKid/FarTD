@@ -23,7 +23,6 @@ public class Turret : Building {
 
     public int bullets = 0;
 
-
     [SerializeField] private Text bulletLabel;
 
     public void Build() {
@@ -33,6 +32,8 @@ public class Turret : Building {
     private void Start() {
         GetComponent<SphereCollider>().radius = radius;
     }
+
+    public bool visible = false;
 
     private void OnTriggerEnter(Collider other) {
         if(other.GetComponent<Enemy>() != null && target == null) {

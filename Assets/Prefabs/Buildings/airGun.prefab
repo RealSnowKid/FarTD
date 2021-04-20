@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3152391262196998817}
   - component: {fileID: 5709368174771511393}
   - component: {fileID: 1449491758631262410}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 8581119096289192724}
   - component: {fileID: 2335885182261430233}
   - component: {fileID: 4125751387097710127}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 6979172949658505153}
   - component: {fileID: 7208441761751883472}
   - component: {fileID: 1813428633067295832}
-  m_Layer: 5
+  m_Layer: 14
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 6427435974182382713}
   - component: {fileID: 7590344708633048258}
   - component: {fileID: 6853446501206223926}
-  m_Layer: 5
+  m_Layer: 14
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 6686713190462309963}
   - component: {fileID: 8672892392586941781}
   - component: {fileID: 1750833992613295585}
-  m_Layer: 5
+  m_Layer: 14
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 3028380308847684161}
   - component: {fileID: 4342648450536048693}
   - component: {fileID: 1571714385708172975}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rotating
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 6355724134526232540}
   - component: {fileID: 686505649865084043}
   - component: {fileID: 1889628917569203339}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,7 +611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4740813287646020775}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: spawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 4505714937267855888}
   - component: {fileID: 8999408433828186185}
   - component: {fileID: 2657183331987166599}
-  m_Layer: 5
+  m_Layer: 14
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 4076556933634032673}
   - component: {fileID: 4930160450404907243}
   - component: {fileID: 5646945410951434644}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: airGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
