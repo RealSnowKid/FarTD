@@ -35,16 +35,26 @@ public class CrafterUITrigger : MonoBehaviour
         }
     }
 
+    bool b_lock = false;
+
+
     private void OnTriggerStay(Collider collider)
     {
         if (collider.GetComponent<PlayerControl>() != null && crafter.GetComponent<Crafter>().isBuilt == true)
         {
-            if (Input.GetKeyDown("e"))
+            if (Input.GetKeyDown("e") && !b_lock)
             {
+                b_lock = true;
                 menuOpen = !menuOpen;
                 HandleUIWindow();
+                StartCoroutine("Unlock");
             }
         }
+    }
+
+    IEnumerator Unlock() {
+        yield return new WaitForSeconds(0.05f);
+        b_lock = false;
     }
 
     private void OnTriggerExit(Collider collider)

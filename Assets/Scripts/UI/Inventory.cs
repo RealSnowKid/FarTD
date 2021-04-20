@@ -22,12 +22,14 @@ public class Inventory : MonoBehaviour {
     [SerializeField] private GunSwitcher gunSwitcher;
 
     private void Start() {
-        foreach(GameObject item in testItems) {
+        foreach (GameObject item in testItems) {
             AddItem(item);
         }
 
         // temp
-        gunSwitcher = GameObject.Find("Player(Clone)").GetComponent<GunSwitcher>();
+        do {
+            gunSwitcher = GameObject.Find("Player(Clone)").GetComponent<GunSwitcher>();
+        } while (gunSwitcher == null);
     }
 
     [SerializeField] GameObject smelteryGUI;

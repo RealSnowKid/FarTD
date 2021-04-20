@@ -35,6 +35,7 @@ public class ConveyorMovement : Building {
 
     private void PushForward()
     {
-        go.transform.Translate(transform.forward * speed * Time.fixedDeltaTime, Space.World);
+        if(go != null)
+            go.transform.Translate(transform.forward * speed * Time.fixedDeltaTime, Space.World);
     }
 }
