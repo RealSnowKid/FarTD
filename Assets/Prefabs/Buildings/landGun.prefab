@@ -155,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419588813814034077}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.338, y: 0.72, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 68.40617, y: 7.6032624, z: 68.40617}
   m_Children:
   - {fileID: 2578733749418248934}
@@ -277,6 +277,7 @@ MonoBehaviour:
   radius: 40
   damage: 20
   shootDelay: 2
+  maxBullets: 12
   bulletPrefab: {fileID: 8962286388536208361, guid: ffbbbb2e8a4386a4193bf2936e06ca5c,
     type: 3}
   target: {fileID: 0}
@@ -655,4 +656,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 6716054379455654283}
   bulletCount: {fileID: 4745631117425761870}
-  bulletsAmoundPerItem: 4
+  bulletsAmountPerItem: 4
