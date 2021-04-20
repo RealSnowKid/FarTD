@@ -9574,6 +9574,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrafterPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 4343927206241685066, guid: 2690c0dfc34659f4da50a119e511ffd0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4343927206241685067, guid: 2690c0dfc34659f4da50a119e511ffd0,
         type: 3}
       propertyPath: m_Pivot.x
