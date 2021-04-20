@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 2078633609329974899}
   - component: {fileID: 4072388953715260043}
   m_Layer: 0
-  m_Name: GUICollider
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
