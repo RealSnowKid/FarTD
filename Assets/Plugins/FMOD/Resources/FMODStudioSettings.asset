@@ -519,8 +519,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:/Users/ivank/Documents/FMOD Studio/FarTDBGMusic/FarTDBGMusic.fspro
-  sourceBankPath: C:\Users\ivank\Documents\FMOD Studio\FarTDBGMusic\Build
+  sourceProjectPath: Assets/Music/FarTDBGMusic/FarTDBGMusic.fspro
+  sourceBankPath: Assets\Music\FarTDBGMusic\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 0
   BankLoadType: 0
@@ -539,7 +539,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
