@@ -775,6 +775,7 @@ MonoBehaviour:
   isConveyor: 0
   bullets: 0
   bulletLabel: {fileID: 0}
+  visible: 0
 --- !u!65 &4076556933634032673
 BoxCollider:
   m_ObjectHideFlags: 0

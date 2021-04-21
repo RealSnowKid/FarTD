@@ -91,8 +91,10 @@ MonoBehaviour:
   inventory: {fileID: 0}
   label: {fileID: 0}
   isPlaceable: 1
-  building: {fileID: 4543236280529704287, guid: 261e9ef7013054b4aa3e6a0f25009b3b,
+  building: {fileID: 7815025340179327397, guid: 261e9ef7013054b4aa3e6a0f25009b3b,
     type: 3}
+  isOre: 0
+  isBurnable: 0
 --- !u!114 &2226329822556123116
 MonoBehaviour:
   m_ObjectHideFlags: 0
