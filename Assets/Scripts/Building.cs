@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class Building : Damageable {
+    public float health = 100f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public override void Damage(float amount) {
+        health -= amount;
+        if (health <= 0) {
+            if(gameObject.GetComponent<Crafter>() != null)
+                Destroy(transform.parent.gameObject);
+            else
+                Destroy(gameObject);
+        }
     }
 }
