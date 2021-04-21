@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -51,11 +52,20 @@ public class Enemy : MonoBehaviour {
 
     private void OnTriggerEnter(Collider col) {
         if(col.GetComponent<Damageable>() != null && !isAttacking) {
+
+            if(col.GetComponent<ConveyorMovement>() != null && col.GetComponent<ConveyorMovement>().subPart) {
+                return;
+            }
+            
+            if (col.GetComponent<Smelter>() != null && col.GetComponent<Smelter>().isConveyor) {
+                target = col.transform.parent.gameObject;
+            } else {
+                target = col.gameObject;
+            }
+
             isAttacking = true;
             GetComponent<NavMeshAgent>().enabled = false;
             animator.SetBool("isAttacking", true);
-
-            target = col.gameObject;
 
             if (isGround) {
                 transform.LookAt(target.transform);
@@ -85,7 +95,11 @@ public class Enemy : MonoBehaviour {
     }
 
     void DealDamage() {
-        target.GetComponent<Damageable>().Damage(damage);
+        try {
+            target.GetComponent<Damageable>().Damage(damage);
+        } catch (SystemException) {
+            StopAttacking();
+        }
     }
 
     private void Update() {

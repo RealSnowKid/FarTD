@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d079aa2f30dc1f40ae641bceba894df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 35
   ironiumPrefab: {fileID: 7527981381151938387, guid: a126ba3bc9b9bb34d806a91a19d00cb7,
     type: 3}
   zoniumPrefab: {fileID: 7867557697869473556, guid: a6127aad09c3d3247be87b33cde08885,
