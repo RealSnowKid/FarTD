@@ -16,6 +16,9 @@ public class BackgroundMusic : MonoBehaviour
         music.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject, gameObject.GetComponent<Rigidbody>()));
         RuntimeManager.AttachInstanceToGameObject(music, transform, gameObject.GetComponent<Rigidbody>());
         music.start();
+        float volume;
+        music.getVolume(out volume);
+        Debug.Log(volume);
         music.release();
         wavesSpawn = GameObject.Find("WavesSystem").GetComponent<WavesSpawn>();
     }

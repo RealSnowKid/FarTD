@@ -24,7 +24,7 @@ public class ShootGun : MonoBehaviour {
     public void Update() {
         if(Input.GetButtonDown("Fire1") && gunEnabled) {
             GameObject bullet = Instantiate(bulletPrefab, spawnLocation.position, Quaternion.identity);
-            AudioSource.PlayClipAtPoint(fireSound, spawnLocation.position, 0.04f);
+            AudioSource.PlayClipAtPoint(fireSound, spawnLocation.position, 0.2f);
 
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
             bullet.GetComponent<Bullet>().SetDamage(damage);

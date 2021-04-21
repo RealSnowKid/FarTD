@@ -191,4 +191,9 @@ public class WavesSpawn : MonoBehaviour {
     {
         return isWave;
     }
+
+    public void PauseUnpause(bool pauseUnapause)
+    {
+        pause = pauseUnapause;
+    }
 }
