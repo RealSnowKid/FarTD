@@ -1573,6 +1573,7 @@ MonoBehaviour:
   maxBullets: 12
   bulletPrefab: {fileID: 8962286388536208361, guid: ffbbbb2e8a4386a4193bf2936e06ca5c,
     type: 3}
+  gunFireSound: {fileID: 8300000, guid: ac87da9553133ce4eb680b1e8813fd78, type: 3}
   target: {fileID: 0}
   isAir: 0
   isConveyor: 1

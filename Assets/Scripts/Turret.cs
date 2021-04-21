@@ -13,6 +13,7 @@ public class Turret : Building {
     public float shootDelay;
     public int maxBullets = 12;
     [SerializeField] private GameObject bulletPrefab;
+    public AudioClip gunFireSound;
 
     public Transform target = null;
 
@@ -76,6 +77,7 @@ public class Turret : Building {
             bullet.GetComponent<Bullet>().damage = damage;
 
             bullet.GetComponent<Rigidbody>().AddForce((isAir ? gun.transform.forward : -body.transform.right) * 250f);
+            AudioSource.PlayClipAtPoint(gunFireSound, transform.position);
             Destroy(bullet, 5);
             bullets--;
 
