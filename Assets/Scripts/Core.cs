@@ -20,6 +20,15 @@ public class Core : Damageable {
         gameOverScreen = gui.GetComponent<Inventory>().EndGameScreen;
     }
 
+    private void Update()
+    {
+        // Debuggin destroy core
+        if (Input.GetKeyDown(KeyCode.Slash))
+        {
+            Damage(100);
+        }
+    }
+
     public override void Damage(float amount) {
         health -= amount;
         slider.value = health;
