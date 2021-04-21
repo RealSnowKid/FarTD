@@ -72,3 +72,8 @@ crashlytics-build.properties
 
 # VS files
 .vsconfig
+
+# FMOD files
+/[Aa]ssets/Music/FarTDBGMusic/Metadata/*
+/fmod_editor.log
+/[Aa]ssets/Plugins/FMOD/Cache/*
