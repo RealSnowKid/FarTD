@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Turret : Building {
+public class Turret : MonoBehaviour {
     public Transform body;
     public Transform gun;
     public Transform spawnLocation;
 
+    public float health;
     public float radius;
     public float damage;
     public float shootDelay;
@@ -89,7 +90,7 @@ public class Turret : Building {
 
         float angle = Vector2.SignedAngle(new Vector2(pos.x, pos.z) - playerPos, playerFwd) + 90f;
 
-        body.transform.rotation = Quaternion.Euler(new Vector3(-90f, angle, 0f));
+        body.transform.rotation = Quaternion.Euler(new Vector3(0f, angle, 0f));
 
         if (isAir) {
             float diff = pos.y - gun.transform.position.y;

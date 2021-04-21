@@ -147,6 +147,7 @@ public class MapGeneration : MonoBehaviour {
 
                         ws.SetCore(core);
                         ws.SetCompass(compass);
+                        continue;
                     }
 
                     // generate enemy spawnpoints

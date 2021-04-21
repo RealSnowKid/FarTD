@@ -224,6 +224,7 @@ MonoBehaviour:
   body: {fileID: 7372571457282479620}
   gun: {fileID: 0}
   spawnLocation: {fileID: 5576644131112360027}
+  health: 30
   radius: 40
   damage: 20
   shootDelay: 2
@@ -1166,7 +1167,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.70238113, y: 0.8714809, z: 0.6814351}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4072388953715260043
 MonoBehaviour:
@@ -1180,6 +1181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5e6717df0723d4a86f761e5ea2c875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   canvas: {fileID: 6716054379455654283}
   bulletCount: {fileID: 4745631117425761870}
   bulletsAmountPerItem: 4

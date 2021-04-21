@@ -21,7 +21,11 @@ public class DestroyGun : MonoBehaviour {
             // if he look at a building
             if (Physics.Raycast(transform.position, transform.forward, out hitInfo, distance)) {
                 if(hitInfo.transform.GetComponent<Building>() != null) {
-                    building = hitInfo.transform.gameObject;
+                    if(hitInfo.transform.GetComponent<TurretCollider>() != null) {
+                        building = hitInfo.transform.parent.gameObject;
+                    } else {
+                        building = hitInfo.transform.gameObject;
+                    }
                 } 
                 else if (hitInfo.transform.childCount > 0 && hitInfo.transform.GetChild(0).GetComponent<Building>() != null) {
                     building = hitInfo.transform.gameObject;

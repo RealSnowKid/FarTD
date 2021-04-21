@@ -6,6 +6,8 @@ public class ConveyorMovement : Building {
     private float speed = 2f;
     GameObject go;
 
+    public bool subPart = false;
+
     private void OnTriggerStay(Collider collider)
     {
         if (collider.gameObject.GetComponent<OreDrop>() != null)

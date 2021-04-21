@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TurretCollider : MonoBehaviour {
+public class TurretCollider : Building {
     private Turret root;
     [SerializeField] private GameObject canvas;
 
@@ -63,8 +63,18 @@ public class TurretCollider : MonoBehaviour {
     public void Build(bool isConveyor) {
         isBuilt = true;
         this.isConveyor = isConveyor;
+        /*
         if (isConveyor) {
             GetComponent<BoxCollider>().size = new Vector3(.3f, .5f, .3f);
+        }
+        */
+    }
+
+    public override void Damage(float amount) {
+        Debug.Log(root.health);
+        root.health -= amount;
+        if(root.health <= 0) {
+            Destroy(transform.parent.gameObject);
         }
     }
 }

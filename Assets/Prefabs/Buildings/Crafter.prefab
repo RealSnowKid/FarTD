@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2890bde3dafad8645ade3c0a7b19ea59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 50
   CraftingRecipe: {fileID: 0}
   Craftable: {fileID: 0}
   SpawnLocation: {fileID: 137805644147554071}
