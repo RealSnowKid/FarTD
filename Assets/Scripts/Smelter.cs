@@ -24,6 +24,7 @@ public class Smelter : Building {
     public bool isConveyor = false;
     [SerializeField] private Transform spawnTransform;
     private bool hasFuel = false;
+    [SerializeField] private AudioSource smeltingSound;
 
     public void Start() {
         // temporary solution again lol
@@ -138,8 +139,10 @@ public class Smelter : Building {
 
         Destroy(input);
         Destroy(fuel);
+        smeltingSound.Play(0);
+        smeltingSound.loop = true;
 
-        while(count < time) {
+        while (count < time) {
             yield return new WaitForSeconds(.2f);
             count += .2f;
         }
@@ -161,6 +164,7 @@ public class Smelter : Building {
             output = ingot;
         } else
             Debug.LogError("ingot not found tf?");
+        smeltingSound.Stop();
         CR_running = false;
     }
 
@@ -168,10 +172,13 @@ public class Smelter : Building {
 
     private IEnumerator SmeltAuto(GameObject obj) {
         ACR_running = true;
+        smeltingSound.Play(0);
+        smeltingSound.loop = true;
         yield return new WaitForSeconds(time);
         Instantiate(obj, spawnTransform.position, Quaternion.identity);
         input = null;
         hasFuel = false;
+        smeltingSound.Stop();
         ACR_running = false;
     }
 }

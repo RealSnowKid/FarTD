@@ -46,6 +46,10 @@ public class BuildGun : MonoBehaviour {
         instance.transform.parent = buildParent.transform;
         tile.GetComponent<Tile>().building = instance;
         instance.GetComponent<Collider>().enabled = true;
+        if (instance.GetComponent<Miner>() != null)
+        {
+            instance.GetComponent<Miner>().Build();
+        }
         instance = null;
 
         Destroy(gunTile.GetComponent<InventoryTile>().item);
