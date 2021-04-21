@@ -57,6 +57,12 @@ public class TurretCollider : Building {
                 root.damage = 15;
             } else if (inventory.pickedItem.GetComponent<Item>().caption == "Zonium Bullet") {
                 root.damage = 20;
+            } else if (inventory.pickedItem.GetComponent<Item>().caption == "Ventium Bullet") {
+                root.damage = 30;
+            } else if (inventory.pickedItem.GetComponent<Item>().caption == "Memium Bullet") {
+                root.damage = 50;
+            } else if (inventory.pickedItem.GetComponent<Item>().caption == "Unobtanium Bullet") {
+                root.damage = 100;
             }
 
             root.bullets += bulletsAmountPerItem;
