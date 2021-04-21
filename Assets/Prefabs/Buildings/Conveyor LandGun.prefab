@@ -373,7 +373,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.54451346, y: 1, z: 0.53308785}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6112266328780085588
 MonoBehaviour:
@@ -387,6 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5e6717df0723d4a86f761e5ea2c875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   canvas: {fileID: 3558721275708934740}
   bulletCount: {fileID: 3282270500714937745}
   bulletsAmountPerItem: 4
@@ -1567,6 +1568,7 @@ MonoBehaviour:
   body: {fileID: 3633568025050307934}
   gun: {fileID: 0}
   spawnLocation: {fileID: 6915962460817841353}
+  health: 55
   radius: 40
   damage: 20
   shootDelay: 2
@@ -1747,6 +1749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137810784434186147, guid: 53655e7c46083f34189adfa01a4c2574,
+        type: 3}
+      propertyPath: subPart
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7089236653921845765, guid: 53655e7c46083f34189adfa01a4c2574,
         type: 3}

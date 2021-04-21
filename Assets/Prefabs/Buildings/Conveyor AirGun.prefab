@@ -348,7 +348,6 @@ GameObject:
   - component: {fileID: 72038137351295984}
   - component: {fileID: 8212685942868253190}
   - component: {fileID: 5436855602980800656}
-  - component: {fileID: 4977513950925704606}
   m_Layer: 14
   m_Name: Supports
   m_TagString: Untagged
@@ -417,19 +416,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4977513950925704606
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463885543378074520}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3054817218837065223
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +427,6 @@ GameObject:
   - component: {fileID: 1637320600252925853}
   - component: {fileID: 3803422661129543626}
   - component: {fileID: 1609609073644829204}
-  - component: {fileID: 5954049004042252244}
   m_Layer: 14
   m_Name: Supports
   m_TagString: Untagged
@@ -510,19 +495,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5954049004042252244
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3054817218837065223}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3064077893956850780
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +538,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.5, z: 0.3}
+  m_Size: {x: 0.8011486, y: 0.71202534, z: 0.7818602}
   m_Center: {x: 0, y: 0, z: 1.4210855e-14}
 --- !u!114 &1261599746097388337
 MonoBehaviour:
@@ -580,6 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5e6717df0723d4a86f761e5ea2c875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   canvas: {fileID: 1393938640414149601}
   bulletCount: {fileID: 874737806826287257}
   bulletsAmountPerItem: 4
@@ -673,7 +646,6 @@ GameObject:
   - component: {fileID: 3054876077641782752}
   - component: {fileID: 2404513670181364617}
   - component: {fileID: 184748482505477155}
-  - component: {fileID: 5575516019748692745}
   m_Layer: 14
   m_Name: Supports
   m_TagString: Untagged
@@ -742,19 +714,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5575516019748692745
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4489523616315936572}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5018422148456070259
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +883,6 @@ GameObject:
   - component: {fileID: 7837800066208071073}
   - component: {fileID: 7875375953128814375}
   - component: {fileID: 7623045218109962193}
-  - component: {fileID: 502885508010186755}
   m_Layer: 14
   m_Name: Supports
   m_TagString: Untagged
@@ -993,19 +951,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &502885508010186755
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5805257037918937688}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5926364154255271999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1010,7 @@ MonoBehaviour:
   body: {fileID: 199689553956851551}
   gun: {fileID: 1302616014066291750}
   spawnLocation: {fileID: 3222065184611605539}
+  health: 55
   radius: 50
   damage: 10
   shootDelay: 1
@@ -1090,7 +1036,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.8227463, y: 8.323876, z: 7.722427}
+  m_Size: {x: 10.262808, y: 9.427164, z: 10.2007475}
   m_Center: {x: 0, y: 3.6393108, z: 0}
 --- !u!135 &7829777886939930101
 SphereCollider:
@@ -1877,6 +1823,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137810784434186147, guid: 53655e7c46083f34189adfa01a4c2574,
+        type: 3}
+      propertyPath: subPart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898278959444792599, guid: 53655e7c46083f34189adfa01a4c2574,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7089236653921845765, guid: 53655e7c46083f34189adfa01a4c2574,
         type: 3}
