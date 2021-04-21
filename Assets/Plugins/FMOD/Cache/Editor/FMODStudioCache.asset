@@ -20,7 +20,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 800064277403815512}
+  - {fileID: 151807618806844920}
   MinDistance: 1
   MaxDistance: 20
   Length: 17000
@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: Assets/Music/FarTDBGMusic/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637545597858146036
+  lastModified: 637546134679192814
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -214,8 +214,28 @@ MonoBehaviour:
   - {fileID: -8403464155911114444}
   StringsBanks:
   - {fileID: 501037626198924308}
-  stringsBankWriteTime: 637545597858226002
+  stringsBankWriteTime: 637546134679202837
   cacheVersion: 6
+--- !u!114 &151807618806844920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGMusic/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &501037626198924308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +251,7 @@ MonoBehaviour:
   Path: Assets/Music/FarTDBGMusic/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637545597858226002
+  lastModified: 637546134679202837
   LoadResult: 0
   FileSizes:
   - Name: Desktop
