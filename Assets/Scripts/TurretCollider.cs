@@ -52,7 +52,13 @@ public class TurretCollider : Building {
     }
 
     public void LoadAmmo() {
-        if(inventory.pickedItem.GetComponent<Item>().caption == "Bullet" && root.bullets + bulletsAmountPerItem <= root.maxBullets) {
+        if(root.bullets + bulletsAmountPerItem <= root.maxBullets) {
+            if (inventory.pickedItem.GetComponent<Item>().caption == "Bullet") {
+                root.damage = 15;
+            } else if (inventory.pickedItem.GetComponent<Item>().caption == "Zonium Bullet") {
+                root.damage = 20;
+            }
+
             root.bullets += bulletsAmountPerItem;
             bulletCount.text = root.bullets.ToString();
             Destroy(inventory.pickedItem);

@@ -25,7 +25,7 @@ public class WavesSpawn : MonoBehaviour {
     private int nrLandEnemies = 1;
     private int nrAirEnemies = 0;
 
-    private float waveDelay = 20f;
+    private float waveDelay = 40f;
 
     private float timer;
 
@@ -39,18 +39,24 @@ public class WavesSpawn : MonoBehaviour {
     public void ChangeDifficulty(int difficulty) {
         switch (difficulty) {
             case 0:
+                waveDelay = 59;
+
                 nrLandEnemies = 1;
                 nrAirEnemies = 0;
                 difficultyLabel.text = "Easy";
                 difficultyLabel.color = new Color(0, 1, 0.1951792f);
                 break;
             case 1:
+                waveDelay = 40;
+
                 nrLandEnemies = 1;
                 nrAirEnemies = 0;
                 difficultyLabel.text = "Medium";
                 difficultyLabel.color = new Color(0, 0.8145137f, 1);
                 break;
             case 2:
+                waveDelay = 20;
+
                 nrLandEnemies = 1;
                 nrAirEnemies = 1;
                 difficultyLabel.text = "Hard";

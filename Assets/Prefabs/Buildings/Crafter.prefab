@@ -111,6 +111,7 @@ MonoBehaviour:
   health: 50
   CraftingRecipe: {fileID: 0}
   Craftable: {fileID: 0}
+  items: []
   SpawnLocation: {fileID: 137805644147554071}
   isBuilt: 0
   crafterSound: {fileID: 2155514395584061417}
@@ -323,13 +324,14 @@ MonoBehaviour:
   CraftingRecipes:
   - {fileID: 11400000, guid: 9e08d585a1c93a14f9b00018302b00ed, type: 2}
   - {fileID: 11400000, guid: 1608ec71bb8661f4aafb2305faffb28b, type: 2}
-  - {fileID: 11400000, guid: 152ae8cc63e29e64b8d70163985dc5a8, type: 2}
+  - {fileID: 11400000, guid: cdf7071ba831030499f1ad38176dcd0d, type: 2}
   - {fileID: 11400000, guid: 208a615d5bb89ea46973059883f3a192, type: 2}
   - {fileID: 11400000, guid: 40ff22e1547c30b43b6a9b8619b4cd1d, type: 2}
   - {fileID: 11400000, guid: 5f6173ea7be55bd4c8552abdef14860f, type: 2}
   Spawnables:
   - {fileID: 2940205708354531436, guid: 05564da7bd58e704798b7080b9f1d3a3, type: 3}
   - {fileID: 6666717648006184035, guid: 66382734855cea647a9baef249eba0ce, type: 3}
+  - {fileID: 3470493605411636599, guid: edc25e28e0df51a4384475de9ff220da, type: 3}
 --- !u!95 &7249768174110452234
 Animator:
   serializedVersion: 3
