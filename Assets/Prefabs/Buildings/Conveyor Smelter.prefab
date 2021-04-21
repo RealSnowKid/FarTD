@@ -712,13 +712,29 @@ MonoBehaviour:
   time: 5
   gui: {fileID: 0}
   itemsParent: {fileID: 0}
-  ironiumSmelt: {fileID: 6928088763016814803, guid: 66e6af16dd729f24e81737b185e7a043,
+  ironiumItem: {fileID: 6928088763016814803, guid: 66e6af16dd729f24e81737b185e7a043,
     type: 3}
-  zoniumSmelt: {fileID: 3497301601034223655, guid: 20dd4dd06b7a4244c854f9dfc6147fe0,
+  zoniumItem: {fileID: 3497301601034223655, guid: 20dd4dd06b7a4244c854f9dfc6147fe0,
     type: 3}
-  ironiumSmeltBlock: {fileID: 8629002236938723915, guid: 9974e3a94fe260c49a8de18a5fcd4cd6,
+  ironiumSmelt: {fileID: 5683055104586402211, guid: fb8211cb846c6d64787ed946491ee1f2,
     type: 3}
-  zoniumSmeltBlock: {fileID: 2682878490316504850, guid: 18cecb3e5636f6a408c52c20b8ed7299,
+  zoniumSmelt: {fileID: 3572319803545677665, guid: 9212833796c12d94ba970b8e59f5273b,
+    type: 3}
+  ventiumSmelt: {fileID: 5433521508868718583, guid: 69eddc23a660dc648a0f95059eec8720,
+    type: 3}
+  memiumSmelt: {fileID: 6130762974036931201, guid: bf66c346af504754f829745f61849cb7,
+    type: 3}
+  unobtaniumSmelt: {fileID: 1624551427951017467, guid: 246fb2f07a8e9454594cf4502cb5c60c,
+    type: 3}
+  ironiumSmeltBlock: {fileID: 8654669060546944457, guid: bac248861fd296d4390641c1d4146aa0,
+    type: 3}
+  zoniumSmeltBlock: {fileID: 8654669060546944457, guid: 36751c1e17aee7c418223485d37d3cfc,
+    type: 3}
+  ventiumSmeltBlock: {fileID: 8654669060546944457, guid: e8c9d39c5c4e8054496911aee1952b11,
+    type: 3}
+  memiumSmeltBlock: {fileID: 8654669060546944457, guid: b3f7ffac5b36b3046914f1a9dcc414c2,
+    type: 3}
+  unobtaniumSmeltBlock: {fileID: 8654669060546944457, guid: de776deaafc6f65438cf275c61ad1bee,
     type: 3}
   isConveyor: 1
   spawnTransform: {fileID: 7242286524700214180}
@@ -1195,7 +1211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4866908762576374581}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.966, z: -0.358}
+  m_LocalPosition: {x: -0, y: 1.211, z: -0.358}
   m_LocalScale: {x: 0.062569804, y: 0.0625698, z: 0.062569804}
   m_Children: []
   m_Father: {fileID: 9212672596596736760}

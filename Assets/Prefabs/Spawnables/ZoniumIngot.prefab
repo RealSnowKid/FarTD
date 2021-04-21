@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2682878490316504850
+--- !u!1 &3572319803545677665
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7101902894733749750}
-  - component: {fileID: 6618035089731727070}
-  - component: {fileID: 3470722767772398553}
-  - component: {fileID: 1333654750723615294}
-  - component: {fileID: 3297481065356610396}
-  - component: {fileID: 4791175384692488508}
+  - component: {fileID: 4240347147462948315}
+  - component: {fileID: 970357318037387902}
+  - component: {fileID: 3067955883335044788}
+  - component: {fileID: 8979614152542702726}
+  - component: {fileID: 7478182215331926209}
+  - component: {fileID: 2122787933899543476}
   m_Layer: 0
-  m_Name: ZoniumSmelt
+  m_Name: ZoniumIngot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7101902894733749750
+--- !u!4 &4240347147462948315
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682878490316504850}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 389.412, y: 248.141, z: -63.531}
-  m_LocalScale: {x: 0.21163987, y: 0.21163987, z: 0.21163987}
+  m_GameObject: {fileID: 3572319803545677665}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -2.429, y: 0.9742, z: -0.119}
+  m_LocalScale: {x: 8.149305, y: 15.405585, z: 8.149305}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6618035089731727070
+--- !u!33 &970357318037387902
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682878490316504850}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3470722767772398553
+  m_GameObject: {fileID: 3572319803545677665}
+  m_Mesh: {fileID: -5495902117074765545, guid: ff0afc4d70d0bee4ab3201e9765c94b7, type: 3}
+--- !u!23 &3067955883335044788
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682878490316504850}
+  m_GameObject: {fileID: 3572319803545677665}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -82,26 +82,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1333654750723615294
-SphereCollider:
+--- !u!65 &8979614152542702726
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682878490316504850}
+  m_GameObject: {fileID: 3572319803545677665}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3297481065356610396
+  m_Size: {x: 0.022965606, y: 0.019903522, z: 0.01071728}
+  m_Center: {x: -4.656613e-10, y: 4.656612e-10, z: 0.0057600057}
+--- !u!54 &7478182215331926209
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682878490316504850}
+  m_GameObject: {fileID: 3572319803545677665}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -111,13 +111,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4791175384692488508
+--- !u!114 &2122787933899543476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682878490316504850}
+  m_GameObject: {fileID: 3572319803545677665}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2d86e1411375984e94212a4a463fe93, type: 3}
