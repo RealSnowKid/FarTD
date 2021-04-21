@@ -1155,6 +1155,48 @@ PrefabInstance:
       objectReference: {fileID: 561278089}
     - target: {fileID: 2333913143035732089, guid: 923aad6641e4dc0489bdcd86db141c89,
         type: 3}
+      propertyPath: testItems.Array.data[10]
+      value: 
+      objectReference: {fileID: 2234993775125010057, guid: 4275eeb24701e6b4bba894047904ea63,
+        type: 3}
+    - target: {fileID: 2333913143035732089, guid: 923aad6641e4dc0489bdcd86db141c89,
+        type: 3}
+      propertyPath: testItems.Array.data[11]
+      value: 
+      objectReference: {fileID: 2234993775125010057, guid: 4275eeb24701e6b4bba894047904ea63,
+        type: 3}
+    - target: {fileID: 2333913143035732089, guid: 923aad6641e4dc0489bdcd86db141c89,
+        type: 3}
+      propertyPath: testItems.Array.data[12]
+      value: 
+      objectReference: {fileID: 2234993775125010057, guid: 4275eeb24701e6b4bba894047904ea63,
+        type: 3}
+    - target: {fileID: 2333913143035732089, guid: 923aad6641e4dc0489bdcd86db141c89,
+        type: 3}
+      propertyPath: testItems.Array.data[13]
+      value: 
+      objectReference: {fileID: 2234993775125010057, guid: 4275eeb24701e6b4bba894047904ea63,
+        type: 3}
+    - target: {fileID: 2333913143035732089, guid: 923aad6641e4dc0489bdcd86db141c89,
+        type: 3}
+      propertyPath: testItems.Array.data[14]
+      value: 
+      objectReference: {fileID: 2234993775125010057, guid: 4275eeb24701e6b4bba894047904ea63,
+        type: 3}
+    - target: {fileID: 2333913143035732089, guid: 923aad6641e4dc0489bdcd86db141c89,
+        type: 3}
+      propertyPath: testItems.Array.data[15]
+      value: 
+      objectReference: {fileID: 2234993775125010057, guid: 4275eeb24701e6b4bba894047904ea63,
+        type: 3}
+    - target: {fileID: 2333913143035732089, guid: 923aad6641e4dc0489bdcd86db141c89,
+        type: 3}
+      propertyPath: testItems.Array.data[16]
+      value: 
+      objectReference: {fileID: 2234993775125010057, guid: 4275eeb24701e6b4bba894047904ea63,
+        type: 3}
+    - target: {fileID: 2333913143035732089, guid: 923aad6641e4dc0489bdcd86db141c89,
+        type: 3}
       propertyPath: testItems.Array.data[17]
       value: 
       objectReference: {fileID: 2226329822556123105, guid: e460405d7bcee344fbcace48c8aa6485,
