@@ -9,6 +9,7 @@ public class Miner : Building {
     [SerializeField] private GameObject memiumPrefab;
     [SerializeField] private GameObject unobtaniumPrefab;
     [SerializeField] private GameObject instabiliumPrefab;
+    [SerializeField] private AudioSource miningSound;
 
     private Ore oreType;
     private GameObject prefab;
@@ -54,8 +55,15 @@ public class Miner : Building {
         InvokeRepeating("spawnOre", 0f, miningSpeed);
     }
 
+    public void Build()
+    {
+        miningSound.Play();
+        miningSound.loop = true;
+    }
+
     private void spawnOre() {
-        for(int i=0; i<amountMined; i++) {
+        for (int i=0; i<amountMined; i++) {
+            //miningSound.Play();
             Instantiate(prefab, spawnLocation.position, spawnLocation.rotation, spawnParent);
         }
     }

@@ -7,6 +7,7 @@ public class Core : Damageable {
     private float health = 100f;
     private Slider slider;
     public GameObject player;
+    public AudioSource coreDeathSound;
 
     private GameObject gameOverScreen;
 
@@ -37,6 +38,7 @@ public class Core : Damageable {
     }
 
     void Lose() {
+        coreDeathSound.PlayOneShot(coreDeathSound.clip);
         gameOverScreen.SetActive(true);
         Time.timeScale = 0;
         gui.SetActive(false);
@@ -46,6 +48,9 @@ public class Core : Damageable {
         player.SetActive(false);
 
         GameObject cam = new GameObject("GameOver Cam");
+        cam.AddComponent<AudioListener>();
+        gameOverScreen.GetComponent<AudioSource>().Play(0);
+        gameOverScreen.GetComponent<AudioSource>().loop = true;
         cam.transform.position = player.transform.position + new Vector3(0f, 20f, 0f);
         cam.transform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
         cam.AddComponent<Camera>();

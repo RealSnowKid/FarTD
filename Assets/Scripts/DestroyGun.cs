@@ -2,6 +2,7 @@
 
 public class DestroyGun : MonoBehaviour {
     public bool gunEnabled = false;
+    public AudioClip destructionSound;
 
     private float distance = 5f;
     private RaycastHit hitInfo;
@@ -39,6 +40,7 @@ public class DestroyGun : MonoBehaviour {
         }
 
         if(Input.GetButtonDown("Fire1") && building != null) {
+            AudioSource.PlayClipAtPoint(destructionSound, building.transform.position);
             Destroy(building);
         }
     }

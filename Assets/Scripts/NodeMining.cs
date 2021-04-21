@@ -14,6 +14,7 @@ public class NodeMining : MonoBehaviour
     public Ore oreType;
     private List<GameObject> resources = new List<GameObject>();
     public Inventory inv;
+    public AudioSource miningSound;
 
     private void Start()
     {
@@ -60,11 +61,14 @@ public class NodeMining : MonoBehaviour
         if (!mining)
         {
             CancelInvoke("ReduceOre");
+            miningSound.Stop();
             return;
         }
         if (!IsInvoking())
         {
-            InvokeRepeating("ReduceOre", 0, 1f);   
+            InvokeRepeating("ReduceOre", 0, 1f);
+            miningSound.Play(0);
+            miningSound.loop = true;
         }
         return;
     }

@@ -54,10 +54,7 @@ public class CraftingRecipe : ScriptableObject
         {
             for (int i = 0; i < itemAmount.Amount; i++)
             {
-                if (inventory.RemoveItem(itemAmount.Item.gameObject))
-                {
-                    Debug.Log("Item Removed " + itemAmount.Item);
-                }
+                inventory.RemoveItem(itemAmount.Item.gameObject);
             }
         }
     }
@@ -68,10 +65,7 @@ public class CraftingRecipe : ScriptableObject
         {
             for (int i = 0; i < itemAmount.Amount; i++)
             {
-                if (inventory.AddItem(itemAmount.Item.gameObject))
-                {
-                    Debug.Log("Item Added " + itemAmount.Item);
-                }
+                inventory.AddItem(itemAmount.Item.gameObject);
             }
         }
     }

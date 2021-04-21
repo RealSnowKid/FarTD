@@ -7,11 +7,12 @@ public class Crafter : Building
 {
     public CraftingRecipe CraftingRecipe;
     public GameObject Craftable;
-    private List<GameObject> items = new List<GameObject>();
+    [SerializeField] private List<GameObject> items = new List<GameObject>();
     public Transform SpawnLocation;
     private Transform spawnParent;
     public bool isBuilt = false;
     private bool crafting = false;
+    public AudioSource crafterSound;
 
     // Debugging purposes
     public string Name;
@@ -63,7 +64,7 @@ public class Crafter : Building
             {
                 foreach (ItemAmount ia in CraftingRecipe.Materials)
                 {
-                    if (ia.Item == collider.GetComponent<OreDrop>().Item)
+                    if (ia.Item == collider.GetComponent<OreDrop>().Item && !items.Contains(collider.GetComponent<OreDrop>().gameObject))
                     {
                         included = true;
                         items.Add(collider.GetComponent<OreDrop>().gameObject);
@@ -123,6 +124,8 @@ public class Crafter : Building
     IEnumerator Crafting()
     {
         Debug.Log("CRAFT");
+        crafterSound.Play();
+        crafterSound.loop = true;
         yield return new WaitForSeconds(2.5f);
         GameObject itemToSpawn = Craftable;
         crafting = false;
@@ -131,6 +134,7 @@ public class Crafter : Building
             Destroy(item);
         }
         items.Clear();
+        crafterSound.Stop();
         GameObject spawnedItem = Instantiate(itemToSpawn, SpawnLocation.position, SpawnLocation.rotation, spawnParent);
         gObject = spawnedItem;
         InvokeRepeating("PushForward", 0, 0.02f);

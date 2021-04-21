@@ -18,6 +18,7 @@ public class BuildGun : MonoBehaviour {
     private GameObject buildParent;
 
     public NavMeshSurface surface;
+    public AudioClip buildingSound;
 
     // refactorr
     private void Start() {
@@ -45,7 +46,12 @@ public class BuildGun : MonoBehaviour {
     void Build(GameObject tile) {
         instance.transform.parent = buildParent.transform;
         tile.GetComponent<Tile>().building = instance;
+        AudioSource.PlayClipAtPoint(buildingSound, tile.transform.position);
         instance.GetComponent<Collider>().enabled = true;
+        if (instance.GetComponent<Miner>() != null)
+        {
+            instance.GetComponent<Miner>().Build();
+        }
         instance = null;
 
         Destroy(gunTile.GetComponent<InventoryTile>().item);

@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
     public float health = 100f;
     public float damage = 5f;
     public float attackDelay = 1;
+    public AudioClip DeathSound;
 
     private Animator animator;
 
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour {
     }
 
     private void Die() {
+        AudioSource.PlayClipAtPoint(DeathSound, transform.position);
         master.Remove(gameObject);
         Destroy(gameObject);
     }

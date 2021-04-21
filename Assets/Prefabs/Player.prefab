@@ -355,6 +355,7 @@ MonoBehaviour:
   instance: {fileID: 0}
   gunTile: {fileID: 0}
   surface: {fileID: 0}
+  buildingSound: {fileID: 8300000, guid: 3d7d63446b8c4fb4e8138622c0df3a76, type: 3}
 --- !u!114 &4557040253903770346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunEnabled: 0
+  fireSound: {fileID: 8300000, guid: e6f920efa99c3b845b74a225acb1b4bf, type: 3}
   bulletPrefab: {fileID: 8962286388536208361, guid: ffbbbb2e8a4386a4193bf2936e06ca5c,
     type: 3}
   spawnLocation: {fileID: 3991664447703825930}
@@ -385,6 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunEnabled: 1
+  destructionSound: {fileID: 8300000, guid: d3e486107c211434abbc7563bf0c9ab2, type: 3}
 --- !u!114 &5278947821796532216
 MonoBehaviour:
   m_ObjectHideFlags: 0
