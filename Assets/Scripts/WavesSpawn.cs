@@ -30,6 +30,7 @@ public class WavesSpawn : MonoBehaviour {
     private float timer;
 
     private bool isWave = false;
+    private bool pause = false;
 
     private int waveCount = 0;
 
@@ -80,7 +81,24 @@ public class WavesSpawn : MonoBehaviour {
     }
 
     void Update() {
-        if (!isWave) UpdateTimer();
+        // Debuggin pause in-between waves timer
+        if (Input.GetKeyDown(KeyCode.Comma))
+        {
+            pause = !pause;
+        }
+
+        // Debugging fast-forward to wave
+        if (Input.GetKeyDown(KeyCode.Period))
+        {
+            timer = 0f;
+            UpdateVisualTime();
+            pause = !pause;
+        }
+
+        if (!pause)
+        {
+            if (!isWave) UpdateTimer();
+        }
 
         if(timer <= 0f && !isWave) {
             isWave = true;
@@ -158,7 +176,11 @@ public class WavesSpawn : MonoBehaviour {
 
     private void UpdateTimer() {
         timer -= Time.deltaTime;
+        UpdateVisualTime();
+    }
 
+    private void UpdateVisualTime()
+    {
         int min = (int)(timer / 60);
         int sec = (int)(timer % 60);
 
