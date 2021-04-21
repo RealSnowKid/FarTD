@@ -39,7 +39,7 @@ public class MapGeneration : MonoBehaviour {
         switch (difficulty) {
             case 0:
                 oreThreshold = 0.3f;
-                oreThreshold2 = 0.21f;
+                oreThreshold2 = 0.16f;
                 wallThreshold = 0.2f;
 
                 ironiumPercent = 16f;
@@ -63,8 +63,8 @@ public class MapGeneration : MonoBehaviour {
                 break;
             case 2:
                 oreThreshold = 0.15f;
-                oreThreshold2 = 0.25f;
-                wallThreshold = 0.45f;
+                oreThreshold2 = 0.14f;
+                wallThreshold = 0.4f;
 
                 ironiumPercent = 53f;
                 zoniumPercent = 20f;
@@ -112,6 +112,9 @@ public class MapGeneration : MonoBehaviour {
 
         ws.Setup();
         compass.GetComponent<Compass>().Setup();
+
+        // make sure every ore spawns at least once
+        int oreCounter = 0;
         // generate tiles
         for (int i=0; i<mapX+2; i++) {
             for (int ii=0; ii<mapY+2; ii++) {
@@ -158,7 +161,7 @@ public class MapGeneration : MonoBehaviour {
                     }
 
                     // generate ores from tiles which are not walls
-                    float oreSample = Mathf.PerlinNoise((i + seed * seed) / mapX * scale, (ii + seed * seed) / mapY * scale);
+                    float oreSample = Mathf.PerlinNoise((i + seed * seed) / mapX * (scale*2), (ii + seed * seed) / mapY * (scale*2));
                     if (oreSample < oreThreshold) {
                         tile.GetComponent<Renderer>().material.color = Color.yellow;
 
@@ -186,21 +189,47 @@ public class MapGeneration : MonoBehaviour {
                         else {
 
                             // if it's a new ore patch, generate random ore
-                            float rnd = Random.Range(0f, 100f);
+                            if (oreCounter < 6) {
+                                switch (oreCounter) {
+                                    case 0:
+                                        tile.GetComponent<Tile>().oreType = Ore.Ironium;
+                                        break;
+                                    case 1:
+                                        tile.GetComponent<Tile>().oreType = Ore.Zonium;
+                                        break;
+                                    case 2:
+                                        tile.GetComponent<Tile>().oreType = Ore.Ventium;
+                                        break;
+                                    case 3:
+                                        tile.GetComponent<Tile>().oreType = Ore.Memium;
+                                        break;
+                                    case 4:
+                                        tile.GetComponent<Tile>().oreType = Ore.Unobtanium;
+                                        break;
+                                    case 5:
+                                        tile.GetComponent<Tile>().oreType = Ore.Instabilium;
+                                        break;
+                                }
+                                oreCounter++;
+                            } else {
+                                float rnd = Random.Range(0f, 100f);
 
-                            if (rnd <= ironiumPercent) {
-                                tile.GetComponent<Tile>().oreType = Ore.Ironium;
-                            } else if (rnd <= zoniumPercent) {
-                                tile.GetComponent<Tile>().oreType = Ore.Zonium;
-                            } else if (rnd <= ventiumPercent) {
-                                tile.GetComponent<Tile>().oreType = Ore.Ventium;
-                            } else if (rnd <= memiumPercent) {
-                                tile.GetComponent<Tile>().oreType = Ore.Memium;
-                            } else if (rnd <= unobtaniumPercent) {
-                                tile.GetComponent<Tile>().oreType = Ore.Unobtanium;
-                            } else if (rnd <= instabiliumPercent) {
-                                tile.GetComponent<Tile>().oreType = Ore.Instabilium;
+                                if (rnd <= ironiumPercent) {
+                                    tile.GetComponent<Tile>().oreType = Ore.Ironium;
+                                } else if (rnd <= zoniumPercent) {
+                                    tile.GetComponent<Tile>().oreType = Ore.Zonium;
+                                } else if (rnd <= ventiumPercent) {
+                                    tile.GetComponent<Tile>().oreType = Ore.Ventium;
+                                } else if (rnd <= memiumPercent) {
+                                    tile.GetComponent<Tile>().oreType = Ore.Memium;
+                                } else if (rnd <= unobtaniumPercent) {
+                                    tile.GetComponent<Tile>().oreType = Ore.Unobtanium;
+                                } else if (rnd <= instabiliumPercent) {
+                                    tile.GetComponent<Tile>().oreType = Ore.Instabilium;
+                                }
                             }
+
+
                         }
 
                         if(adjacentOre != null)
