@@ -1302,6 +1302,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 794344040986627548, guid: 469b2a75ccab383439778a9477c54c9f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7549672731442745977}
+    - target: {fileID: 794344040986627548, guid: 469b2a75ccab383439778a9477c54c9f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 794344041206249020, guid: 469b2a75ccab383439778a9477c54c9f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7549672731442745977}
+    - target: {fileID: 794344041206249020, guid: 469b2a75ccab383439778a9477c54c9f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 2631041785136863208, guid: 469b2a75ccab383439778a9477c54c9f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
