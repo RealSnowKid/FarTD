@@ -56,6 +56,7 @@ public class TurretCollider : MonoBehaviour {
             root.bullets += bulletsAmountPerItem;
             bulletCount.text = root.bullets.ToString();
             Destroy(inventory.pickedItem);
+            root.ammoLight.color = Color.green;
         }
     }
 

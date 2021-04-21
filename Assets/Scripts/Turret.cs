@@ -25,6 +25,8 @@ public class Turret : Building {
 
     [SerializeField] private Text bulletLabel;
 
+    public Light ammoLight;
+
     public void Build() {
         transform.GetChild(1).GetComponent<TurretCollider>().Build(isConveyor);
     }
@@ -68,6 +70,7 @@ public class Turret : Building {
     void Shoot() {
         if(bullets <= 0) {
             Debug.LogWarning("turret out of ammo");
+            ammoLight.color = Color.red;
         } else {
             GameObject bullet = Instantiate(bulletPrefab, spawnLocation.position, Quaternion.identity);
             bullet.GetComponent<Bullet>().damage = damage;
