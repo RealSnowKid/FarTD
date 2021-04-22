@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b4f582dfac1fa4d87ab5440e0e2f50, type: 3}
   m_Name: Bullet_Memium
   m_EditorClassIdentifier: 
-  Materials: []
-  Results: []
+  Materials:
+  - Item: {fileID: 3628750516154569548, guid: 3075ef886871af647ba361335bc6a547, type: 3}
+    Amount: 1
+  - Item: {fileID: 4411658495435683107, guid: d9fc490556cfe1b43af0a9e7c510e2b5, type: 3}
+    Amount: 1
+  Results:
+  - Item: {fileID: 2376461926109205585, guid: a4730f057db574f409bf8a4f09013377, type: 3}
+    Amount: 1

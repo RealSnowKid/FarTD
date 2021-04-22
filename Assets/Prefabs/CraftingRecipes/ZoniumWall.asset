@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b4f582dfac1fa4d87ab5440e0e2f50, type: 3}
   m_Name: ZoniumWall
   m_EditorClassIdentifier: 
-  Materials: []
-  Results: []
+  Materials:
+  - Item: {fileID: 4756135500905359231, guid: 20dd4dd06b7a4244c854f9dfc6147fe0, type: 3}
+    Amount: 2
+  Results:
+  - Item: {fileID: 3866988626496625706, guid: 7804360ec5d963e4fb2660e72aac9edc, type: 3}
+    Amount: 0

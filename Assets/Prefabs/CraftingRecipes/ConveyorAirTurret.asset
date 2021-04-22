@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b4f582dfac1fa4d87ab5440e0e2f50, type: 3}
   m_Name: ConveyorAirTurret
   m_EditorClassIdentifier: 
-  Materials: []
-  Results: []
+  Materials:
+  - Item: {fileID: 2234993775125010059, guid: 4275eeb24701e6b4bba894047904ea63, type: 3}
+    Amount: 1
+  - Item: {fileID: 6617921465597776963, guid: c75615973ac9579409cd5cebde7796d8, type: 3}
+    Amount: 1
+  Results:
+  - Item: {fileID: 7667752691372528205, guid: c2a1f8994489b2d419cff03d2620b6fe, type: 3}
+    Amount: 0

@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b4f582dfac1fa4d87ab5440e0e2f50, type: 3}
   m_Name: IroniumWall
   m_EditorClassIdentifier: 
-  Materials: []
-  Results: []
+  Materials:
+  - Item: {fileID: 6928088763016814801, guid: 66e6af16dd729f24e81737b185e7a043, type: 3}
+    Amount: 2
+  Results:
+  - Item: {fileID: 7805061125708748713, guid: ca2b9a91c6be64b43b441b90d18d3b4d, type: 3}
+    Amount: 1

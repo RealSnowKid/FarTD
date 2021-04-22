@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b4f582dfac1fa4d87ab5440e0e2f50, type: 3}
   m_Name: Bullet_Ventium
   m_EditorClassIdentifier: 
-  Materials: []
-  Results: []
+  Materials:
+  - Item: {fileID: 1345163713863794121, guid: 3042d4417e257e44e8c721f39737adbc, type: 3}
+    Amount: 1
+  - Item: {fileID: 7469383457234836813, guid: 4f06dbfc7ce595f4a8fe67ddfea7703f, type: 3}
+    Amount: 1
+  Results:
+  - Item: {fileID: 3628750516154569548, guid: 3075ef886871af647ba361335bc6a547, type: 3}
+    Amount: 1

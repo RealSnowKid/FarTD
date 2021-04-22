@@ -11331,6 +11331,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -105
       objectReference: {fileID: 0}
+    - target: {fileID: 5423181405531795718, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5423181405539016396, guid: bcde9f424c2a5c7459d59e852cf13ff1,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -11520,8 +11525,7 @@ PrefabInstance:
         type: 3}
       propertyPath: CraftingRecipes.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 3f4cdd53665954d46ab1af88b0e1b573,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5423181406081279918, guid: bcde9f424c2a5c7459d59e852cf13ff1,
         type: 3}
       propertyPath: CraftingRecipes.Array.data[2]

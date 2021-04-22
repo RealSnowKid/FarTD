@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b4f582dfac1fa4d87ab5440e0e2f50, type: 3}
   m_Name: AirTurret
   m_EditorClassIdentifier: 
-  Materials: []
-  Results: []
+  Materials:
+  - Item: {fileID: 8654669060546944459, guid: 7e9f4a18f6226b342b28819d429da66a, type: 3}
+    Amount: 1
+  - Item: {fileID: 4756135500905359231, guid: 20dd4dd06b7a4244c854f9dfc6147fe0, type: 3}
+    Amount: 1
+  Results:
+  - Item: {fileID: 6617921465597776963, guid: c75615973ac9579409cd5cebde7796d8, type: 3}
+    Amount: 1
