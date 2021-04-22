@@ -15,11 +15,20 @@ public class Smelter : Building {
 
     [SerializeField] private Transform itemsParent;
 
+    [SerializeField] private GameObject ironiumItem;
+    [SerializeField] private GameObject zoniumItem;
+
     [SerializeField] private GameObject ironiumSmelt;
     [SerializeField] private GameObject zoniumSmelt;
+    [SerializeField] private GameObject ventiumSmelt;
+    [SerializeField] private GameObject memiumSmelt;
+    [SerializeField] private GameObject unobtaniumSmelt;
 
     [SerializeField] private GameObject ironiumSmeltBlock;
     [SerializeField] private GameObject zoniumSmeltBlock;
+    [SerializeField] private GameObject ventiumSmeltBlock;
+    [SerializeField] private GameObject memiumSmeltBlock;
+    [SerializeField] private GameObject unobtaniumSmeltBlock;
 
     public bool isConveyor = false;
     [SerializeField] private Transform spawnTransform;
@@ -66,19 +75,37 @@ public class Smelter : Building {
                 case Ore.Ironium:
                     if (input == null) {
                         Destroy(other.gameObject);
-                        input = ironiumSmeltBlock;
+                        input = ironiumSmelt;
                     }
                     break;
                 case Ore.Zonium:
                     if (input == null) {
                         Destroy(other.gameObject);
-                        input = zoniumSmeltBlock;
+                        input = zoniumSmelt;
                     }
                     break;
                 case Ore.Instabilium:
                     if (!hasFuel) {
                         Destroy(other.gameObject);
                         hasFuel = true;
+                    }
+                    break;
+                case Ore.Ventium:
+                    if(input == null) {
+                        Destroy(other.gameObject);
+                        input = ventiumSmelt;
+                    }
+                    break;
+                case Ore.Memium:
+                    if(input == null) {
+                        Destroy(other.gameObject);
+                        input = memiumSmelt;
+                    }
+                    break;
+                case Ore.Unobtanium:
+                    if(input == null) {
+                        Destroy(other.gameObject);
+                        input = unobtaniumSmelt;
                     }
                     break;
             }
@@ -148,8 +175,8 @@ public class Smelter : Building {
         }
         count = 0;
 
-        if (isIronium) ingot = Instantiate(ironiumSmelt, itemsParent);
-        else if (isZonium) ingot = Instantiate(zoniumSmelt, itemsParent);
+        if (isIronium) ingot = Instantiate(ironiumItem, itemsParent);
+        else if (isZonium) ingot = Instantiate(zoniumItem, itemsParent);
 
         if (ingot != null) {
             ingot.GetComponent<Item>().inventory = gui.transform.parent.parent.GetComponent<Inventory>();
@@ -175,7 +202,8 @@ public class Smelter : Building {
         smeltingSound.Play(0);
         smeltingSound.loop = true;
         yield return new WaitForSeconds(time);
-        Instantiate(obj, spawnTransform.position, Quaternion.identity);
+        GameObject newObj = Instantiate(obj, spawnTransform.position, spawnTransform.rotation);
+        Debug.Log(newObj.name);
         input = null;
         hasFuel = false;
         smeltingSound.Stop();

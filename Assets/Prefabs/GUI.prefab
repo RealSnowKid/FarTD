@@ -595,7 +595,7 @@ RectTransform:
   - {fileID: 2333913141866003020}
   - {fileID: 2333913141926035707}
   m_Father: {fileID: 2333913141907142338}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Bullet
+  ItemName: C_Smelter
   image: {fileID: 2333913142092404505}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -2455,7 +2455,7 @@ RectTransform:
   - {fileID: 2333913142251101361}
   - {fileID: 2333913141927182729}
   m_Father: {fileID: 2333913141907142338}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2969,7 +2969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Smelter
+  ItemName: Conveyor
   image: {fileID: 2333913142047939144}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -3359,7 +3359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Conveyor
+  ItemName: Miner
   image: {fileID: 2333913142858047291}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -4086,7 +4086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Conveyor
+  ItemName: IroniumIngot
   image: {fileID: 2333913143254481552}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -4610,7 +4610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: IroniumIngot
+  ItemName: IroniumRod
   image: {fileID: 2333913141671656621}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -4649,7 +4649,7 @@ RectTransform:
   - {fileID: 2333913142166574010}
   - {fileID: 2333913143072305754}
   m_Father: {fileID: 2333913141907142338}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4788,7 +4788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: C_Smelter
+  ItemName: Smelter
   image: {fileID: 2333913141880133333}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -5141,7 +5141,7 @@ RectTransform:
   - {fileID: 2333913142529082168}
   - {fileID: 2333913143648657361}
   m_Father: {fileID: 2333913141907142338}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -5354,7 +5354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Smelter
+  ItemName: IroniumIngot
   image: {fileID: 2333913142530441441}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -5747,7 +5747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: IroniumIngot
+  ItemName: IroniumRod
   image: {fileID: 2333913143364308597}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -7223,7 +7223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: IroniumRod
+  ItemName: OreIronium
   image: {fileID: 2333913142620467759}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -8599,7 +8599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: IroniumIngot
+  ItemName: Conveyor
   image: {fileID: 2333913142299058535}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -9365,7 +9365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Miner
+  ItemName: IroniumIngot
   image: {fileID: 2333913141846485279}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -9404,7 +9404,7 @@ RectTransform:
   - {fileID: 2333913143474986868}
   - {fileID: 2333913143004165003}
   m_Father: {fileID: 2333913141907142338}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -9543,7 +9543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: IroniumRod
+  ItemName: PowderInstabilium
   image: {fileID: 2333913142124789753}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -10909,7 +10909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc63b62af2d7ab45a1007fea059930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: PowderInstabilium
+  ItemName: Smelter
   image: {fileID: 2333913142429888636}
   Label: {fileID: 0}
   isInCrafting: 1
@@ -11554,29 +11554,34 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 5423181406081279918, guid: bcde9f424c2a5c7459d59e852cf13ff1,
         type: 3}
-      propertyPath: craftingRecipeUIs.Array.data[2]
+      propertyPath: craftingRecipeUIs.Array.data[1]
       value: 
       objectReference: {fileID: 2333913143484322603}
     - target: {fileID: 5423181406081279918, guid: bcde9f424c2a5c7459d59e852cf13ff1,
         type: 3}
-      propertyPath: craftingRecipeUIs.Array.data[3]
+      propertyPath: craftingRecipeUIs.Array.data[2]
       value: 
       objectReference: {fileID: 2333913142121907573}
     - target: {fileID: 5423181406081279918, guid: bcde9f424c2a5c7459d59e852cf13ff1,
         type: 3}
-      propertyPath: craftingRecipeUIs.Array.data[4]
+      propertyPath: craftingRecipeUIs.Array.data[3]
       value: 
       objectReference: {fileID: 2333913142509671242}
     - target: {fileID: 5423181406081279918, guid: bcde9f424c2a5c7459d59e852cf13ff1,
         type: 3}
-      propertyPath: craftingRecipeUIs.Array.data[5]
+      propertyPath: craftingRecipeUIs.Array.data[4]
       value: 
       objectReference: {fileID: 2333913142613517796}
     - target: {fileID: 5423181406081279918, guid: bcde9f424c2a5c7459d59e852cf13ff1,
         type: 3}
-      propertyPath: craftingRecipeUIs.Array.data[6]
+      propertyPath: craftingRecipeUIs.Array.data[5]
       value: 
       objectReference: {fileID: 2333913141848471003}
+    - target: {fileID: 5423181406081279918, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: craftingRecipeUIs.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5423181406081279919, guid: bcde9f424c2a5c7459d59e852cf13ff1,
         type: 3}
       propertyPath: m_Name

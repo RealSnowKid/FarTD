@@ -76,23 +76,23 @@ public class CrafterWindow : MonoBehaviour
                     buttonsGroupController.NotifySelection(0);
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
-                case "Miner":
+                case "Bullet":
                     buttonsGroupController.NotifySelection(1);
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
-                case "Conveyor":
+                case "BulletZonium":
                     buttonsGroupController.NotifySelection(2);
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
-                case "Smelter":
+                case "BulletVentium":
                     buttonsGroupController.NotifySelection(3);
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
-                case "C_Smelter":
+                case "BulletMemium":
                     buttonsGroupController.NotifySelection(4);
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
-                case "Bullet":
+                case "BulletUnobtanium":
                     buttonsGroupController.NotifySelection(5);
                     SetInputOutputImages(crafter.CraftingRecipe);
                     break;
