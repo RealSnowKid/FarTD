@@ -20,3 +20,4 @@ MonoBehaviour:
   Results:
   - Item: {fileID: 5069095588615387270, guid: ceab7a504d67600459f301642c536ffd, type: 3}
     Amount: 1
+  setGodMode: 0
