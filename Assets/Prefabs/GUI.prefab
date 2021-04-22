@@ -6727,6 +6727,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2333913143035732102}
     m_Modifications:
+    - target: {fileID: 627143361405240255, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 2626449705452752912, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 3195065232560076626, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 3385943084717197174, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 3773803965812001516, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 4826431597069566685, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
     - target: {fileID: 5423181404348398915, guid: bcde9f424c2a5c7459d59e852cf13ff1,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6832,11 +6862,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5423181405727583546, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 5423181406081279918, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
     - target: {fileID: 5423181406081279919, guid: bcde9f424c2a5c7459d59e852cf13ff1,
         type: 3}
       propertyPath: m_Name
       value: CraftingPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 5642142071471568412, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 6010275907933041379, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 6173504720323194936, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 6726513469451537912, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 8575645835988360940, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
+    - target: {fileID: 8790983505013175222, guid: bcde9f424c2a5c7459d59e852cf13ff1,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 2333913143035732089}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcde9f424c2a5c7459d59e852cf13ff1, type: 3}
 --- !u!1 &2165121083450881289 stripped
