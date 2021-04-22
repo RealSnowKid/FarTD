@@ -68,6 +68,7 @@ public class NodeMining : MonoBehaviour
         {
             InvokeRepeating("ReduceOre", 0, 1f);
             miningSound.Play(0);
+            miningSound.volume = 1f;
             miningSound.loop = true;
         }
         return;

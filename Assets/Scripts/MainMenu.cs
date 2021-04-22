@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
     public GameObject playerUI;
+    public GameObject TutorialPopUp;
     public Camera menuCamera;
 
     public MapGeneration mapAgent;
@@ -15,6 +16,8 @@ public class MainMenu : MonoBehaviour {
 
     private int mapSize = 100;
     public Text sizeLabel;
+
+    private bool tutorialPopUp = true;
 
     public void StartGame() {
         playerUI.SetActive(true);
@@ -27,6 +30,16 @@ public class MainMenu : MonoBehaviour {
         mapAgent.BuildMap();
 
         wavesAgent.gameObject.SetActive(true);
+        if (tutorialPopUp)
+        {
+            wavesAgent.PauseUnpause(true);
+            playerUI.GetComponent<Inventory>().enabled = false;
+            playerUI.GetComponent<Inventory>().player.GetComponent<PlayerControl>().enabled = false;
+            playerUI.GetComponent<Inventory>().player.GetComponent<GunSwitcher>().enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            TutorialPopUp.SetActive(true);
+        }
     }
 
     public void QuitGame() {
@@ -55,5 +68,18 @@ public class MainMenu : MonoBehaviour {
     public void ReloadScene() {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void TutorialPopup(bool isOn)
+    {
+        Debug.Log(isOn);
+        if (isOn)
+        {
+            tutorialPopUp = true;
+        }
+        else if (!isOn)
+        {
+            tutorialPopUp = false;
+        }
     }
 }
